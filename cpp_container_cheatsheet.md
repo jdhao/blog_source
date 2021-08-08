@@ -1,0 +1,102 @@
+---
+title: "Cpp Container/Adapter and Common Structure CheatSheet"
+date: 2021-07-04 19:02:50+0800
+tags: [C++]
+categories: [Note]
+---
+
+I use Python in my work, and rarely need C++. So I need to compile this C++
+cheatsheet for common STL containers/adapters just in case I need them.
+
+<!--more-->
+
+# vector
+
++ Define a 1D vector: `vector<int> arr = {1, 2, 3};`
++ Define a 2D vector:  `vector<vector<int>> mat = {{1, 2, 3}, {4, 5}}`
++ Define a 2D vector of size 3x4: `vector<vector<int> > mat(3, vector<int>(4, 0));`
++ Add element: `arr.push_back(2)`
++ Check its size: `arr.size()`
++ Check if string is empty: `arr.empty();`
++ Slice a vector: `vector<int> arr(10, 1); vector<int> new_vec(arr.begin(), arr.begin()+3);` (the end is not inclued, so the resulting vector has 3 elments)
+
+Ref:
+
++ Best way to extract a sub-vector from a vector?: https://stackoverflow.com/q/421573/6064933
+
+# string
+
++ Define a string: `string myStr = "hello";`
++ Get str size: `myStr.size()`
++ Get sub-string: `myStr.substr(0, 2)` (Get the substring starting at index 0 and with length 2)
++ Get sub-string: `myStr.substr(1)` (Get substring starting at index 1 till the end)
++ Check if string is empty: `myStr.empty();`
+
+# set (keys have order)
+
+Typically implemented using balanced binary search tree.
+
++ Define a set: `set<int> x = {1, 2, 3};`
++ Add an element: `x.insert(5);`
++ Check size: `x.size()`
++ Check if set is empty: `x.empty();`
++ Check if a key exists in a set: `bool has_key = x.find(2) != x.end();`
++ Initialize set from a vector of int: `vector<int> arr = {1, 2, 1, 3}; set<int> my_set(arr.begin(), arr.end());`
+
+There is also unordered_set, which is different from set:
+
++ The underlying implementation for set is binary search tree (BST), while the underlying implementation for unordered_set is hash table.
++ The element in set is sorted so that their order is guaranteed, while for unorder_set, there is no guarantee for the element order.
++ set requires less memory than unordered_set (unordered_set has to store a hash table).
++ Search time is at most `O(log(n))` for set, while for unordered_set, the search time is on average `O(1)`, but may be `O(n)` (highly unlikely)
+
+# map (works like a Python dict)
+
+Typically implemented using balanced binary search tree.
+
++ Define a map: `map<int, string> items;`
++ Add an element: `items.insert({1, "apple"});` or `items[1] = "apple";`
++ Remove an element: `items.erase("apple");`
++ Access a key (no check): `cout << items[1] << endl;` (we have to make sure the key exists, or it will be inserted silently)
++ Access a key (with check): `cout << items.at(4);` (will error out)
++ Show map element key and value:
+
+  ```cpp
+  for (auto item: items){
+    cout << item.first << " " << item.second << endl;
+  }
+  ```
+
++ Check if a key exists in a map: `bool has_key = items.find(2) != items.end();` or `items.count(2)`
+
+There is also `unordered_map`. The different between map and unordered_map is
+similar to difference between set and unordered_set. So we will not elaborate
+on this.
+
+# queue
+
+Queue is a data structure that provides FIFO (first in first out) feature.
+Element that is added first will also be removed first.
+
++ Get queue size: `queue<int> q; cout << q.size() << endl;`
++ Check if queue is empty: use `q.empty()` or `q.size()`
++ Get front element of queue: `cout << q.front() << endl;`
++ Add element to queue: `q.push(4);`
++ Pop up front element: `q.pop();`
+
+# stack
+
+Stack is the opposite of queue. It provides a LIFO (last in first out) data
+structure. Element that is added last will be removed first.
+
++ Get stack size: `stack<int> s; cout << s.size() << endl;`
++ Check if stack is empty: `s.empty()` or `s.size()`
++ Get top elment from stack: `cout << s.top() << endl;`
++ Add elment to stack: `s.push(1);`
++ Pop up element from stack: `s.pop();`
+
+# References
+
++ Why would anyone use set instead of unordered_set?: https://stackoverflow.com/q/1349734/6064933
++ How to choose between map and unordered_map?: https://stackoverflow.com/q/13799593/6064933
++ Is there any advantage of using map over unordered_map in case of trivial keys?: https://stackoverflow.com/q/2196995/6064933
