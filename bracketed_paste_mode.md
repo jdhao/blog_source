@@ -2,7 +2,7 @@
 title: "Bracketed Paste Mode in Terminal"
 date: 2021-02-01T23:34:02+08:00
 draft: false
-tags: [terminal, Neovim, Vim]
+tags: [terminal, Nvim, Vim]
 categories: [tools]
 ---
 

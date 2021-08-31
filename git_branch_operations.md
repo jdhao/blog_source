@@ -103,6 +103,36 @@ Ref:
 
 + [Delete git branch](https://stackoverflow.com/q/2003505/6064933).
 
+# Rename a branch locally and remotely
+
+First we need to rename the local branch:
+
+```bash
+git branch -m foo bar
+git branch --unset-upstream foo
+```
+
+Then we push this branch to the remote:
+
+```bash
+# create a remote branch of the same name and track it.
+git push -u origin bar
+```
+
+If the original remote branch `foo` is the default branch, you need to set
+other branch as the default. Otherwise, you can delete remote branch `foo`.
+After making sure that `foo` is default remote branch, run the following
+command to delete it from remote:
+
+```bash
+# suppose that origin is the remote name
+git push -d origin foo
+```
+
+Ref:
+
++ How do I rename both a Git local and remote branch name?: https://stackoverflow.com/q/30590083/6064933
+
 # Create a local branch from a remote branch?
 
 I have a remote branch and I would like to create a local branch based on it.

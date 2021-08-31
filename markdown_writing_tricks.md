@@ -11,9 +11,7 @@ Some of the tricks when writing Markdown files.
 
 # How to color text
 
-<a name="color_text"></a> To color some text, we can use the [font
-tag](https://www.w3schools.com/tags/tag_font.asp), which is deprecated in
-HTML5.
+<a name="color_text"></a> To color some text, we can use the [font tag](https://www.w3schools.com/tags/tag_font.asp), which is deprecated in HTML5.
 
 ```html
 <font color="red">red text</font>

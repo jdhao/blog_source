@@ -95,6 +95,17 @@ structure. Element that is added last will be removed first.
 + Add elment to stack: `s.push(1);`
 + Pop up element from stack: `s.pop();`
 
+# tuple
+
+[Tuple](https://en.cppreference.com/w/cpp/utility/tuple) can be used to different types of data.
+
++ Create a tuple: `std::make_tuple("abc", 2, 3);`
++ Get tuple element: `std:get<0>(some_tuple);` (get first element, **really weird and unintuitive syntax!**)
+
+Ref:
+
++ Get tuple element: https://stackoverflow.com/q/32606464/6064933
+
 # References
 
 + Why would anyone use set instead of unordered_set?: https://stackoverflow.com/q/1349734/6064933

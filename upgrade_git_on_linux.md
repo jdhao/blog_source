@@ -3,7 +3,7 @@ title: "How To Install Latest Version of Git on Linux"
 date: 2021-03-27T21:48:34+08:00
 draft: false
 tags: [Git]
-categories: [Note]
+categories: [Git]
 ---
 
 The version of the default git bundled with the Linux system is often too old,

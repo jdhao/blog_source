@@ -66,8 +66,8 @@ on terminal with `nvim` command.
 # Nvim configuration file
 
 Neovim use a different configuration file from Vim. You need to create a file
-named `init.vim` under the directory `$HOME/config/nvim` (if this directory
-does not exist, just create one). All configurations can be put into this file.
+named `init.vim` under the directory `$HOME/.config/nvim` (if this directory
+does not exist, just create one)[^4]. All configurations can be put into this file.
 
 Most of the configuration options for Neovim are the same with Vim. You can
 copy your vim configurations if you have used Vim before.
@@ -718,3 +718,4 @@ OK, that is end of this long post. You can find my complete Nvim configurations
 [^1]: Vim was first released in 1991. Its predecessor is Vi, born in 1978.
 [^2]: Developers would send a patch to Bram. Bram will review it and then merge it on GitHub if he thinks the patch is ok.
 [^3]: Check [here](https://jdhao.github.io/2018/10/16/tmux_build_without_root_priviledge/) on how to build the latest version of tmux from source.
+[^4]: For Windows, the config directory is different. Open neovim and run command `:echo stdpath('config')` to find the exact directory.

@@ -44,7 +44,7 @@ printf "\033]52;c;$(printf "%s" "hello" | base64)\a"
 
 Now your local clipboard content should become "hello".
 
-# Set up OSC 52 support in ZOC terminal
+# Enable OSC 52 support in ZOC terminal
 
 [ZOC terminal](https://www.emtec.com/zoc/) has added support for OSC-52 terminal sequence in version 8.01.0,
 as indicated by [its change log](https://www.emtec.com/downloads/zoc/zoc_changes.txt).
@@ -57,6 +57,12 @@ To enable this feature, go to `Options --> Edit Session Profile`,  in the
 Currently, osc-52 in ZOC only works for pure ASCII characters and does not work
 for non-ASCII characters. The dev said that it will be fixed in the next
 release.
+
+# Enable OSC 52 in iterm2
+
+Open preferences, and go to `General` settings. Turn on the option
+`Applications in terminal may access clipboard`. It's off by default for
+security reasons.
 
 # Copy text inside Neovim to local clipboard
 
@@ -72,11 +78,12 @@ Plug 'ojroques/vim-oscyank'
 Select a text region and use command `OSCYank` to copy the text to your local
 clipboard.
 
-# Refs
+# References
 
 + https://medium.com/free-code-camp/tmux-in-practice-integration-with-system-clipboard-bcd72c62ff7b
 + https://mintty.github.io/mintty.1.html#CONFIGURATION
 + https://github.com/mintty/mintty/issues/258#issuecomment-246123745
++ OSC 52 support in iterm2: https://gitlab.com/gnachman/iterm2/-/issues/6842
 + https://chromium.googlesource.com/apps/libapps/+/master/hterm/etc/osc52.vim
 
 [^1]: **OSC** stands for Operating System Commands, see https://en.wikipedia.org/wiki/ANSI_escape_code#OSC

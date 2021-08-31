@@ -5,6 +5,13 @@ tags: [terminal]
 categories: [Mac]
 ---
 
+<details>
+<summary><font size="2" color="red">Changelog</font></summary>
+
++ <font color="blue">2021-08-21: Update the part on how to open URLs since some options are removed.</font>
+
+</details>
+
 [Kitty](https://github.com/kovidgoyal/kitty) is a fast and lightweight terminal
 emulator for Mac and Linux. In this post, I will summarize some of its
 settings.
@@ -17,11 +24,11 @@ config file is located at `$HOME/.config/kitty/kitty.conf`.
 
 # How to copy and paste in Kitty terminal?
 
-By default, to copy selected text to clipboard in Kitty, we can use the
-shortcut <kbd>Ctrl</kbd>+ <kbd>Shift</kbd> + <kbd>C</kbd>. To paste the
-selected text, we can use the mouse middle click.
+By default, to copy selected text to clipboard in Kitty, use the shortcut <kbd>
+Ctrl</kbd>+ <kbd>Shift</kbd> + <kbd>C</kbd>. To paste selected text, we can use
+mouse middle click.
 
-We can also edit the Kitty config file to add more copy and paste shortcut:
+We can also edit the Kitty config and add more shortcut for copy-pasting:
 
 ```
 map cmd+c        copy_to_clipboard
@@ -30,8 +37,8 @@ map shift+insert paste_from_clipboard
 ```
 
 Most terminal emulators have this nice feature to copy the selected text to
-clipboard by default. In Kitty, we can also do this. Just enable the following
-option:
+clipboard automatically. In Kitty, we can also do this by enabling the
+following option:
 
 ```
 copy_on_select yes
@@ -39,14 +46,15 @@ copy_on_select yes
 
 # How to open URLs?
 
-Iterm2 has the feature to open a URL in default browser if you press
-<kbd>Ctrl</kbd> and click the URL link. In Kitty, we can achieve the same
-behavior with the following settings:
+Iterm2 has a feature to open a URL in default browser if you press <kbd>
+Ctrl</kbd> and click the URL link. In kitty, you can press <kbd>Ctrl</kbd> +
+<kbd>Shift</kbd> and then click the left mouse to open a URL.
+
+If you are using the lastest version of Kitty (tested on kitty 0.23), you can
+also add the following kitty config:
 
 ```
-# show single underline when hovering the mouse over URL
-url_style single
-open_url_modifiers ctrl
+mouse_map ctrl+left press ungrabbed,grabbed mouse_click_url
 ```
 
 # Tab configuration
@@ -85,6 +93,7 @@ has a lot of Kitty themes for you to choose.
 
 # References #
 
++ Offical on kitty conf: https://sw.kovidgoyal.net/kitty/overview/#configuring-kitty
 + [Copy text on select](https://github.com/kovidgoyal/kitty/issues/125).
 + [Copy and paste in Kitty](https://unix.stackexchange.com/q/500072/221410).
 + [Use option as meta key](https://github.com/kovidgoyal/kitty/issues/123#issuecomment-342702282).
