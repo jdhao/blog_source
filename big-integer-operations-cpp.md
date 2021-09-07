@@ -1,7 +1,7 @@
 ---
 title: Some Programming Questions Related to Operations with Big Integers
 date: 2017-09-21 10:23:46 +0800
-tags: [C++, algorithms, string]
+tags: [algorithms]
 categories: [Programming]
 ---
 
