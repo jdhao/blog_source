@@ -30,7 +30,7 @@ To temporarily disable SSL verification (note that this is dangerous for
 production applications! Do this at your own risk!), we can add `verify=False` to the requests method:
 
 ```python
-r = requests.get(url, proxies=proxy)
+r = requests.get(url, proxies=proxy, verify=False)
 ```
 
 You will see the following warnings:

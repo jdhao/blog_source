@@ -5,15 +5,14 @@ tags: [mintty, Cygwin]
 categories: [tools]
 ---
 
-In this post, I want to share some useful tips and configurations about
-[mintty](https://github.com/mintty/mintty).
+In this post, I want to share some useful tips and configurations about [mintty](https://github.com/mintty/mintty).
 
 <!--more-->
 
 # Share mintty config between Cygwin and wsltty
 
 Since both Cygwin and wsltty use mintty as its terminal emulator, it would be
-great if we could use a unified config file for mintty intead of having to
+great if we could use a unified config file for mintty instead of having to
 configure separately on two locations. According to [doc
 here](https://github.com/mintty/mintty/wiki/Tips#configuring-mintty), mintty
 provides such a feature: you need to put configuration in
@@ -22,7 +21,7 @@ config.
 
 # Quickly switch to other mintty windows
 
-Unlike iterm or other terminal emulator, mintty does not have a Tabbed window.
+Unlike iterm2 or other terminal emulator, mintty does not have a Tabbed window.
 However, mintty does provide a virtual tab feature. If you are using mintty
 3.0.3 or above, you can switch between different mintty windows with several
 shortcuts:
