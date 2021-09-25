@@ -1,12 +1,12 @@
 ---
-title: "Python 发行版和库的国内源/镜像"
+title: "Anaconda Python 和 pip 国内源/镜像"
 date: 2021-01-17T21:32:39+08:00
 draft: false
-tags: []
-categories: [Note]
+tags: [pip]
+categories: [Python]
 ---
 
-使用国外的源下载 Python 发行版和各种 Python 库，速度实在是太慢了😭，国内的源速度会快很多，权宜之计。
+使用国外的源下载 Python 发行版和各种 Python 库，速度实在是太慢了😭😠，国内的源速度会快很多，权宜之计。
 
 <!--more-->
 
@@ -44,17 +44,17 @@ pip 下载库的时候，默认使用 pypi 的官方源，速度不理想。把 
 
 永久方案：
 
-```
+```bash
 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
 临时方案（使用清华源安装某些库）
 
-```
+```bash
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
 ```
 
-# Refs
+# 参考
 
 + https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html
 + https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/

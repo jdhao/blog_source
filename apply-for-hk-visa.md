@@ -1,11 +1,11 @@
 ---
-title: 申请香港通行证
+title: "申请香港通行证"
 date: 2017-04-30 21:30:16 +0800
 tags: [Mobike]
 categories: [life]
 ---
 
-这个月中旬，ICME Workshop 的投稿结果公布，我投的论文被接收了，忙完 camera-ready论文的提交和论文的注册，我开始办理签证相关的东西。
+这个月中旬，ICME Workshop 的投稿结果公布，我投的论文被接收了，忙完 camera-ready 论文的提交和注册，我开始办理香港签证相关的东西。
 
 <!--more-->
 

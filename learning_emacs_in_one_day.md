@@ -11,8 +11,8 @@ years and I have been constantly hearing the greatness of its rival editor
 [Emacs](https://www.gnu.org/s/emacs/). So today I am gonna to try it and see if
 it is truly great.
 
-**Edit: My final Emacs conf is [here](https://github.com/jdhao/emacs-conf).**
-
+**Edit: My final Emacs conf is [here](https://github.com/jdhao/emacs-conf).
+**[]()
 <!--more-->
 
 # Install
