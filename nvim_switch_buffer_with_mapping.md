@@ -8,7 +8,7 @@ categories: [Nvim]
 
 I usually use `{num}Ctrl-6` to switch buffers in Neovim, where `{num}` is the
 number of buffer (see [this post](https://jdhao.github.io/2018/09/29/Switching_buffers_quickly_Neovim/)).
-Since Neovim has builtin `gt` mapping to switch between tabpages, I thought it
+Since Neovim has built-in `gt` mapping to switch between tabpages, I thought it
 might be a good idea to use `gb` as buffer switching shortcut avoid strech when
 pressing `Ctrl-6`.
 

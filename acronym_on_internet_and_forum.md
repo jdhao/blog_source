@@ -33,9 +33,10 @@ categories: [Note]
 + OT: Off Topic，指的是在论坛/群组上的讨论偏离了论坛或者群组的主题。
 + OTOH: On The Other Hand, 另外一方面，用于说明其他情况。
 + PITA: Pain In The Ass，非常令人烦恼的事情。
-+ PR: Pull Request, 合并请求。
++ PR: Pull Request, Git 合并分支请求。
 + PSA: Public Service Announcement, 开源项目或者服务发布公告。
 + PTAL: Please Take Another Look，请再检查一下（指已经有所更新或变化）。
++ PoC: Proof of Concept, 原型设计（通常用来证明某种想法的可行性）
 + RFC: Request For Comment, 征求意见。
 + RTFM: Read The Fucking Manual, 请读程序文档
 + STFW: Search The Fucking Web, 自己去网上搜索

@@ -18,7 +18,8 @@ cheatsheet for common STL containers/adapters just in case I need them.
 + Add element: `arr.push_back(2)`
 + Check its size: `arr.size()`
 + Check if string is empty: `arr.empty();`
-+ Slice a vector: `vector<int> arr(10, 1); vector<int> new_vec(arr.begin(), arr.begin()+3);` (the end is not inclued, so the resulting vector has 3 elments)
++ Slice a vector: `vector<int> arr(10, 1); vector<int> new_vec(arr.begin(), arr.begin()+3);`
+  (the end is not inclued, so the resulting vector has 3 elments)
 
 Ref:
 
@@ -31,6 +32,12 @@ Ref:
 + Get sub-string: `myStr.substr(0, 2)` (Get the substring starting at index 0 and with length 2)
 + Get sub-string: `myStr.substr(1)` (Get substring starting at index 1 till the end)
 + Check if string is empty: `myStr.empty();`
++ Generate a string with `n` same character `ch`: string(n, ch);
++ Reverse a string: use `std::reverse`, `std::reverse(myStr.begin(), myStr.end())`.
+
+Ref:
+
++ Repeat string n times: https://stackoverflow.com/q/166630/6064933
 
 # set (keys have order)
 
@@ -57,7 +64,8 @@ Typically implemented using balanced binary search tree.
 + Define a map: `map<int, string> items;`
 + Add an element: `items.insert({1, "apple"});` or `items[1] = "apple";`
 + Remove an element: `items.erase("apple");`
-+ Access a key (no check): `cout << items[1] << endl;` (we have to make sure the key exists, or it will be inserted silently)
++ Access a key (no check): `cout << items[1] << endl;` (we have to make sure
+  the key exists, otherwise it will be inserted silently)
 + Access a key (with check): `cout << items.at(4);` (will error out)
 + Show map element key and value:
 
@@ -72,6 +80,10 @@ Typically implemented using balanced binary search tree.
 There is also `unordered_map`. The different between map and unordered_map is
 similar to difference between set and unordered_set. So we will not elaborate
 on this.
+
+Note that when map is defined using the `const` modifier, you can not access
+map element with operator `[]`, since it is possible to alter map value when
+accessing map element like this, see [this post](https://stackoverflow.com/a/5134691/6064933).
 
 # queue
 
@@ -91,7 +103,7 @@ structure. Element that is added last will be removed first.
 
 + Get stack size: `stack<int> s; cout << s.size() << endl;`
 + Check if stack is empty: `s.empty()` or `s.size()`
-+ Get top elment from stack: `cout << s.top() << endl;`
++ Get top elment from stack: `cout << s.top() << endl;` (note that getting top element when **stack is empty** leads to errors!)
 + Add elment to stack: `s.push(1);`
 + Pop up element from stack: `s.pop();`
 
@@ -101,6 +113,13 @@ structure. Element that is added last will be removed first.
 
 + Create a tuple: `std::make_tuple("abc", 2, 3);`
 + Get tuple element: `std:get<0>(some_tuple);` (get first element, **really weird and unintuitive syntax!**)
+
+# pair
+
+Pair can be used to hold two different data types conveniently.
+
++ Create a pair: `pair<int, string> my_pair = std::make_pair(2, "abc")`
++ Get pair element: `my_pair.first` and `my_pair.second`
 
 Ref:
 

@@ -78,7 +78,7 @@ One of main reasons for the powerfulness of Vim comes from the various plugins
 written for it. With these plugins, you can achieve all sorts of crazy things
 which are hard to achieve with plain Vim. If you have installed a lot of
 plugins manually, you will find it difficult to manage them. Like Vim, Neovim
-does not have a builtin plugin manager. We need to install one ourselves.
+does not have a built-in plugin manager. We need to install one ourselves.
 
 There are two plugin managers in wide use among Nvim users. One is
 [dein](https://github.com/Shougo/dein.vim) and the other is [vim-plug](https://github.com/junegunn/vim-plug).
@@ -568,7 +568,7 @@ There are some shortcuts to manipulate code folding:
 
 ## Before we begin
 
-Neovim has several builtin colorschemes or themes. You may not like them and
+Neovim has several built-in colorschemes or themes. You may not like them and
 want better themes. It is easy to install a theme. But it is little tricky to
 make the theme display correctly as what the theme homepage shows. A lot of
 themes will not display well if you use an SSH client which has poor support

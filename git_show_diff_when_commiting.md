@@ -2,7 +2,7 @@
 title: "Show Git Diff When Doing Git Commit"
 date: 2021-07-24T11:07:16+08:00
 draft: false
-tags: [Nvim, Vim]
+tags: [Nvim, Vim, diff]
 categories: [Git]
 ---
 

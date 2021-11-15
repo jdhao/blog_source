@@ -5,7 +5,7 @@ tags: []
 categories: [Nvim]
 ---
 
-There are several options related to file backups in Vim/Nvim.
+There are several options related to file backup behavior in Vim/Nvim.
 
 + `backup`
 + `writebackup`
@@ -13,19 +13,17 @@ There are several options related to file backups in Vim/Nvim.
 + `backupcopy`
 + `backupext`
 
-How are these options related to each other?
+In this post, I will explain how these options are related to each other.
 
 <!--more-->
 
-The option `backup` controls whether to make a physical backup when writing a
-file.
+Option `backup` controls whether to make a physical backup when writing a file.
 
-The option `writebackup` makes sure that a file backup be made before
-overwriting a file. The backup will be removed when the file is successfully
-written, unless `backup` option is also on. It reduces the risk that your file
-is destroyed if something goes wrong when you are writing the file to disk. For
-more info about using `backup` and `writebackup` together, see `:h
-backup-table`.
+Option `writebackup` makes sure that a file backup be made before overwriting a
+file. The backup will be removed when the file is successfully written, unless
+`backup` option is also on. It reduces the risk that your file is destroyed if
+something goes wrong when you are writing the file to disk. For more info about
+using `backup` and `writebackup` together, see `:h backup-table`.
 
 The option `backext` controls the extension used for backup files. `backupext`
 will be appended to the backup file names (default is `~`). For example, if
@@ -54,9 +52,9 @@ of `backupcopy` can be `yes`, `no` or `auto`:
 
 + `yes`: it will copy the original file to the backup location and overwrite the
 original file.
-+ `no`: it will rename the original file (i.e., move the original file to the
++ `no`: it will rename the original file (i.e., move it to the
 backup directory) and write a new file with the same name.
-+ `auto`: Nvim will choose what works best for you.
++ `auto`: Nvim will choose whatever works best for you.
 
 Note that for some applications, you may want to set `backupcopy` to `yes` to
 avoid [issues](https://github.com/webpack/webpack/issues/781#issuecomment-95523711).

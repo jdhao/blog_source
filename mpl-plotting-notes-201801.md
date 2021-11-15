@@ -18,7 +18,7 @@ on various tips and tricks collected during the process of using Matplotlib.
 
 ## Default math font is ugly?
 
-If you try to play with the [builtin LaTeX-style math
+If you try to play with the [built-in LaTeX-style math
 support](https://matplotlib.org/users/mathtext.html) in the recent version of
 Matplotlib, e.g., version 2.0. You may have noticed that the [default math font
 is ugly](https://github.com/matplotlib/matplotlib/issues/7921/) compared to the

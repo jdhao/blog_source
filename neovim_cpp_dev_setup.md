@@ -319,7 +319,7 @@ let  g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 If you are writing a large code project, you should use `make` or other [build
 tools](https://en.wikipedia.org/wiki/List_of_build_automation_software). For simple programs, using clang directly is convenient.
 
-This is how to compile and run a simple program via the builtin terminal:
+This is how to compile and run a simple program via the built-in terminal:
 
 ```vim
 nnoremap <silent> <buffer> <F9> :call <SID>compile_run_cpp()<CR>

@@ -1,5 +1,5 @@
 ---
-title: "A Hands-on Experience with Neovim's Builtin LSP Support"
+title: "A Hands-on Experience with Neovim's Built-in LSP Support"
 date: 2019-11-20T22:41:16+08:00
 tags: [LSP]
 categories: [Nvim]
@@ -14,19 +14,19 @@ categories: [Nvim]
 
 </details>
 
-Just a few days ago, the builtin [Language Server Protocol](https://microsoft.github.io/language-server-protocol/)
+Just a few days ago, the built-in [Language Server Protocol](https://microsoft.github.io/language-server-protocol/)
 support [has been merged](https://github.com/neovim/neovim/pull/11336) into Neovim master.
 
 This post is a hands-on experience of setting up LSP support for Python with
 the [python-lsp-server](https://github.com/python-lsp/python-lsp-server).
 
-Note that settings here may be obsolete due to rapid evolving of the builtin lsp.
+Note that settings here may be obsolete due to rapid evolving of the built-in lsp.
 
 <!--more-->
 
 # Install Neovim
 
-To try the builtin LSP, we have to install Neovim master build release or build
+To try the built-in LSP, we have to install Neovim master build release or build
 Neovim from source. The easiest way is to install Neovim [nightly release](https://github.com/neovim/neovim/releases/tag/nightly).
 
 # Install nvim-lspconfig
@@ -60,7 +60,7 @@ set completeopt-=preview
 autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
 ```
 
-Then open a Python source file. Note that the builtin LSP does not support
+Then open a Python source file. Note that the built-in LSP does not support
 auto-completion like what is provided by deoplete. To invoke completion, we
 need to press `<C-X><C-O>`[^1]. If all goes well, you should be able to see a
 completion menu with all the completion items.
@@ -163,7 +163,7 @@ colorscheme gruvbox8_hard
 ```
 </details>
 
-A good plugin to install is [nvim-compe](https://github.com/hrsh7th/nvim-compe) which provides auto-completion for the builtin lsp.
+A good plugin to install is [nvim-compe](https://github.com/hrsh7th/nvim-compe) which provides auto-completion for the built-in lsp.
 
 # References #
 

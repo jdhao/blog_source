@@ -7,7 +7,7 @@ categories: [Nvim]
 
 In Sublime-Text and other editors, we can press `Ctrl-Shift-F` to invoke the
 search and replace UI. We can also accomplish this task easily in Vim or Neovim
-with the builtin features. Here is how.
+with the built-in features. Here is how.
 
 <p align="center">
 <img src="https://blog-resource-1257868508.file.myqcloud.com/8KSiBq.png" width="800">

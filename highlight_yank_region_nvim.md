@@ -31,7 +31,7 @@ let g:highlightedyank_highlight_duration = 1000
 
 If you are using the [latest
 version](https://github.com/neovim/neovim/releases/tag/nightly) of Neovim. They
-have make this little feature builtin in [this pull
+have make this little feature built-in in [this pull
 request](https://github.com/neovim/neovim/pull/12279) (see also `:h
 lua-highlight`).
 

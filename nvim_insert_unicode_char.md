@@ -6,37 +6,44 @@ tags: [Unicode, Vim]
 categories: [Nvim]
 ---
 
-Except for those ASCII characters, it is often not straightforward to insert
-Unicode characters into Vim/Neovim. Below I will summarize different ways to
-enter Unicode character inside Neovim/Vim.
+Except for the ASCII characters, it is often not straightforward to insert
+Unicode characters into Vim/Neovim. Below I will summarize a few ways to enter
+Unicode characters inside Neovim/Vim.
 
 <!--more-->
 
 I assume that you are using UTF-8 encoding (`:set encoding=utf-8`), and you are
-using a font with proper support for Unicode symbols
-([nerd-fonts](https://github.com/ryanoasis/nerd-fonts), for example).
-Otherwise, some Unicode characters shown below may not show correctly in your
+using a font with proper support for Unicode symbols, e.g., [nerd-fonts](https://github.com/ryanoasis/nerd-fonts).
+Otherwise, some Unicode characters shown below may not show correctly on your
 terminal.
 
-# Use Ctrl-V
+# Use Ctrl-V to insert character
 
-The native way to insert a Unicode character is via `Ctrl-V`. In insert mode,
-we first press <kbd>Ctrl</kbd> + <kbd>V</kbd>, and then for Unicode character
-whose code point[^1]:
+The native way to insert a Unicode character is via <kbd>Ctrl</kbd> + <kbd>
+V</kbd>. In insert mode, we first press <kbd>Ctrl</kbd> + <kbd>V</kbd>, and
+then for Unicode characters whose code points[^1] are less than:
 
-+ less than `ffff` (in hex format): press `u` (**lower** case), followed by its four-digit hex representation.
-+ less than `7fffffff` (in hex format): press `U` (**upper** case), followed by its eight-digit hex representation.
++ `ffff` (in hex format): press `u` ( __lower__ case), followed by its four-digit hex representation.
++ `7fffffff` (in hex format): press `U` ( __upper__ case), followed by its eight-digit hex representation.
 
-For example, to insert the middle dot symbol (`·`, code point `U+00B7`), we can
-press `<C-v>u00b7`. To insert the crying cat emoji (`😿`, code point `U+1F63F`),
-we can press `<C-v>U0001f63f`[^2].
+For example, to insert the [middle dot symbol](https://unicode-table.com/en/00B7/) (`·`), we can press `<C-v>u00b7` or `<C-v>ub7`
+followed by <kbd>ESC</kbd>. To insert the [crying cat emoji](https://emojipedia.org/crying-cat/) (`😿`), we can press `<C-v>U0001f63f`[^2] or
+`<C-v>U1f63f` followed by <kbd>ESC</kbd>.
+
+# Use special escape sequence notation
+
+We can also use special escape sequence to represent a character. To represent
+middle dot in the above section, use `\u00b7` or `\ub7`. To represent the cry
+cat, use `\U0001f63f` or `\U1f63f`. Backspace is `\b` and Escape is `\e`.
+
+For more details, see `:h string`.
 
 # Use plugin unicode.vim
 
 To ease manipulation of Unicode characters, there is also a plugin called
 [unicode.vim](https://github.com/chrisbra/unicode.vim).
 
-Unicode.vim provides an enhanced version of the builtin `ga` (see `:h ga`)
+Unicode.vim provides an enhanced version of the built-in `ga` (see `:h ga`)
 operation. To use it, add the following setting to `init.vim`:
 
 ```vim
@@ -115,7 +122,7 @@ Then, in insert mode, pressing `<C-K>lc` will insert this emoji.
 
 # References
 
-+ [How to enter non-ascii characters using hex or octal codes in vi?](https://unix.stackexchange.com/q/61118/221410)
++ [How to enter non-ASCII characters using hex or octal codes in vi?](https://unix.stackexchange.com/q/61118/221410)
 + [What is the easiest way to insert Unicode characters into a document?](https://vi.stackexchange.com/q/2254/15292)
 + [Enter Unicode characters with 8-digit hex code](https://stackoverflow.com/q/9119649/6064933)
 + https://sanctum.geek.nz/arabesque/special-characters-in-vim/

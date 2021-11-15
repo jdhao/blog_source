@@ -105,7 +105,7 @@ the ack.vim documentation.
 
 There is high chance that you may have installed [fzf](https://github.com/junegunn/fzf)
 and [fzf.vim](https://github.com/junegunn/fzf.vim). Then You do not need to install
-ack.vim. fzf.vim has builtin support for ag and rg.
+ack.vim. fzf.vim has built-in support for ag and rg.
 
 Both fzf and fzf.vim is easy to install. After installation, you can use `:Ag
 PATTERN` or `rg PATTERN` to search for keyword `PATTERN` under your current

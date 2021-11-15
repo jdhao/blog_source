@@ -67,7 +67,7 @@ something.
 
 For plain Vim, see [this post](https://vi.stackexchange.com/q/25311/15292) on
 how to enable bracketed paste mode. If you are using Neovim, bracketed paste
-mode in builtin, if your terminal supports it, you do not need to do any setup.
+mode in built-in, if your terminal supports it, you do not need to do any setup.
 Neovim will just work, see also `:h bracketed-paste-mode` inside Neovim.
 
 # Ref

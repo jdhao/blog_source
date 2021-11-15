@@ -1,5 +1,5 @@
 ---
-title : "Configuring Ultisnips for Neovim"
+title : "Setting up Ultisnips for Neovim"
 date: 2019-04-17 00:28:45+0800
 tags: [snippet]
 categories: [Nvim]

@@ -17,7 +17,7 @@ productivity.
 
 # Plugin management with zplug
 
-Oh-my-zsh has a lot of builtin plugins and works great. But there are also a
+Oh-my-zsh has a lot of built-in plugins and works great. But there are also a
 lot of plugins which are not packaged with oh-my-zsh. You can [manually add a
 plugin
 *foo*](https://github.com/robbyrussell/oh-my-zsh/wiki/Customization#adding-a-new-plugin)

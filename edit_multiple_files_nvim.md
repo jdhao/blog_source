@@ -24,7 +24,7 @@ several ways to open multiple files at once.
 
 # Use argument list
 
-We can Neovim's builtin in argument list feature to open multiple files. When
+We can Neovim's built-in in argument list feature to open multiple files. When
 we open Neovim from command line with multiple files, argument list will be
 filled with a list of file names. To replace the argument list with new file
 names, we can use `:args {glob_pattern}` or `:next {glob_pattern}`.

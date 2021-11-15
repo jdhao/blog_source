@@ -1,11 +1,11 @@
 ---
 title: "Git Learning Notes (1)"
 date: 2020-04-23 00:05:20+0800
-tags: [Git]
+tags: [Git, diff]
 categories: [Git]
 ---
 
-This is my personal note of learning Git.
+This is my personal note on learning Git.
 
 <!--more-->
 

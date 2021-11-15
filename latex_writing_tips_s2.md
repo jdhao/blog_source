@@ -12,7 +12,7 @@ Some useful tips on writing papers in LaTeX.
 
 ## Use package `cleveref` for easier reference.
 
-If you use the LaTeX builtin command `\ref{}` to refer to a table or image, it
+If you use the LaTeX built-in command `\ref{}` to refer to a table or image, it
 will only give you the index of referred object. You have to manually type ref
 type, i.e., `Fig.` or `Table`. The package
 [`cleveref`](https://ctan.org/pkg/cleveref?lang=en) will help you to insert the

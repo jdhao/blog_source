@@ -37,14 +37,14 @@ of `FOO` in Python.
 But why? What is the difference here? This is in fact a bit complexer than what
 I think.
 
-# Bash builtin and external commands
+# Bash built-in and external commands
 
-First, we need to know that, when Bash executes commands, it treats the builtin
-and external commands differently. Builtin commands are those that are,
+First, we need to know that, when Bash executes commands, it treats the built-in
+and external commands differently. Built-in commands are those that are,
 literally, built into the Bash executable. External commands are those commands
 that are not part of the Bash shell.
 
-When Bash executes builtin commands, it does not create a new process. When it
+When Bash executes built-in commands, it does not create a new process. When it
 executes external commands, it will create a new shell and then execute the
 external commands. The new shell will inherit the environment variables of its
 parent shell (see [here](https://askubuntu.com/q/428458/768311) on why Bash
@@ -52,15 +52,15 @@ needs to create a new process to execute an external command).
 
 How do we check if a command is a Bash builtin or an external command?
 
-First, we can check the output of `help`, it will list all Bash builtin
-commands. We can also use the `type` command to check if a command is a builtin
+First, we can check the output of `help`, it will list all Bash built-in
+commands. We can also use the `type` command to check if a command is a built-in
 command:
 
 ```Bash
 type -t some_command
 ```
 
-For builtin commands, it will output `builtin`. For external commands, it will
+For built-in commands, it will output `builtin`. For external commands, it will
 output different info, for example, `file` (see `help type` for more info).
 
 Ref:

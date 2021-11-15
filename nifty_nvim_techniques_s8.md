@@ -1,7 +1,7 @@
 ---
 title: "Nifty Nvim/Vim Techniques That Make My Life Easier -- Series 8"
 date: 2020-11-11T22:43:47+08:00
-tags: []
+tags: [diff]
 categories: [Nvim]
 ---
 
@@ -45,23 +45,24 @@ Ref:
 
 # Execute a macro in several lines.
 
-Macros are a powerful way to edit texts with similar structures. To execute a
+Macro is a powerful way to edit texts with similar structures. To execute a
 macro on several lines, we can use a line range if the lines are continuous.
-For example, execute macro `a` from line 10 to 15, use:
+For example, execute macro `a` for line 10 to 15, use:
 
 ```vim
 10,15normal! @a
 ```
 
-Or we can visually select the lines we want to execute the macro, and run the
-following command (note that if you select these lines, and then press `:`,
-Nvim will insert `'<,'>` automatically):
+Or we can visually select the lines, and run the following command (note that
+if you select these lines, and then press `:`, Nvim will insert `'<,'>`
+automatically):
 
 ```vim
 :'<,'>normal! @a
 ```
 
-To only execute a macro on lines matching a certain pattern, use the following command:
+To execute a macro only on lines matching a certain pattern, run the following
+command:
 
 ```vim
 :g/pattern/normal! @a
@@ -83,7 +84,7 @@ let @" = expand('<cfile>')
 The above method is not perfect, since `expand('<cfile>')` will also give you
 results even if your cursor is on a normal words (non-URL).
 
-A more sophisticated method would be use actual URL patterns and search the
+A more sophisticated method would be using actual URL patterns and search the
 current line to get a valid URL. A good URL pattern is provided by plugin
 [vim-highlighturl](https://github.com/itchyny/vim-highlighturl) via
 `highlighturl#default_pattern()` method. With this knowledge, here is a more
@@ -111,7 +112,7 @@ If you haven't start Nvim, you can run the following command:
 nvim -d manual-v1.md manual-v2.md
 ```
 
-This will start nvim in the diff mode.
+This will start nvim in diff mode.
 
 If you are already inside Neovim, first open `manual-v1.md` (`:e manual-v1.md`),
 then open `manual-v2.md` in a vertical split window (`:vs manual-v2.md`)[^1].

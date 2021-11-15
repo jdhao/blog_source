@@ -31,6 +31,8 @@ lines when there is a blank line, see [this issue](https://github.com/Yggdroot/i
 + [Nvim-lspconfig](https://github.com/neovim/nvim-lspconfig): Show diagnostics as virtual text in the end of a line.
 + [Extmark-toy.nvim](https://github.com/sunjon/extmark-toy.nvim): Showing cool visual effects.
 + [blamer.nvim](https://github.com/APZelos/blamer.nvim): Show line blame message at EOL[^1].
++ [virtual-type.nvim](https://github.com/jubnzv/virtual-types.nvim): show variable type using virtual text
++ [nvim-cmp](https://github.com/hrsh7th/nvim-cmp): [show function signature using virutal text](https://github.com/hrsh7th/nvim-cmp/commit/ada9ddeff71e82ad0e52c9a280a1e315a8810b9a).
 
 # Using extmarks
 

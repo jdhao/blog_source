@@ -55,7 +55,7 @@ Plug 'neoclide/coc-neco'
 call plug#end()
 "}}}2
 
-"{{{2 Builtin options
+"{{{2 Built-in options
 set number
 set relativenumber
 set pyxversion=3
@@ -94,7 +94,7 @@ open the fold. Now the buffer will be shown as the following:
 "{{{ Some settings
 +---  7 lines: Plugin install·········································
 
-+---  7 lines: Builtin options········································
++---  7 lines: Built-in options········································
 "}}}1
 
 +--  4 lines: Color schemes···········································

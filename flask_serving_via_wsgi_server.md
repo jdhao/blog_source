@@ -5,7 +5,7 @@ tags: [Flask]
 categories: [Python]
 ---
 
-In my [older post](https://jdhao.github.io/2020/04/06/build_webapi_with_flask_s1/), I have shared how to run the builtin development server to serve the web service. For production, we need to use more powerful web servers. Flask complies to the [WSGI](https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface) (Web Server Gateway Interface) specification and can work with any web server that conforms to WSGI.
+In my [older post](https://jdhao.github.io/2020/04/06/build_webapi_with_flask_s1/), I have shared how to run the built-in development server to serve the web service. For production, we need to use more powerful web servers. Flask complies to the [WSGI](https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface) (Web Server Gateway Interface) specification and can work with any web server that conforms to WSGI.
 
 In this post, I want share how to run Flask applications using
 [uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/) --- a popular WSGI-compliant server.

@@ -92,7 +92,7 @@ NumPy data type | Tensor data type
 
 I am curious to know the speed difference between torch Tensor operation and
 equivalent NumPy ndarray operations. I do it in Jupyter-console using the
-builtin magic `%timeit`.
+built-in magic `%timeit`.
 
 ```python
 import torch

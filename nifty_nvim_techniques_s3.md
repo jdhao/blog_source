@@ -34,7 +34,7 @@ input your last search pattern, that is, first press <kbd>Ctrl</kbd>+
 
 [^1]: see `:h c_CTRL-R` for more information.
 
-# How do I write the output of a command or builtin function to a buffer?
+# How do I write the output of a command or built-in function to a buffer?
 
 A least three ways are possible (take function
 [`strftime()`](https://neovim.io/doc/user/eval.html#strftime()) and command

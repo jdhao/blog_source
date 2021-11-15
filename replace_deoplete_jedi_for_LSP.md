@@ -29,7 +29,7 @@ There are quite a few LSP clients out there. Some of the most popular ones are:
 + [vim-lsp](https://github.com/prabirshrestha/vim-lsp)
 + [LanguageClient-neovim](https://github.com/autozimu/LanguageClient-neovim)
 + [vim-lsc](https://github.com/natebosch/vim-lsc)
-+ Neovim builtin LSP client (you need to install [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) for easier configuration)
++ Neovim built-in LSP client (you need to install [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) for easier configuration)
 
 I want something simple to set up, powerful, and yet not too monolithic. So I
 choose vim-lsp for a try. Here is how to configure it for Python

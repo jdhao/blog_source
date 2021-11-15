@@ -12,7 +12,7 @@ categories: [Python]
 <!--more-->
 
 When I use [Pycharm](https://www.jetbrains.com/pycharm/download/) a while ago,
-I get used to debugging my code with its builtin GUI debugger, which works
+I get used to debugging my code with its built-in GUI debugger, which works
 really well. But when I write code on a server without X11 support, I am forced
 to use [Neovim](https://neovim.io/) for Python development. My debugging is
 reduced to a serize of `print` statement in the source code. It works well for
@@ -77,7 +77,7 @@ pdb.Pdb.complete=rlcompleter.Completer(locals()).complete
 
 # ipdb #
 
-[Ipdb](https://github.com/gotcha/ipdb) is like pdb, but with builtin
+[Ipdb](https://github.com/gotcha/ipdb) is like pdb, but with built-in
 autocompletion, syntax highlighting and more commands. You can install it with
 pip:
 

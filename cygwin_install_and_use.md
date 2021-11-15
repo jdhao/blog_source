@@ -29,7 +29,7 @@ good.
 
 # When I use ssh to connect to my server, I got an error message "Pseudo-terminal will not be allocated because stdin is not a terminal"
 
-On Windows 10, there is a builtin ssh program under
+On Windows 10, there is a built-in ssh program under
 `C:/Windows/System32/OpenSSH/ssh.exe`. You are probably using this program. If
 that is the case, you have to install `openssh` yourself. Just run the Cygwin
 setup program one more time to install the additional package. Then this issue
@@ -56,7 +56,7 @@ just a list of settings for different colors. There are several places where
 you can find mintty themes. A non-exhaustive list is:
 
 + https://github.com/oumu/mintty-color-schemes
-+ A python tool with several builtin color themes, https://github.com/joakimkarlsson/mintty-colors
++ A python tool with several built-in color themes, https://github.com/joakimkarlsson/mintty-colors
 + [How do I change colors on-the-fly in mintty?](https://superuser.com/q/223198/736190)
 
 Save the color theme file under `$CYGWIN_ROOT/usr/share/mintty/themes`. Open

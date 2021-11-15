@@ -95,7 +95,7 @@ results, use `Ctrl-N` and `Ctrl-P`.
 # Replace part of last command and re-execute
 
 In Bash, we can use `fc -s old=new` to replace string `old` in the last command
-executed to `new` and execute it again. Bash builtin `fc` is different from zsh
+executed to `new` and execute it again. Bash built-in `fc` is different from zsh
 `fc`.
 
 For `fc` in zsh, there is no `-s` option. The zsh equivalent is `fc -e -`. `-e`

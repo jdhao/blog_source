@@ -41,7 +41,7 @@ characters in the [GBK character
 set](https://en.wikipedia.org/wiki/GBK_(character_encoding)).
 
 The solution to this issue is quite simple. If you are sure that the file to
-read is encoded in UTF-8, you can use `encoding="utf-8"` in the builtin
+read is encoded in UTF-8, you can use `encoding="utf-8"` in the built-in
 [`open()`](https://docs.python.org/3/library/functions.html#open) method:
 
 ```python

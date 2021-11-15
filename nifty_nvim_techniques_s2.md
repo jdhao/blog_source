@@ -134,11 +134,11 @@ if it is off.
 
 ## create a fold
 
-In your vim configuration, in order to create a section `Nvim builtin options
+In your vim configuration, in order to create a section `Nvim built-in options
 and settings`, you can use the following boilerplate code:
 
 ```
-" Nvim builtin options and settings {{{
+" Nvim built-in options and settings {{{
     " put all your settings inside here
     set number
     set relative number

@@ -2,7 +2,7 @@
 title: "Git Learning Notes (3)"
 date: 2021-02-17T15:24:46+08:00
 draft: false
-tags: [Git]
+tags: [Git, diff]
 categories: [Git]
 ---
 

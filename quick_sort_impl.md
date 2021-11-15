@@ -69,20 +69,6 @@ vector<int> quickSort(vector<int> arr){
   return new_arr;
 }
 
-vector<int> bubbleSort(vector<int> & arr){
-  int N = arr.size();
-  for (int i = 0; i < N; i++){
-    for (int j = i+1; j < N; j++){
-      if (arr[i] > arr[j]){
-        // swap element
-        std::swap(arr[i], arr[j]);
-      }
-    }
-  }
-
-  return arr;
-}
-
 // Generate a random sequence of length len, in range(low, high) (inclusive).
 // need to #include<random>
 vector<int> genRandom(int low, int high, int len){
@@ -115,10 +101,6 @@ int main()
   auto arr1 = quickSort(arr);
   cout << "After quick sort\n";
   printList(arr1, "arr1");
-
-  auto arr2 = bubbleSort(arr);
-  cout << "After bubble sort\n";
-  printList(arr2, "arr2");
 
   return 0;
 }

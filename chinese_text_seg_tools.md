@@ -6,6 +6,11 @@ tags: []
 categories: [Note]
 ---
 
+<details>
+<summary><font size="2" color="red">Update log</font></summary>
+
++ <font color="blue">2021-10-23: fix typo，更新链接。</font>
+</details>
 对几种中文分词工具进行了调研，简单总结一下。
 
 <!--more-->
@@ -14,12 +19,12 @@ categories: [Note]
 
 这里用了几种开源的分词工具，具体信息如下：
 
-+ [jieba](https://github.com/fxsjy/jieba)：jieba 在分词领域还挺有名的一个工具。
-+ [pkuseg](https://github.com/lancopku/pkuseg-python)：pkuseg 是北京大学语言[计算与机器学习研究组](http://lanco.pku.edu.cn/)开源的一个分词工具。
-+ [LAC](https://github.com/baidu/lac)：LAC 是[百度 NLP 团队](https://nlp.baidu.com/homepage/index)开源的基于百度自家的 PaddlePaddle 词法分析工具。
-+ [LTP](https://github.com/HIT-SCIR/ltp): LTP 是哈工大[社会计算与信息检索研究中心](http://ir.hit.edu.cn/)开源的一款中文自然语言处理工具。
++ [jieba](https://github.com/fxsjy/jieba)：jieba 是分词领域还挺有名的一个工具。
++ [pkuseg](https://github.com/lancopku/pkuseg-python)：pkuseg 是[北京大学语言计算与机器学习研究组](https://lancopku.github.io/)开源的一个分词工具。
++ [LAC](https://github.com/baidu/lac)：LAC 是[百度 NLP 团队](https://nlp.baidu.com/homepage/index)开源的基于百度自家的 [PaddlePaddle](https://github.com/PaddlePaddle/Paddle) 的词法分析工具。
++ [LTP](https://github.com/HIT-SCIR/ltp): LTP 是[哈工大社会计算与信息检索研究中心](http://ir.hit.edu.cn/)开源的一款中文自然语言处理工具。
 
-这些库都提供了 Python 接口，试用 pip 安装命令如下：
+这些库都提供了 Python 接口，使用 pip 安装命令如下：
 
 ```bash
 pip install jieba pkuseg lac ltp
@@ -44,7 +49,6 @@ print(pseg.cut(my_str))
 print(list(jieba.cut(my_str)))   # jieba.cut() 返回的是 iterator，所以转成了 list 显示
 print(ltp.seg([my_str])[0])
 ```
-
 
 # 速度 benchmark
 

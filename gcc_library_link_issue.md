@@ -112,7 +112,7 @@ error for gcc 4.8.0 and 7.5.0 on my servers:
 gcc test.c -o test
 ```
 
-This is because GCC uses its builtin implementation of some standard C library
+This is because GCC uses its built-in implementation of some standard C library
 functions to produce faster and smaller executables. According to [post here](https://stackoverflow.com/a/57062793/6064933),
 we can use `-fno-builtin` to disable this behavior. We can also use
 `-fno-builtin-somefunc` to disable a single function named `somefunc`. Take the

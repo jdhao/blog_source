@@ -25,7 +25,7 @@ on my nvim-config repo .
 # Pre-requisite
 
 Before we begin, you should make sure that you have installed the following
-softwares and plugins.
+software and plugins.
 
 + TeX Distribution: [TeX Live](https://www.tug.org/texlive/) is preferred since it is bundled with the possible many tools you will ever need for writing LaTeX.
 + Auto-complete plugin: Since I use Neovim, so I recommend using [deoplete](https://github.com/Shougo/deoplete.nvim).
@@ -189,8 +189,8 @@ endfunction
 
 ## Inverse search
 
-<font color="red">Note the below settings are not up to date, see [this post](https://jdhao.github.io/2021/02/20/inverse_search_setup_neovim_vimtex/)
-for a more up to date config without much manual labor.</font>
+<font color="red">Note the below settings are not updated anymore, see [this post](https://jdhao.github.io/2021/02/20/inverse_search_setup_neovim_vimtex/)
+for a better and up-to-date config without much manual labor.</font>
 
 First, we need to install [neovim-remote](https://github.com/mhinz/neovim-remote):
 

@@ -24,7 +24,7 @@ on Windows, check [this post](https://jdhao.github.io/2019/01/17/nvim_qt_setting
 
 # Before we begin
 
-The builtin CMD on Windows is awful and lacks features of a normal Linux
+The built-in CMD on Windows is awful and lacks features of a normal Linux
 terminal. I strongly recommend readers using a better terminal emulator, for
 example, [Cmder](https://jdhao.github.io/2017/12/29/cmder-usage/), which
 comes with [Git for Windows](https://git-scm.com/download/win) and other

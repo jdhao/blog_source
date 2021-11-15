@@ -11,8 +11,8 @@ years and I have been constantly hearing the greatness of its rival editor
 [Emacs](https://www.gnu.org/s/emacs/). So today I am gonna to try it and see if
 it is truly great.
 
-**Edit: My final Emacs conf is [here](https://github.com/jdhao/emacs-conf).
-**[]()
+**Edit: My final Emacs conf is [here](https://github.com/jdhao/emacs-conf).**
+
 <!--more-->
 
 # Install
@@ -22,7 +22,12 @@ Check here: https://www.gnu.org/software/emacs/download.html
 For Windows, go to [this mirror site](http://ftpmirror.gnu.org/emacs/windows),
 and download emacs-27.2-x86_64.zip and extract it.
 
-For macOS, use homebrew to install Emacs (`brew install --cask emacs`)
+For macOS, use homebrew to install [Emacs-plus](https://github.com/d12frosted/homebrew-emacs-plus)[^2]:
+
+```basha
+brew tap d12frosted/emacs-plus
+brew install emacs-plus 
+```
 
 # How to Run?
 
@@ -44,11 +49,9 @@ Ref:
 Emacs uses`~/.emacs.d/init.el` as its startup file
 (`~/.config/emacs/init.el` is also supported). Its configuration is
 written via a dialect of [Lisp](https://en.wikipedia.org/wiki/Lisp_(programming_language))
-language called [Emacs Lisp](https://www.gnu.org/software/emacs/manual/html_node/eintr/), or
-[Elisp](https://en.wikipedia.org/wiki/Emacs_Lisp) in short.
+language called [Emacs Lisp](https://www.gnu.org/software/emacs/manual/html_node/eintr/), or [Elisp](https://en.wikipedia.org/wiki/Emacs_Lisp) in short.
 
-To check config file path, run `C-H v user-init-file RET` (`RET` is return
-key).
+To check config file path, run `C-H v user-init-file RET` (`RET` is return key).
 
 Reload config: note that it is not possible to entirely reload config, the best
 way is to restart your emacs. Open `init.el`, and run `m-x eval-buffer`.
@@ -62,12 +65,12 @@ Ref:
 
 # Install packages
 
-I am not a purist guy which only uses the builtin features of and editor and
+I am not a purist guy which only uses the built-in features of and editor and
 refuses to add plugins or packages.
 
 Package is to Emacs what plugin is to Vim.
 
-## The builtin way
+## The built-in way
 
 To install packages, run `M-x package-install`, we are prompted to type the
 package name we want to install. Type the package name, and the package shall
@@ -87,13 +90,13 @@ In this case, we can [change the package repo URL](https://emacs.stackexchange.c
                          ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
 ```
 
-One disadvantage of using builtin package management is that it can not
+One disadvantage of using built-in package management is that it can not
 install a package automatically if its hasn't been installed. We need to write
 [a few lines of code](https://emacs.stackexchange.com/a/28933/23435) in config file.
 
 ## Using 3rd party package manager
 
-Aside from the builtin way to install packages, we can also use 3rd
+Aside from the built-in way to install packages, we can also use 3rd
 party package managers, for example, [straight.el](https://github.com/raxod502/straight.el).
 
 To install straight.el, just put the following script to `init.el`:
@@ -134,7 +137,7 @@ color and foreground color:
 ```
 
 More advanced way to customize color is to use or install a color theme. Emacs
-comes with several builtin themes.
+comes with several built-in themes.
 
 To find good themes, [MELPA](https://github.com/melpa/melpa) [is a good place to start](https://melpa.org/#/?q=theme&sort=downloads&asc=false).
 A good theme package is [doom-themes](https://github.com/hlissner/emacs-doom-themes). It comes with a lot of themes.
@@ -155,6 +158,8 @@ to check.
 + Go to line beginning and end: `C-a` and `c-e`.
 + Yank selected text and paste: `M-w` and `c-y`.
 
+## Evil mode
+
 I find the editing experience in Emacs highly inferior to that of Vim. So We
 can use [emacs-evil](https://github.com/emacs-evil/evil):
 
@@ -165,9 +170,14 @@ can use [emacs-evil](https://github.com/emacs-evil/evil):
 (evil-mode 1)
 ```
 
+There is in fact a built-in [viper-mode](https://www.gnu.org/software/emacs/manual/html_mono/viper.html) for Emacs, but [it is
+not complete as compared to evil](https://www.reddit.com/r/emacs/comments/9jp61o/difference_between_vipermode_evil_and_spacemacs/).
+
 Ref:
 
++ Difference between viper, vimpulse, evil for emacs: https://stackoverflow.com/q/14291260/6064933
 + delete a line: https://stackoverflow.com/a/3958568/6064933
++ Emacs evil guide: https://github.com/noctuid/evil-guide
 
 # Window and buffer
 
@@ -403,5 +413,8 @@ in Emacs.
 
 + https://github.com/emacs-tw/emacs-101-beginner-survival-guide
 + awesome emacs: https://github.com/emacs-tw/awesome-emacs
++ Emacs 101: https://github.com/emacs-tw/emacs-101-beginner-survival-guide
++ Emacs for the rest of us: http://iqss.github.io/IQSS.emacs/
 
 [^1]: Sadly, I do not think any Nvim GUI can do this or come even close to org-mode.
+[^2]: For macOS, there is [emacs-mac](https://github.com/d12frosted/homebrew-emacs-plus).
