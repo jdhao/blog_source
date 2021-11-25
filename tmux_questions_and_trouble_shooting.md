@@ -67,8 +67,7 @@ Also make sure that you do not manually set `TERM` variable in `.bash_profile`
 or other shell configuration files. You should set `TERM` in your terminal
 emulator configurations. This will most probably fix the issue.
 
-Reference
-[here](https://stackoverflow.com/questions/18600188/home-end-keys-do-not-work-in-tmux).
+See also reference [here](https://stackoverflow.com/q/18600188/6064933).
 
 # What is terminfo and how to see the content of a term files?
 
@@ -161,8 +160,7 @@ interpreted as a Meta key. For example:
 set -gs escape-time 10
 ```
 
-See more discussions [here](https://github.com/neovim/neovim/issues/2035) and
-[here](https://www.johnhawthorn.com/2012/09/vi-escape-delays/).
+See more discussions [here](https://github.com/neovim/neovim/issues/2035) and [here](https://www.johnhawthorn.com/2012/09/vi-escape-delays/).
 
 # Difference between `set` and `set-option`?
 
@@ -188,8 +186,7 @@ input in another pane split.
 It seems that there is no good solution for this issue. You may need to change
 your terminal emulator.
 
-More discussions can be found [here](https://superuser.com/a/589896/736190),
-[here](https://github.com/tmux/tmux/issues/822) and [here](https://github.com/tmux/tmux/issues/609).
+More discussions can be found [here](https://superuser.com/a/589896/736190), [here](https://github.com/tmux/tmux/issues/822) and [here](https://github.com/tmux/tmux/issues/609).
 
 ## References
 

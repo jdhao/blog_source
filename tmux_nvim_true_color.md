@@ -5,6 +5,12 @@ tags: [Tmux, Nvim, terminal]
 categories: [Mac]
 ---
 
+<details>
+<summary><font size="2" color="red">Update log</font></summary>
+
+<font color="blue">2021-11-23: update tmux and nvim version to the latest and fix other issues.</font>
+</details>
+
 In this post, I want to share how to set up true color support in Tmux, Nvim
 and the shell to make them work nicely together.
 
@@ -12,28 +18,30 @@ and the shell to make them work nicely together.
 
 There are tons of posts on the Internet regarding how to set up true color
 support to make Tmux, Nvim and terminal work together. Time flies and settings
-may change. There are also many people who do not really understand the reason
-behind all the settings and often give some ad-hoc settings. All these lead to
-chaos. It turns out that setting up true color support is painfully difficult
-and costs me several hours.
+may change. Many people also do not really understand the reason behind all the
+settings and often give some ad-hoc settings. All these lead to chaos. It turns
+out that setting up true color support is painfully difficult and costs me
+several hours.
 
 # Version info
 
 Before we begin, I will list the info about all the necessary components so
 that you can reproduce on your device:
 
-+ Terminal: I use [iTerm2](https://github.com/gnachman/iTerm2), which supports True color by default.
-+ Tmux: Version 2.7 (`tmux -V`) and installed with HomeBrew
-+ Neovim: v0.3.1 (`nvim --version`) and installed with HomeBrew
++ Terminal: [iTerm2](https://github.com/gnachman/iTerm2) and [kitty](https://github.com/kovidgoyal/kitty), which support True color by default.
++ Tmux: Version 3.2 (`tmux -V`) and installed via HomeBrew
++ Neovim: v0.5.1 (`nvim --version`) and installed via HomeBrew
 
-First, we have to understand that not all terminal support true colors. Whether
+First, we have to understand that not all terminals support true colors. Whether
 you use a terminal emulator to connect to remote host or use a native terminal,
 make sure that your terminal supports true colors. For a list of terminals
-supporting true colors, see [this wonderful gists](https://gist.github.com/XVilka/8346728).
+supporting true colors, see [this wonderful repo](https://github.com/termstandard/colors).
 
 # Setting up true color support
 
-## iTerm2 settings
+## terminal emulator settings
+
+### iTerm2 settings
 
 For iTerm2, make sure the output of `echo $TERM` is `xterm-256color`. If the
 output is wrong, you should set it properly in iTerm2. Open the iTerm2
@@ -50,6 +58,14 @@ If you set TERM variable in your shell, the TERM variable inside Tmux will also
 be set to that value when the shell is initialized, which is simply wrong![^2].
 **Do not do this.**
 
+### kitty settings
+
+Open `~/.config/kitty/kitty.conf` and use the following setting:
+
+```
+term xterm-256color
+```
+
 ## Neovim settings
 
 Neovim has good support for true colors. According to [official doc](https://github.com/neovim/neovim/wiki/FAQ#how-can-i-use-true-color-in-the-terminal),
@@ -65,10 +81,13 @@ set termguicolors
 In order to make Nvim colorscheme work well inside Tmux, you need to add these
 settings to your `.tmux.conf`[^1]:
 
-```tmux
+```
 set -g default-terminal "screen-256color"
 # tell Tmux that outside terminal supports true color
 set -ga terminal-overrides ",xterm-256color*:Tc"
+
+# for tmux 3.2, you can use the following setting instead:
+# set -as terminal-features ",xterm-256color:RGB"
 ```
 
 You can also use `tmux-256color` instead of `screen-256color`. `Tmux-256color`
@@ -118,7 +137,7 @@ example).
 <img src="https://blog-resource-1257868508.file.myqcloud.com/20181023012639.png">
 </p>
 
-If everything goes well, you should be able to see a smooth color band both
+If everything works well, you should be able to see a smooth color band both
 inside and outside Tmux.
 
 <p align="center">

@@ -90,7 +90,7 @@ Ref:
 
 I would like to generate a list of incrementing numbers:
 
-```txt
+```
 1
 2
 3

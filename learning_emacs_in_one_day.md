@@ -6,6 +6,12 @@ tags: []
 categories: [Emacs]
 ---
 
+<details>
+<summary><font size="2" color="red">update log</font></summary>
+
+<font color="blue">2021-11-24: Add more detailed instructions for installing doom-modeline.</font>
+</details>
+
 I have been using [Neovim](https://github.com/neovim/neovim) for over three
 years and I have been constantly hearing the greatness of its rival editor
 [Emacs](https://www.gnu.org/s/emacs/). So today I am gonna to try it and see if
@@ -26,7 +32,7 @@ For macOS, use homebrew to install [Emacs-plus](https://github.com/d12frosted/ho
 
 ```basha
 brew tap d12frosted/emacs-plus
-brew install emacs-plus 
+brew install emacs-plus
 ```
 
 # How to Run?
@@ -257,13 +263,19 @@ Ref:
 
 ## Modeline
 
-What they call statusline in Vim, we call it modeline in Emacs. IMO,
-they are very similar concepts.  We can use [doom-modeline](https://github.com/seagle0128/doom-modeline) to help
-use customize the modeline.
+What we call statusline in Vim, they call it modeline in Emacs. IMO, they are
+very similar concepts. We can use [doom-modeline](https://github.com/seagle0128/doom-modeline) to help use customize the modeline.
 
-First, we need to install some special icon that doom-modeline
-uses. Run `M-x all-the-icons-install-fonts` to install the icon
-fonts. Then install doom-modeline:
+First, we need to install some special icon that doom-modeline uses. We need to
+install package [all-the-icons](https://github.com/domtronn/all-the-icons.el) to install the fonts needed:
+
+```
+(straight-use-package 'all-the-icons)
+```
+
+Run `M-x all-the-icons-install-fonts` to install the icon fonts.
+
+Then install doom-modeline:
 
 ```lisp
 (straight-use-package 'doom-modeline)

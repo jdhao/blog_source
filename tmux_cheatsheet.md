@@ -6,7 +6,7 @@ tags: [Tmux]
 categories: [Linux]
 ---
 
-Some usefuls tips for using Tmux.
+Some useful tips for using Tmux.
 
 <!--more-->
 
@@ -71,9 +71,9 @@ to the below layout:
 +--------------+--------------+
 ```
 
-By default, `split-window` command only spans the the width of current pane. We
-can use the `-f` option to make the new pane span the entire window width. The
-help for `-f` says that:
+By default, `split-window` command only spans the width of current pane. We can
+use the `-f` option to make the new pane span the entire window width. The help
+for `-f` says that:
 
 > -f  -- create new pane spanning full window width or height
 
@@ -129,3 +129,15 @@ swap-pane -s 0 -t 2
 Ref:
 
 + [How does one swap two panes in Tmux?](https://superuser.com/q/879190/736190)
+
+# equalize two panes
+
+To make two panes have the same width in side by side position, press `<prefix>
+Alt-1`  or run command `select-layout even-horizontal`. To make two panes have
+the same height and in top-down position, press `<prefix> Alt-2` or run command:
+`select-layout even-vertical`.
+
+
+Ref:
+
++ [How do I equally balance tmux(1) split panes?](https://unix.stackexchange.com/a/37754/221410)

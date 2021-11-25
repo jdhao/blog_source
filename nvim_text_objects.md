@@ -1,5 +1,5 @@
 ---
-title: "How Do I Create New Text Objects in Neovim/Vim"
+title: "Creating Your Own Text Objects in Neovim/Vim from Scratch"
 date: 2020-11-15T15:00:06+08:00
 draft: false
 tags: []
@@ -16,11 +16,11 @@ object really work.
 <!--more-->
 
 Since I use Markdown frequently, I often need to change URLs quickly. I thought
-it might be a good idea to define a text object for URL. Actually, there is
+it might be a good idea to define a text object for URL. Actually, there are already
 [some](https://github.com/mattn/vim-textobj-url) [plugins](https://github.com/LeonB/vim-textobj-url) for it. However, they all rely on another
 plugin. Besides, I also want to learn how to write my own text objects from
 scratch. So I read some documentation and online posts. Now, I am able to
-create my own text objects.
+create my own text objects with ease.
 
 # How to define new text objects
 
@@ -154,8 +154,8 @@ style of native text objects.
 # A text object for Markdown code blocks
 
 For Markdown code blocks, it is necessary to define both inner and around text
-objects. We will use `ic` and `ac` to denote **inner** codeblock and **around**
-codeblock, respectively.
+objects. We will use `ic` and `ac` to denote **inner** code block and
+**around** code block, respectively.
 
 Here is a sample implementation[^2]:
 
@@ -212,5 +212,5 @@ and find ways to visually select it when the corresponding shortcut is pressed.
 + https://25.wf/posts/2020-09-04-vim-markdown-text-object.html
 + https://vimways.org/2018/transactions-pending/
 
-[^1]: Operator pending mode is activated when we use some operations that should be followed by motions or text objects, such as when we press `d`, `c`, `gq`. See also `:h operator`.
+[^1]: Operator pending mode is activated when we use some operations that should be followed by motions or text objects, e.g., when we press `d`, `c`, `gq`. See also `:h operator`.
 [^2]: Other implementations can be found in [this issue](https://github.com/plasticboy/vim-markdown/issues/282).

@@ -5,16 +5,16 @@ tags: [Tmux, Mac, CentOS]
 categories: [Linux]
 ---
 
-In this post, I want to share how to manage tmux plugins with Tmux plugin
-manager (i.e., tpm) and also mention a few useful plugins.
+In this post, I want to share how to manage tmux plugins with [Tmux plugin
+manager]((https://github.com/tmux-plugins/tpm)) (i.e., tpm) and also mention a few useful plugins.
 
 <!--more-->
 
 # Install the plugin manager
 
-Like Vim, to add new tmux plugins, we can either manually install themes or
-employ a plugin manager. [Tpm](https://github.com/tmux-plugins/tpm) is designed
-for this purpose, which helps to manage your plugins automatically.
+Like Vim, to add new tmux plugins, we can either manually install them or
+employ a plugin manager. Tpm is designed for this purpose, which helps to
+manage our plugins automatically.
 
 ## Install tpm ##
 
@@ -58,10 +58,9 @@ Press `<prefix> + U` to update existing plugins
 
 ### plugin uninstall ###
 
-1. Delete or comment out the plugin in `.tmux.conf`
+1. Delete or comment out the plugin line in `.tmux.conf`
 
 2. Press `<prefix> + alt + u` to remove the plugin
-
 
 ## Automatic install of tpm on new machines
 
@@ -74,7 +73,7 @@ if "test ! -d ~/.tmux/plugins/tpm" \
    "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins'"
 ```
 
-# Plugin Install
+# Plugins to Install
 
 ## Themes
 
@@ -82,8 +81,7 @@ Themes are great. Here are a few themes you can try.
 
 ### Tmux theme pack
 
-[Tmux theme pack](https://github.com/jimeh/tmux-themepack) is a collection of
-themes.
+[Tmux theme pack](https://github.com/jimeh/tmux-themepack) is a collection of themes.
 
 Install it with tpm (add the following setting to `.tmux.conf`):
 
@@ -99,8 +97,7 @@ set -g @themepack 'powerline/block/cyan'
 
 ### tmux-colors-solarized
 
-[tmux-colors-solarized](https://github.com/seebi/tmux-colors-solarized) is a
-solarized color theme for tmux.
+[tmux-colors-solarized](https://github.com/seebi/tmux-colors-solarized) is a solarized color theme for tmux.
 
 Install it with tpm:
 
@@ -137,7 +134,6 @@ It provides two key bindings for save and restore your tmux environment:
 + Save: `<prefix> + Ctrl-s`
 + Restore: `<prefix> + Ctrl-r`
 
-For more plugins, you can find them [here](https://github.com/rothgar/awesome-tmux) and
-[here](https://github.com/tmux-plugins).
+For more plugins, you can find them [here](https://github.com/rothgar/awesome-tmux) and [here](https://github.com/tmux-plugins).
 
 [^1]: `<prefix>` is your prefix key for tmux
