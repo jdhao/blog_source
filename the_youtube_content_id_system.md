@@ -1,5 +1,5 @@
 ---
-title: "The YouTube Content ID system"
+title: "How Does The YouTube Content ID System Work?"
 date: 2021-08-02T01:27:05+08:00
 draft: false
 tags: [YouTube, video, audio]
@@ -19,7 +19,14 @@ The copyright owners can submit the audio and video content they want to
 protect to YouTube. When a user uploads new content to YouTube, the new content
 will be compared to the files in the database to check their similarity.
 
-How do we compare the similarity between audio or video files? We need [audio](https://emysound.com/blog/open-source/2020/06/12/how-audio-fingerprinting-works.html) and [video](https://en.wikipedia.org/wiki/Digital_video_fingerprinting) fingerprinting technology. Generally speaking, we can extract fingerprints (i.e., features or vectors) from the audio and video files and store them in the database. When a new content arrives, we extract its fingerprints and compare it with the fingerprints in the database. Then we can calculate the similarity between the new content and the content in the database. If the similarity is above a threshold, we can assume that the uploaded content is a pirated content.
+How do we compare the similarity between audio or video files? We need [audio](https://emysound.com/blog/open-source/2020/06/12/how-audio-fingerprinting-works.html)
+and [video](https://en.wikipedia.org/wiki/Digital_video_fingerprinting) fingerprinting technology. Generally speaking, we can extract fingerprints
+(i.e., features or vectors) from the audio and video files and store them in
+the database. When a new content arrives, we extract its fingerprints and
+compare it with the fingerprints in the database. Then we can calculate the
+similarity between the new content and the content in the database. If the
+similarity is above a threshold, we can assume that the uploaded content is a
+pirated content.
 
 There is little resource online talking about which methods Google use for
 fingerprinting audio and videos.
@@ -54,13 +61,13 @@ we can forge adversarial content to fool the content ID system: the pirated
 content can be altered in a subtle way so that the system can not detect it is
 a pirated content.
 
-There are some research on this, for example, see [here](https://www.cs.umd.edu/~tomg/projects/copyrightattack/) and [here](https://arxiv.org/abs/1906.07153).
+There are some research papers on this, for example, see [here](https://www.cs.umd.edu/~tomg/projects/copyrightattack/) and [here](https://arxiv.org/abs/1906.07153).
 
 # References
 
 + https://www.blog.google/outreach-initiatives/public-policy/protecting-what-we-love-about-internet-our-efforts-stop-online-piracy/
 + https://www.streamingmedia.com/Articles/ReadArticle.aspx?ArticleID=78358
-+ Youtube content identification technology?: https://stackoverflow.com/q/649116/6064933
++ YouTube content identification technology?: https://stackoverflow.com/q/649116/6064933
 + Manipulating the YouTube Algorithm: https://www.youtube.com/watch?v=1PGm8LslEb4
 
 [^1]: Source here: https://www.tubefilter.com/2018/11/07/youtube-payouts-content-id/

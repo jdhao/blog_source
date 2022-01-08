@@ -1,7 +1,7 @@
 ---
 title: "Vim 和 Neovim 的前世今生"
 date: 2020-01-12T11:48:43+08:00
-tags: [Vim]
+tags: [Vim, LSP]
 categories: [Nvim]
 ---
 

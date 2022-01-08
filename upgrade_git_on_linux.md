@@ -6,6 +6,12 @@ tags: [Git]
 categories: [Git]
 ---
 
+<details>
+<summary><font size="3" color="red">Update log</font></summary>
+
+<font color="blue">2021-12-10: update endpoint rpm link for git</font>
+</details>
+
 The version of the default git bundled with the Linux system is often too old,
 and lacks certain features, which may [break some tools](https://github.com/lewis6991/gitsigns.nvim/issues/103).
 This post summarizes how to install newer versions of Git on Linux.
@@ -33,7 +39,7 @@ The version of git installed is 2.24.4.
 The following also work:
 
 ```bash
-yum -y install https://packages.endpoint.com/rhel/7/os/x86_64/endpoint-repo-1.7-1.x86_64.rpm
+yum -y install https://packages.endpointdev.com/rhel/7/os/x86_64/endpoint-repo.x86_64.rpm
 yum remove git
 yum install git
 ```

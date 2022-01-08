@@ -5,7 +5,7 @@ tags: []
 categories: [Note]
 ---
 
-上 [Reddit](https://www.reddit.com/) 或者 GitHub 时，在讨论中，经常会碰到一些缩略语，作为一名非 native speaker，经常有点摸不着头脑，不知道这些缩略语啥意思，这篇文章总结一些常用缩略语以及中文含义。
+上 [Reddit](https://www.reddit.com/) 或 GitHub 时，在讨论中，经常会碰到一些缩略词，作为一名非 native speaker，经常有点摸不着头脑，不知道这些缩略语啥意思，这篇文章总结一些常用缩略语以及中文含义。
 
 <!--more-->
 
@@ -14,6 +14,7 @@ categories: [Note]
 + AFAIK: As Far As I Know, 据我所知。
 + ATM: At The Moment, 在此刻，现在。
 + AWOL: Absent Without Official Leave, 没有得到批准，私自离开。
++ BAU: Business as usual, 和往常一样正常。
 + DM: Direct Message, 指的是用社交软件工具发私信。
 + DWIM: Do What I Mean, 指的是计算机能够根据人的意图，做出符合的反应。
 + FOSS: Free And Open-Source Software, 自由与开源软件。
@@ -38,7 +39,7 @@ categories: [Note]
 + PTAL: Please Take Another Look，请再检查一下（指已经有所更新或变化）。
 + PoC: Proof of Concept, 原型设计（通常用来证明某种想法的可行性）
 + RFC: Request For Comment, 征求意见。
-+ RTFM: Read The Fucking Manual, 请读程序文档
++ RTFM: Read The Fucking/Fine Manual, 请读程序文档
 + STFW: Search The Fucking Web, 自己去网上搜索
 + TBH: To Be Honest, 实话跟你说吧。
 + TBQH: To Be Quite Honest, 实话跟你说吧（语气诚恳）。

@@ -11,19 +11,20 @@ categories: [Nvim]
 
 I have been using [vim-airline](https://github.com/vim-airline/vim-airline) to
 customize my statusline ever since I started using Neovim. It works great.
-Recently, I started [a repo](https://github.com/jdhao/minimal_vim) to create a
-minimal configuration without external plugins for both Vim and Neovim. During
-the process, I learned how to build a custom statusline from scratch.
+Recently, I started [a repo](https://github.com/jdhao/minimal_vim) named
+`minimal_vim` to create a minimal configuration without external plugins for
+both Vim and Neovim. During the process, I learned how to build a custom
+statusline from scratch.
 
 <!--more-->
 
-The primary source of my reference is the Vim help file on `statusline` (see `:
-h 'statusline'`). It is well written and should give you enough knowledge on
+The primary source of my reference is the Vim help on `statusline` (see `: h
+'statusline'`). It is well written and should give you enough knowledge on
 building a simple statusline.
 
 The Vim statusline consists of a number of items with special format to
-indicate what you want to show and how they should be displayed, e.g., width,
-color, alignment, etc.
+indicate what we want to show and how they should be styled, e.g., width, color,
+alignment, padding etc.
 
 # Statusline item format
 
@@ -35,16 +36,21 @@ current file. The complete format for items are as follows:
 %-0{minWidth}.{maxWidth}{item}
 ```
 
-`-` means to align the item to the left instead of right (the default). `0` is
-the leading zeros for items that return numeric numbers and is overridden by
-`-`. `minWidth` and `maxWidth` decide the min and max length of the item to be
-shown. All fields are optional except `{item}`.
++ `-` means to align the item to the left instead of right (the default).
++ `0` is the leading zeros for items that return numeric numbers and is overridden by `-`.
++ `minWidth` and `maxWidth` decide the min and max length of the item to be
+shown.
 
-# Good convention: build statusline bit by bit
+All fields are optional except `{item}` itself.
 
-Since you may use several items to build your statusline, it is best to
-concatenate the various components to build a statusline (also see `:h set+=`)
-instead of using a single long strings to set up statusline, for example:
+# Good conventions: build statusline bit by bit
+
+Since we will use several items to build our statusline, the best practice is
+to concatenate the various components to build a statusline (also see `:h
+set+=`) instead of using a single long strings to set up the statusline.
+Building the statusline incrementally make it easier to understand and edit.
+
+For example, we use the following
 
 ```vim
 set statusline=
@@ -57,11 +63,11 @@ set statusline+=%l
 # Show the result of functions or an expression
 
 Vim provides some default items to show info about current file, but that may
-not be enough. You may want to show the result of a function or show strings
+not be enough. We may want to show the result of a function or show strings
 based on some conditions. Vim use `%{}` to evaluate functions or expressions
 and show the returned strings in statusline.
 
-To show the current mode in statusline, you can use the following setting:
+To show the current mode in statusline, we can use the following setting:
 
 ```vim
 let g:currentmode={
@@ -79,10 +85,10 @@ set statusline=
 set statusline+=\ %{toupper(g:currentmode[mode()])}
 ```
 
-Based on which mode you are in, the statusline will change automatically.
+Based on which mode we are in, the statusline will change automatically.
 
 To show a modified sign `[+]` based on whether current file has been modified,
-you can use the following setting:
+we can use the following setting:
 
 ```
 set statusline+=%{&modified?'[+]':''}
@@ -90,15 +96,15 @@ set statusline+=%{&modified?'[+]':''}
 
 # Using group
 
-Group is used to set width and alignment for several elements in a whole. Start
-a group with `(` and end it with `%)`, i.e., `(group_element%)`. For example,
-to show the file format, you may use the following setting:
+Group is used to set width and alignment for several elements as a whole. We
+start a group with `(` and end it with `%)`, i.e., `(group_element%)`. For
+example, to show file format, we may use the following setting:
 
 ```
 set statusline+=%-7([%{&fileformat}]%)
 ```
 
-The above group has min width 7 and is left aligned.
+The above group has min width 7 and is left-aligned.
 
 # Using highlight groups
 
@@ -109,9 +115,9 @@ There are two slightly different ways to use highlight.
 
 ## Use a highlight group name
 
-The first way is to use the name of a highlight group. You can check what
-highlight groups are available using `:highlight` command. To use highlight
-group `Warnings`, you can use the following setting:
+The first way is to use the name of a highlight group. We can check what
+highlight groups are available using `:highlight` command. For example, to use
+highlight group `Warnings`, we can use the following setting:
 
 ```vim
 set statusline+=%#Warnings#
@@ -119,12 +125,13 @@ set statusline+=%{&bomb?'[BOM]':''}
 ```
 
 The highlight group will take effect from the point it is used in statusline.
-To switch a highlight, you just need to provide another highlight group at your
-desired position.
+To switch a highlight, we just need to provide another highlight group at the
+desired position (which means that if you do not switch it, any later element
+in statusline use that highlight group).
 
 ## Use special user defined highlight groups
 
-Vim also allows you to define 9 special highlight groups named from `User1` to
+Vim also allows us to define 9 special highlight groups named from `User1` to
 `User9` and refer to them in statusline with a special syntax like the
 following:
 
@@ -133,34 +140,34 @@ following:
 set statusline+=%2*
 ```
 
-First, you need to define the needed user highlight group:
+First, we need to define the needed user highlight group:
 
 ```vim
 hi User1 ctermfg=0 ctermbg=114
 hi User2 ctermfg=114 ctermbg=0
 ```
 
-Then you can use them in statusline settings. To return to the default
-Statusline colors, you can use:
+Then we can use them in statusline settings. To return to the default
+Statusline colors, we can use:
 
 ```vim
 set statusline+=%*
 ```
 
-# Common errors to avoid
+# Common caveat to avoid
 
-The most common error is fail to escape some special characters. Since space
-and `|` have special meanings (see also `:h option-backslash`), you need to use
+The most common error is failing to escape some special characters. Since space
+and `|` have special meanings (see also `:h option-backslash`), we need to use
 backslash to escape them to include a literal one. For example:
 
 ```
 set statusline+=%{&filetype!=#''?&filetype.'\ ':'none\ '}
 ```
 
-The above setting will show the current filetype followed a space or `none`
+The above setting will show the current filetype followed by a space or `none`
 followed by space if filetype is empty.
 
-`%` is also a special character. To include a literal `%` char, you need to use
+`%` is also a special character. To include a literal `%` char, we need to use
 `%%`. For example, to show the percentage of current cursor position in the
 buffer, use:
 

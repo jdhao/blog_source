@@ -167,6 +167,6 @@ upstream master. In order to merge, you have to resolve the conflicts. See
 + [Create a pull request, general guide](https://help.github.com/articles/creating-a-pull-request/#)
 + [Create a pull request from a fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/)
 + [Contribute to a project](https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project)
-+ [How to update a pull request](https://stackoverflow.com/questions/9790448/how-to-update-a-pull-request-from-forked-repo).
-+ [How to update a fork](https://stackoverflow.com/questions/7244321/how-do-i-update-a-github-forked-repository/7244456#7244456)
-+ <https://stackoverflow.com/questions/7947322/preferred-github-workflow-for-updating-a-pull-request-after-code-review/15055649#15055649>
++ [How to update a pull request](https://stackoverflow.com/q/9790448/6064933).
++ [How to update a fork](https://stackoverflow.com/a/7244456/6064933)
++ [update a pull request](https://stackoverflow.com/a/15055649/6064933)

@@ -1,8 +1,8 @@
 ---
-title: "Creating Your Own Text Objects in Neovim/Vim from Scratch"
+title: "A Guide on Creating Your Own Text Objects in Neovim/Vim from Scratch"
 date: 2020-11-15T15:00:06+08:00
 draft: false
-tags: []
+tags: [text-object]
 categories: [Nvim]
 ---
 

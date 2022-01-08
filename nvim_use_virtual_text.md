@@ -25,14 +25,15 @@ Plugins have been using virtual text to do various things. Here is a
 non-exhaustive list:
 
 + [IndentBlankLine.nvim](https://github.com/lukas-reineke/indent-blankline.nvim): Show indent guides even on blank lines. Previously, it is not possible to place text
-on blank lines (lines with only a new line). So there is will a gap for indent
-lines when there is a blank line, see [this issue](https://github.com/Yggdroot/indentLine/issues/275).
+  on blank lines (lines with only a new line). So there is will a gap for indent
+  lines when there is a blank line, see [this issue](https://github.com/Yggdroot/indentLine/issues/275).
++ [virt-column.nvim](https://github.com/lukas-reineke/virt-column.nvim): replace option `colorcolumn` using virtual text
++ [nvim-cmp](https://github.com/hrsh7th/nvim-cmp): [show function signature using virtual text](https://github.com/hrsh7th/nvim-cmp/commit/ada9ddeff71e82ad0e52c9a280a1e315a8810b9a).
 + [nvim-hlslens](https://github.com/kevinhwang91/nvim-hlslens): Show search count and index at EOL, an excellent alternative to [vim-anzu](https://github.com/osyo-manga/vim-anzu) and the likes.
-+ [Nvim-lspconfig](https://github.com/neovim/nvim-lspconfig): Show diagnostics as virtual text in the end of a line.
-+ [Extmark-toy.nvim](https://github.com/sunjon/extmark-toy.nvim): Showing cool visual effects.
 + [blamer.nvim](https://github.com/APZelos/blamer.nvim): Show line blame message at EOL[^1].
++ [Nvim-lspconfig](https://github.com/neovim/nvim-lspconfig): Show diagnostics as virtual text in the end of a line.
 + [virtual-type.nvim](https://github.com/jubnzv/virtual-types.nvim): show variable type using virtual text
-+ [nvim-cmp](https://github.com/hrsh7th/nvim-cmp): [show function signature using virutal text](https://github.com/hrsh7th/nvim-cmp/commit/ada9ddeff71e82ad0e52c9a280a1e315a8810b9a).
++ [Extmark-toy.nvim](https://github.com/sunjon/extmark-toy.nvim): Showing cool visual effects.
 
 # Using extmarks
 

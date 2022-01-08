@@ -1,7 +1,7 @@
 ---
 title: "A Complete Guide on Writing LaTeX with Vimtex in Neovim"
 date: 2019-03-26 22:54:43+0800
-tags: [LaTeX, PDF]
+tags: [LaTeX, PDF, text-object]
 categories: [Nvim]
 ---
 

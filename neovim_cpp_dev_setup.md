@@ -2,7 +2,7 @@
 title: "Setting up Neovim for C++ Development with LSP"
 date: 2020-11-29 23:55:52+0800
 draft: false
-tags: [C++, Clang]
+tags: [C++, Clang, LSP]
 categories: [Nvim]
 ---
 
@@ -15,7 +15,7 @@ programs.
 
 First, we need to install additional packages or tools. The installation
 sections below are mostly aimed at Linux. For macOS, clang is already installed,
-and for ccls, you can simply install it via HomeBrew:
+and for ccls (a LSP server for C++/C), you can simply install it via HomeBrew:
 
 ```
 brew install ccls

@@ -13,11 +13,13 @@ cheatsheet for common STL containers/adapters just in case I need them.
 # vector
 
 + Define a 1D vector: `vector<int> arr = {1, 2, 3};`
-+ Define a 2D vector:  `vector<vector<int>> mat = {{1, 2, 3}, {4, 5}}`
++ Define a 2D vector:  `vector<vector<int>> mat = {{1, 2, 3}, {4, 5}};`
 + Define a 2D vector of size 3x4: `vector<vector<int> > mat(3, vector<int>(4, 0));`
-+ Add element: `arr.push_back(2)`
-+ Check its size: `arr.size()`
-+ Check if string is empty: `arr.empty();`
++ Add an element: `arr.push_back(2);`
++ Insert an element: `arr.insert(arr.begin(), -1);`
++ Insert another vec: `vector<int> another = {1, 2, 3}; arr.insert(arr.begin(), another.begin(), another.end());`
++ Check its size: `cout << arr.size();`
++ Check if string is empty: `cout << arr.empty();`
 + Slice a vector: `vector<int> arr(10, 1); vector<int> new_vec(arr.begin(), arr.begin()+3);`
   (the end is not inclued, so the resulting vector has 3 elments)
 

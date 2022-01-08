@@ -2,7 +2,7 @@
 title: "Setting up sumneko lua for Nvim-lsp"
 date: 2021-08-12T00:14:12+08:00
 draft: false
-tags: []
+tags: [LSP]
 categories: [Nvim]
 ---
 

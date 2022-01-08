@@ -43,7 +43,7 @@ url like this:
 git remote set-url origin https://jdhao@github.com/jdhao/toy_project.git
 ```
 
-where `jdhao` is my username. In this way, we do not need to enter password
+where `jdhao` is my username. In this way, we do not need to enter username
 when we push to remote. In fact, we can provide the password after the username
 like this:
 
@@ -51,8 +51,8 @@ like this:
 git remote set-url origin https://jdhao:some_pwd@github.com/jdhao/toy_project.git
 ```
 
-However, it is not safe to do so, since your password are stored in plain text
-now.
+However, it is **not safe** to do so, since your password are stored in plain
+text now.
 
 For password, if we are in Linux, we can use the following settings:
 
@@ -60,8 +60,8 @@ For password, if we are in Linux, we can use the following settings:
 git config --global credential.helper 'cache --timeout=3600'
 ```
 
-The password will be cached in memory for 3600 seconds, which means that you
-do not need to input password for 1 hour. Tweak the time interval to suit your
+The password will be cached in memory for 3600 seconds, which means that you do
+not need to input password for 1 hour. Tweak the time interval to suit your
 need.
 
 Ref:
@@ -71,9 +71,9 @@ Ref:
 
 # Compare same file from different branches
 
-Sometimes, I want to see the difference of same file on different branches. For
-example, to find the difference for file `foo.py` on master and dev
-branch. There are two slightly different ways to do this.
+Sometimes, I want to see the difference of a file on different branches. For
+example, to find the difference for `foo.py` on master and dev branch. There
+are two slightly different ways to do this.
 
 ```bash
 git diff master..dev path/to/foo.py
@@ -108,11 +108,11 @@ Ref:
 
 # How to check last commit for a given line only?
 
-By default, [git-blame](https://www.atlassian.com/git/tutorials/inspecting-a-repository/git-blame)
-will print out the last commit info for each line in a file. What if we are
-only interested in a particular line range? In this case, we can use `-L` to
-restrict the line range. For example, if I want to blame line 4-5 for a file, I
-can use the following command:
+By default, [git-blame](https://www.atlassian.com/git/tutorials/inspecting-a-repository/git-blame) will print
+out the last commit info for each line in a file. What if we are only
+interested in a particular line range? In this case, we can use `-L` to
+restrict the line range. For example, if I want to blame line 4-5 for file
+`options.vim`, I can use the following command:
 
 ```
 git blame -L 4,5 core/options.vim

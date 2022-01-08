@@ -88,7 +88,7 @@ Ref:
 
 # Extract a frame every N seconds
 
-How do we extract a frame from a video every N seconds?
+How do we extract a frame from a video every 5 seconds?
 
 ```
 ffmpeg -i input.mp4 -vf "fps=1/5" output_%3d.jpg

@@ -6,6 +6,11 @@ tags: [GitHub]
 categories: [Git]
 ---
 
+update:
+
++ On 2021-11-28, we expericence another GitHub outage which lasts more than two hours, see [here](https://www.theverge.com/2021/11/27/22805076/github-down-outage-service-issues).
+
+
 On 2021-08-10 23:30 CST, I observed that I cannot push to my GitHub repo even
 with `--force`. After checking the [GitHub status site](https://www.githubstatus.com/), it seems that the GitHub API is down[^1].
 
