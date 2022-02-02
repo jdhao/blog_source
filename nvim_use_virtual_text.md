@@ -6,6 +6,10 @@ tags: []
 categories: [Nvim]
 ---
 
+<p align="center">
+<img src="https://blog-resource-1257868508.file.myqcloud.com/202109150127349.png" width="800">
+</p>
+
 In Neovim, we can use the `virtual text` feature to place text anywhere in the
 window, which is not possible with normal text.
 
@@ -27,11 +31,11 @@ non-exhaustive list:
 + [IndentBlankLine.nvim](https://github.com/lukas-reineke/indent-blankline.nvim): Show indent guides even on blank lines. Previously, it is not possible to place text
   on blank lines (lines with only a new line). So there is will a gap for indent
   lines when there is a blank line, see [this issue](https://github.com/Yggdroot/indentLine/issues/275).
-+ [virt-column.nvim](https://github.com/lukas-reineke/virt-column.nvim): replace option `colorcolumn` using virtual text
 + [nvim-cmp](https://github.com/hrsh7th/nvim-cmp): [show function signature using virtual text](https://github.com/hrsh7th/nvim-cmp/commit/ada9ddeff71e82ad0e52c9a280a1e315a8810b9a).
 + [nvim-hlslens](https://github.com/kevinhwang91/nvim-hlslens): Show search count and index at EOL, an excellent alternative to [vim-anzu](https://github.com/osyo-manga/vim-anzu) and the likes.
 + [blamer.nvim](https://github.com/APZelos/blamer.nvim): Show line blame message at EOL[^1].
 + [Nvim-lspconfig](https://github.com/neovim/nvim-lspconfig): Show diagnostics as virtual text in the end of a line.
++ [virt-column.nvim](https://github.com/lukas-reineke/virt-column.nvim): replace option `colorcolumn` using virtual text
 + [virtual-type.nvim](https://github.com/jubnzv/virtual-types.nvim): show variable type using virtual text
 + [Extmark-toy.nvim](https://github.com/sunjon/extmark-toy.nvim): Showing cool visual effects.
 
@@ -79,11 +83,7 @@ this is actually the only case the `col_num` really works.
 + `eol`: virtual text is place at the end of the line (`col_num` does not take effect).
 + `right_align`: virtual is place on the right of current window.
 
-See the following image for a comparison:
-
-<p align="center">
-<img src="https://blog-resource-1257868508.file.myqcloud.com/202109150127349.png" width="800">
-</p>
+See the title image for a comparison.
 
 To actually put virtual text on any column, we should use `virt_text_win_col`
 in the opts table. If we use `virt_text_win_col`, `virt_text_pos` does not take

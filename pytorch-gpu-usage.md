@@ -1,8 +1,8 @@
 ---
-title: Set Default GPU in PyTorch
+title: "Set Default GPU in PyTorch"
 date: 2018-04-02 11:13:22 +0800
 tags: [PyTorch]
-categories: [Deep-Learning]
+categories: [machine-learning]
 ---
 
 You can use two ways to set the GPU you want to use by default.

@@ -5,8 +5,8 @@ tags: [Tmux]
 Categories: [Linux]
 ---
 
-In this post, I summarize a list of questions related to Tmux during the
-process of learning how to use it.
+In this post, I will summarize a list of questions related to Tmux
+during the process of learning how to use it.
 
 <!--more-->
 
@@ -31,16 +31,15 @@ right side of tmux status bar.
 
 # How does tmux color work?
 
-You may see the following setting to set the color of some Tmux window
-component:
+You may use the following setting to set the color of some Tmux window component:
 
 ```tmux
 # set the status bar background color to colour10
 set -g status-bg colour10
 ```
 
-The colors are from the 256 colors supported by the terminal. we can use script
-below to show what these colors look like:
+The colors are from the 256 colors supported by the terminal.
+we can use script below to show what these colors look like:
 
 ```bash
 for i in {0..255}; do
@@ -69,7 +68,7 @@ emulator configurations. This will most probably fix the issue.
 
 See also reference [here](https://stackoverflow.com/q/18600188/6064933).
 
-# What is terminfo and how to see the content of a term files?
+# What is terminfo and how to check the content of a term files?
 
 For almost every terminal, there is terminfo file describing the ability of
 this terminal. Usually, programs have to know the terminal type to send the
@@ -110,8 +109,7 @@ tmux a -d -t <SESSION_NUM>
 
 # How to copy text inside Tmux when `set -g mouse on`?
 
-Press `<Shift>` and drag mouse to select text, the text will be automatically
-copied.
+Press `<Shift>` and drag mouse to select text, the selected text will be copied automatically.
 
 To copy a block of text when there are multiple vertical splits, press
 `<Alt>`+`<Shift>` and drag mouse to select a rectangle text region.

@@ -2,20 +2,18 @@
 title: "Warmup in Maskrcnn-benchmark and how does it work?"
 date: 2020-08-14 23:04:54+0800
 tags: []
-categories: [Deep-Learning]
+categories: [machine-learning]
 ---
 
-In [maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark),
-there is some config parameters about warmup in solver (`WARMUP_FACTOR`,
-`WARMUP_ITERS`, `WARMUP_METHOD` ). What is warmup, and how does it work?
+In [maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark), there is some config parameters about warmup in solver
+(`WARMUP_FACTOR`, `WARMUP_ITERS`, `WARMUP_METHOD`). But what is warmup, and how does it work?
 
 <!--more-->
 
-The paper [Accurate, Large Minibatch SGD: Training ImageNet in 1
-Hour](https://arxiv.org/abs/1706.02677) gives a good explanation of why warmup
-is needed and explains different strategies of warmup.
+Warmup was originally proposed in this paper: [Accurate, Large Minibatch SGD: Training ImageNet in 1 Hour](https://arxiv.org/abs/1706.02677).
+It gives a good explanation on why warmup is needed, and explains different strategies of warmup.
 
-## why do we need warmup
+## Why do we need warmup
 
 Suppose that we use learning rate $\eta$ on a single GPU with batch size $n$,
 when we train the network on 8 GPUs, now the batch size becomes $8n$.  The
@@ -86,7 +84,7 @@ So as current iteration approaches `warmup_iters`, `warmup_factor` will
 gradually approach 1.  As a result, the learning rate used will approach base
 learning rate.
 
-Ref:
+## References
 
 + [How the learning rate change?](https://github.com/facebookresearch/maskrcnn-benchmark/issues/562)
 + [Discussions about warmup policy](https://www.reddit.com/r/MachineLearning/comments/es9qv7/d_warmup_vs_initially_high_learning_rate/)

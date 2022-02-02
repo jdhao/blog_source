@@ -1,5 +1,5 @@
 ---
-title: "Trying Git TUI Clients"
+title: "Hands on with Three Git TUI Clients"
 date: 2021-09-11T00:33:12+08:00
 draft: false
 tags: []

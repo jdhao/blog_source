@@ -14,7 +14,7 @@ categories: [Note]
 
 # 向量搜索库和引擎的区别？
 
-简单理解，向量搜索库更轻量化，可能不支持分布式，仅仅是作为 Library 存在，向量搜索引擎实现了一整套特征存储，更新，删除，分布式等特性，而且向量搜索引擎底层可能就是基于这些向量搜索库的，譬如 vearch 会用到 FAISS，Milvus 也会用到 FAISS。
+简单理解，向量搜索库更轻量化，可能不支持分布式，仅仅是作为 Library 存在，向量搜索引擎实现了一整套特征存储，更新，删除，分布式等特性，而且向量搜索引擎底层可能会用到这些向量搜索库，譬如 vearch 会用到 FAISS，Milvus 也会用到 FAISS, nmslib 等。
 
 # 向量搜索库
 
@@ -35,6 +35,8 @@ Faiss 原始论文「Billion-scale similarity search with GPUs」见 [这里](ht
 ## ScaNN
 
 [ScaNN](https://github.com/google-research/google-research/tree/master/scann) 是谷歌在 2020 年发布的一款向量检索工具[^1]，基于谷歌在 ICML 2020 上发表的一篇文章 [Accelerating Large-Scale Inference with Anisotropic Vector Quantization](https://arxiv.org/abs/1908.10396)。
+
+快手推荐中台在使用 ScaNN 作为 ANN 搜索工具[^3]。
 
 ## NMSLIB
 
@@ -85,3 +87,4 @@ Proxima 是阿里巴巴开发的向量搜索引擎，介绍可以参考[这篇�
 
 [^1]: https://ai.googleblog.com/2020/07/announcing-scann-efficient-vector.html
 [^2]: https://engineering.fb.com/2017/03/29/data-infrastructure/faiss-a-library-for-efficient-similarity-search/
+[^3]: 消息来源：https://www.pojan.cn/kuaishou/6118.html

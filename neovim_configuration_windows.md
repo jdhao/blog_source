@@ -13,12 +13,10 @@ categories: [Nvim]
 
 **TL;DR**: After nearly one year of using Neovim on Windows, I find that the
 best experience one can get on Windows is to use GUI Neovim client such as
-[Nvim-qt](https://github.com/equalsraf/neovim-qt) or [fvim](https://github.com/yatli/fvim),
-not the terminal Nvim[^2].
+[Nvim-qt](https://github.com/equalsraf/neovim-qt) or [fvim](https://github.com/yatli/fvim), not the terminal Nvim[^2].
 
-In this post, I want to share how to install and configure Neovim on Windows
-10[^1]. For configurations of [nvim-qt](https://github.com/equalsraf/neovim-qt)
-on Windows, check [this post](https://jdhao.github.io/2019/01/17/nvim_qt_settings_on_windows/).
+In this post, I want to share how to install and configure Neovim on Windows 10[^1].
+For configurations of [nvim-qt](https://github.com/equalsraf/neovim-qt) on Windows, check [this post](https://jdhao.github.io/2019/01/17/nvim_qt_settings_on_windows/).
 
 <!--more-->
 

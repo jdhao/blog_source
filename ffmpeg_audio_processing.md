@@ -1,12 +1,12 @@
 ---
-title: "Audio Processing Using FFMPEG"
+title: "Audio Processing Using FFmpeg"
 date: 2021-11-10T00:24:09+08:00
 draft: false
 tags: [audio,ffmpeg]
 categories: [tools]
 ---
 
-Collected tips on audio processing with ffmpeg.
+Collected tips on audio processing with FFmpeg.
 
 <!--more-->
 
@@ -23,7 +23,7 @@ Ref:
 
 + https://superuser.com/q/268985/736190
 
-# Extract audio from ffmpeg
+# Extract audio from FFmpeg
 
 ```bash
 ffmpeg -i input.mp4 -vn -acodec copy out.acc

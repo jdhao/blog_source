@@ -5,6 +5,10 @@ tags: [Git]
 categories: [Git]
 ---
 
+<p align="center">
+<img src="https://blog-resource-1257868508.file.myqcloud.com/202202021114754.jpg" width="800">
+</p>
+
 Some commonly used Git commands related to branch operations.
 
 <!--more-->

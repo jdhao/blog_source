@@ -2,7 +2,7 @@
 title: "A Guide on Squashing Commits with git-rebase"
 date: 2021-06-28T23:43:56+08:00
 draft: false
-tags: [Git]
+tags: [rebase, squash]
 categories: [Git]
 ---
 
@@ -148,7 +148,7 @@ dc5d518 - (HEAD -> master) Demo 1 and 2 (2021-06-28 20:07:19 +0800) <jdhao>
 Note that if we change the parent commit, the hash of any following commits also changes.
 The commit has for `Demo 1 and 2` changes from `adc8ebd` to `5452bfe`.
 
-# Avoid squash commits that have been pushed to remote
+# Avoid squashing commits that have been pushed to remote
 
 It is now rather clear that rebasing will change the commit history.
 If you are collaborating with other people and have pushed some commits to the remote,

@@ -2,7 +2,7 @@
 title: "Set the Number of Threads to Use in PyTorch"
 date: 2020-07-06 23:15:25+0800
 tags: [PyTorch, thread]
-categories: [Deep-Learning]
+categories: [machine-learning]
 ---
 
 In this post, I will share how PyTorch set the number of the threads to use for

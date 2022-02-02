@@ -5,6 +5,10 @@ tags: [Vim, LSP]
 categories: [Nvim]
 ---
 
+<p align="center">
+<img src="https://blog-resource-1257868508.file.myqcloud.com/202202021242998.jpg" width="800">
+</p>
+
 # 引子
 
 从完全使用 [Neovim](https://neovim.io/) 进行日常[项目开发](https://jdhao.github.io/2018/12/24/centos_nvim_install_use_guide_en/)与[文档写作](https://jdhao.github.io/2019/01/15/markdown_edit_preview_nvim/)到现在，已经过去大约一年半的时间。一年半以前，我对 Vim 的了解还处在非常初级的阶段，甚至还不知道 Neovim，经过长时间的[使用与学习](https://jdhao.github.io/categories/Nvim/)，目前已经达到了熟练使用的程度。当然，Vim 的知识过于庞大，即便我已经使用了一年半的时间，还有很多 Vim/Neovim 的特性或者知识仍然有待了解与发掘。

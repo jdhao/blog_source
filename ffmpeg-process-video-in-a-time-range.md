@@ -1,5 +1,5 @@
 ---
-title: "Process video in a certain time range with ffmpeg?"
+title: "Process video in a certain time range with FFmpeg?"
 date: 2021-12-16T00:34:16+08:00
 draft: false
 tags: [ffmpeg]

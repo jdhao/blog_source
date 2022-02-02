@@ -196,25 +196,25 @@ Currently, my config is still a mix of vim script and lua script due to several 
 + Some viml command is more concise to write, and lua tends to be more verbose, e.g., when defining mappings or setting an option.
 + I am still using quite a few vim script plugins, and it makes sense to configure these plugins in vim script.
 
-## Should I use a config distribution?
+## Should I use a pre-made config distribution?
 
-There are several so-called Vim/Nvim distributions which aim at providing IDE-like and out-of-the-box config.
+There are several so-called Vim/Nvim distributions, which aim at providing IDE-like and out-of-the-box experience of using Neovim.
 Some of the most popular distributions are [Spacevim](https://github.com/SpaceVim/SpaceVim), [LunarVim](https://github.com/LunarVim/LunarVim) and [NvChad](https://github.com/NvChad/NvChad).
 
-People ask frequently on r/neovim and r/vim whether they should use a vim/Nvim
-distribution. If you are serious about Vim and want to learn how to use it
-properly and eventually master it (to some extent), I think it is better to
-avoid those distributions and build your own config from scratch:
+People ask frequently on r/neovim and r/vim whether they should use a vim/Nvim distribution.
+If you are serious about Vim and want to learn how to use it properly and eventually master it,
+I think it is better to avoid those distributions and build your own config from scratch:
 
 + Those distributions may add their own configuration layer and complicate things.
-  Users end up learning their specific config without learning real Vim stuff.
-+ Even if you use those distribution, when you want to customize certain things,
+  Users end up learning two much distribution-specific config without learning real Vim stuff.
++ Even if you use those distributions, when you want to customize certain things,
   you still need to learn how Vim/Nvim works under the hood.
+  Otherwise, you can only count on other developer to implement the feature for you.
 + When you meet issues with those distributions, you may have a hard time debugging it,
   since they all include various configurations.
 
-Surely you can learn from these distributions, e.g., how they configure,
-how they organize their directory structure, or even *steal* some configs for your own use.
+However, this does not mean that you can not learn from these distributions, e.g., how they configure,
+how they organize their directory structure. You can even *steal* some configs for your own use.
 
 # Concluding remarks
 

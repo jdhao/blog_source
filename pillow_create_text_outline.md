@@ -5,11 +5,13 @@ tags: [PIL]
 categories: [Python]
 ---
 
+<p align="center">
+<img src="https://blog-resource-1257868508.file.myqcloud.com/20200818221311.png" width="400">
+</p>
+
 Sometimes, we may want to add surrounding color to text strokes in Python.
-Prior to version 6.2.0, we can not do this in Pillow. Fortunately, starting
-from version 6.2.0, pillow now supports text outlines natively in the
-[`ImageDraw.text()`](https://pillow.readthedocs.io/en/stable/reference/ImageDraw.html#PIL.ImageDraw.ImageDraw.text)
-method.
+Prior to version 6.2.0, we can not do this in Pillow. Fortunately, starting from version 6.2.0,
+pillow now supports text outlines natively in the [`ImageDraw.text()`](https://pillow.readthedocs.io/en/stable/reference/ImageDraw.html#PIL.ImageDraw.ImageDraw.text) method.
 
 <!--more-->
 
@@ -41,12 +43,7 @@ if __name__ == "__main__":
 The parameter `stroke_width` controls the width of outline, and `stroke_fill`
 controls the outline color.
 
-The above script will create the following image.
-
-<p align="center">
-<img src="https://blog-resource-1257868508.file.myqcloud.com/20200818221311.png" width="400">
-</p>
-
+The above script will create the something like the title image.
 
 Ref:
 

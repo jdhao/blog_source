@@ -6,7 +6,7 @@ categories: [Nvim]
 ---
 
 <p align="center">
-<img src="https://blog-resource-1257868508.file.myqcloud.com/20200214144759.png" width="800">
+<img src="https://blog-resource-1257868508.file.myqcloud.com/20200214144759.png" width="600">
 </p>
 
 <!--more-->

@@ -6,16 +6,15 @@ tags: [Linux]
 categories: [Python]
 ---
 
-When starting a long-running Python program, I often run it under [nohup](https://en.wikipedia.org/wiki/Nohup) so I
-can redirect all the output to `nohup.out` for easier inspection. I use `nohup
-python test.py&` to run the process in the background. Then I can use `tail -f
-nohup.out` to monitor the output from this program.
+When starting a long-running Python program,
+I often run it under [nohup](https://en.wikipedia.org/wiki/Nohup) so I can redirect all the output to `nohup.out` for easier inspection.
+I use `nohup python test.py&` to run the process in the background.
+Then I can run `tail -f nohup.out` to monitor the output message from this program.
 
 <!--more-->
 
-One strange issue I met is that all messages from the [`print()`](https://docs.python.org/3/library/functions.html#print) function are missing. To
-reproduce this issue, run the following `test.py` with command `nohup python
-test.py&`:
+One strange issue I met is that all messages from the [`print()`](https://docs.python.org/3/library/functions.html#print) function are missing.
+To reproduce this issue, run the following `test.py` with command `nohup python test.py&`:
 
 ```python
 import time
@@ -26,61 +25,63 @@ for i in range(n):
     print(f"this is loop {i}")
 ```
 
-Then use `tail -f nohup.out` to monitor the output. Notice that there is no
-output for some time. Then, all of a sudden, all the output is printed.
+Then use `tail -f nohup.out` to check the output. Notice that there is no output for some time.
+Then, all of a sudden, all the output is printed when the program exits.
 
-However, if we directly run this program (`python test.py`), to our
-expectations, the messages are shown one at a time.
+However, if we directly run this program (`python test.py`), to our expectations,
+the messages are indeed shown one at a time.
 
-# Buffering behavior of sys.stdout and sys.stderr
+# Different buffering behaviors of `sys.stdout` and `sys.stderr`
 
-This has something to do with the stream buffering behavior of Python. The
-`print()` function in Python will print message to the [sys.stdout](https://docs.python.org/3.7/library/sys.html#sys.stdout) stream. When
-we print directly to the console, in this case, the stdout stream is used
-interactively, it will be line-buffered, i.e., the message will be shown in the
-terminal once a new line is met.
+This has something to do with the stream buffering behavior of Python.
+`print()` function in Python will print a message to the [sys.stdout](https://docs.python.org/3.7/library/sys.html#sys.stdout) stream.
+When we print directly to the console, in this case, the stdout stream is used interactively,
+it will be line-buffered, i.e., the message will be shown in the terminal once a newline is met.
 
-If we use nohup, stdout is redirected to a file (`nohup.out`), it will be
-block-buffered in this case, i.e., only when the size of the output reaches a
-certain limit, will they be put into the destination (`nohup.out` file). So we
-can not see each print message in a timely manner. When the program stops, all
-the output is flushed to `nohup.out`, that is when we see those messages.
+If we use nohup, stdout is redirected to a file (`nohup.out`), it will be block-buffered in this case,
+i.e., only when the size of the output reaches a certain limit, will they be put into the destination (`nohup.out` file).
+So we can not see each print message in a timely manner.
+When the program exits, all the output is flushed to `nohup.out`, that is when we see those messages.
 
-This behavior of sys.stdout and sys.stderr is documented [here](https://docs.python.org/3.7/library/sys.html?highlight=sys%20stdout#sys.stdout):
+This behavior of `sys.stdout` and `sys.stderr` is documented [here](https://docs.python.org/3.7/library/sys.html?highlight=sys%20stdout#sys.stdout):
 
 > When interactive, stdout and stderr streams are line-buffered. Otherwise,
 > they are block-buffered like regular text files.
 
-This explains why the messages is not shown promptly if we redirect stdout to
-`nohup.out`, since stdout is block buffered in this case. If we use
-sufficiently large message, it will also be shown immediately since the output
-buffer is full.
+This explains why the messages is not shown timely if we redirect stdout to `nohup.out`,
+since stdout is block buffered in this case.
+Block-buffered means that Python stores the output message in a buffer,
+and only when the buffer reaches a certain size and can not accommodate the incoming message,
+the message in this buffer will be flushed and reach its destination.
 
-To verify this, we modify `test.py` a little bit:
+If we use sufficiently large message, it will also be shown immediately since the output buffer is full.
+It seems that buffer size for print is 8192[^1]. To verify this, we modify `test.py` a little bit:
 
 ```python
 import time
 
 n = 20
+size = 2048
+sleep_time = 1
+
 for i in range(n):
-    time.sleep(0.5)
-    print(f"{i}" + "a" * 8192)
+    time.sleep(sleep_time)
+    print(f"{i}" + "a" * size)
 ```
 
-Run it using nohup and check the output, you will find that the messages are
-indeed printed separately, since each message is now big enough (more than 8192
-bytes).
+If we run the above script with `nohup python test.py &` and then observe the output via `tail -f nohub.out`,
+we will find that it will print 4 lines at a time, i.e., lines starting with `0`, `1`, `2`, and `3` will be printed out first,
+then lines starting with `4`, `5`, `6`, and `7`, etc.
 
-For stderr, users may want to see the error messages immediately when they are
-produced even if it is redirected. In Python 3.9, [the behavior of stderr is changed](https://bugs.python.org/issue13601).
-The [new doc](https://docs.python.org/3/library/sys.html?highlight=sys%20stdout#sys.stderr) is:
+For stderr, users may want to see the error messages immediately when they are produced even if it is redirected.
+In Python 3.9, [the behavior of stderr is changed](https://bugs.python.org/issue13601). The [new doc](https://docs.python.org/3/library/sys.html?highlight=sys%20stdout#sys.stderr) is:
 
 > When interactive, the stdout stream is line-buffered. Otherwise, it is
 > block-buffered like regular text files. The stderr stream is line-buffered in
 > both cases.
 
-Thus, after Python 3.9, stderr will always be line-buffered, whether the error
-message is displayed on the terminal or redirected to a file.
+Thus, after Python 3.9, stderr will always be line-buffered,
+no matter how the error message is displayed, i.e., on the terminal or redirected to a file.
 
 # Show the message without buffering
 
@@ -92,8 +93,7 @@ To show the printed message immediately, we may run Python in unbuffered mode wi
 nohup python -u test.py
 ```
 
-Another way is to add `flush=True` to `print()` function so that output will be
-flushed to its destination forcibly.
+Another way is to add `flush=True` to `print()` function so that output will be flushed to its destination forcibly.
 
 ```python
 print(f"this is loop {i}", flush=True)
@@ -109,3 +109,5 @@ print(f"this is loop {i}", flush=True)
 + [Python bugs mailing list: Improve documentation of stdout/stderr buffering in Python 3.x](https://bugs.python.org/issue13597#msg149419)
 + [How to flush output of print function?](https://stackoverflow.com/q/230751/6064933)
 + [Disable output buffering](https://stackoverflow.com/q/107705/6064933)
+
+[^1]: Related to [`io.DEFAULT_BUFFER_SIZE`](https://stackoverflow.com/a/41259881/6064933).

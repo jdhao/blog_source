@@ -6,6 +6,10 @@ tags: [Tmux]
 categories: [Linux]
 ---
 
+<p align="center">
+<img src="https://blog-resource-1257868508.file.myqcloud.com/202111211332634.png" width="400">
+</p>
+
 During my work, I use multiple Tmux sessions to manage different projects. When
 I create a new session, I usually give it unique name so that I know that the
 project is about via the session name.
@@ -17,16 +21,12 @@ project is about via the session name.
 Tmux has a builtin subcommand called `choose-session`. Initially, I add a key
 binding for this command in my `.tmux.conf`:
 
-```tmux
+```
 bind-key S choose-session
 ```
 
 It works by showing a list of sessions, and you can switch between these
-sessions by using `Ctrl-N` and `Ctrl-P`.
-
-<p align="center">
-<img src="https://blog-resource-1257868508.file.myqcloud.com/202111211332634.png" width="400">
-</p>
+sessions by using `Ctrl-N` and `Ctrl-P` (check the title image).
 
 One disadvantage with this method is that we can only switch between different
 session one at a time. When I have multiple sessions, switching between them is

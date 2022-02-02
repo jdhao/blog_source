@@ -6,21 +6,27 @@ categories: [Nvim]
 ---
 
 <p align="center">
-<img src="https://blog-resource-1257868508.file.myqcloud.com/Xnip2020-04-04_21-39-49.jpg" width="800">
+<img src="https://blog-resource-1257868508.file.myqcloud.com/Xnip2020-04-04_21-39-49.jpg" width="600">
 </p>
 
 <details>
 <summary><font size="3" color="blue">Change log</font></summary>
 
++ <font color="blue">2022-01-29: Add deprecation notice</font>
 + <font color="blue">2021-01-17: Install nvim via tar ball instead of appimage</font>
 + <font color="blue">2020-12-01: Add detailed guide on installing Neovim on Linux</font>
 </details>
 
-<!--more-->
-
 TL;DR: My complete nvim configuration is [here](https://github.com/jdhao/nvim-config). Follow the guide there on how to
 use it. Most of the config below also applies to Windows and Mac. For how to
 configure Neovim on Windows, you may also be interested in [this post](https://jdhao.github.io/2018/11/15/neovim_configuration_windows/).
+
+**2022-01-29: Note that this post is written more than three years ago.
+Some of the plugins mentioned here may not be maintained or may not be the best fit for Neovim,
+or even not need anymore, e.g., [highlighted yank is builtin in Neovim since May 2020](https://jdhao.github.io/2020/05/22/highlight_yank_region_nvim/#neovim-only).
+I have shared some of the plugin changes in [this post](https://jdhao.github.io/2021/12/31/using_nvim_after_three_years/#what-remains-what-has-changed-and-some-new-plugins).**
+
+<!--more-->
 
 Vim is a popular code editor on Unix/Linux systems, and it is often compared
 with [Emacs](https://www.gnu.org/software/emacs/), another great code editor

@@ -1,5 +1,5 @@
 ---
-title: "Cutomize Your GitHub Profile"
+title: "Customize Your GitHub Profile"
 date: 2022-01-03T13:13:03+08:00
 draft: false
 tags: [GitHub]

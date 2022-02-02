@@ -2,7 +2,7 @@
 title: "How I Manage My Personal Blog"
 date: 2021-11-28T18:37:48+08:00
 draft: false
-tags: []
+tags: [Hugo]
 categories: [Blog]
 ---
 
@@ -35,8 +35,7 @@ Occasionally, I also write about what I am reading, what I thought, etc.
 
 I often save some notes about a topic or an idea in my free time.
 Later, when I have time, I will expand the notes to a full blog post.
-This way, I do not need to worry what to write.
-I always have something to share when I want to.
+This way, I do not need to worry what to write. I always have something to share when I want to.
 
 # Tools I use for writing
 
@@ -45,15 +44,15 @@ I use neovim because it is a highly configurable editor that no other editors ca
 
 I use [snippet plugins](https://jdhao.github.io/2019/01/15/markdown_edit_preview_nvim/#markdown-editing) to make writing posts quicker.
 For previewing, I use [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim), which is the best previewer for Neovim.
+I have shared how I write and preview Markdown efficiently in [this post](https://jdhao.github.io/2019/01/15/markdown_edit_preview_nvim/).
 
 I rarely insert images into my blog post since image links tend to break easily.
 So I try to explain things without using images as much as I can.
 If I need to use images in a post, I store the image in a cloud service and use the generated image links.
 
-# Blog generator
+# Static blog generator
 
-I generate my blog using a static blog generator.
-Back in 2017 when I started this blog, I use [Hexo](https://github.com/hexojs/hexo).
+I generate my blog using a static blog generator. Back in 2017 when I started this blog, I use [Hexo](https://github.com/hexojs/hexo).
 In Oct. 2018, I switched to [Hugo](https://github.com/gohugoio/hugo) for its high performance.
 
 For comment system, I used Disqus for a long time. Recently, I have switched to use [utterances](https://utteranc.es/),
@@ -67,4 +66,5 @@ I have not purchased a personal domain for my blog because I think that is irrel
 It is the content of the blog that matters most.
 People often get a fancy domain for their blog, and they get tired and stop writing anything.
 
-[^1]: My nvim config is stored in [this repo](https://github.com/jdhao/nvim-config).
+
+[^1]: My nvim config is stored in [this repo](https://github.com/jdhao/nvim-config). If you use Hugo, you can set up the [default content editor](https://gohugo.io/getting-started/configuration/#newcontenteditor) when running `hugo new post content/xxx.md`.

@@ -5,6 +5,9 @@ draft: false
 tags: [LSP]
 categories: [Nvim]
 ---
+<p align="center">
+<img src="https://blog-resource-1257868508.file.myqcloud.com/202202020047792.jpg" width="600">
+</p>
 
 In this post, I will share how to set up [sumneko lua](https://github.com/sumneko/lua-language-server) for [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig).
 

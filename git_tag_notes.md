@@ -15,11 +15,21 @@ example, 'v1.0', 'v2.0'.
 
 # Create tags
 
-To create a tag and give some information, use the following command:
+There are two different types of tag: lightweight and annotated tag.
 
+To create lightweight tags, do not use `-a` option:
+
+```bash
+git tag v0.5
 ```
-git tag -a v1.0 -m "milestone point, blah blah"
+
+To create annotated tags, use `-a` option and `-m` (for tag message):
+
+```bash
+git tag -a v0.5  -m "some info about this commit"
 ```
+
+For annotated tags, when we use `git show {some-tag}`, the tag message will also be displayed.
 
 To tag a specific commit, we can provide its commit hash:
 
@@ -58,6 +68,10 @@ we use `git tag -d v1.2`.
 
 To delete a tag in remote, use `git push origin -d {tag-name}`.
 
-# ref
+# References
 
 + https://git-scm.com/book/en/v2/Git-Basics-Tagging
++ https://git-scm.com/book/en/v2/Git-Basics-Tagging
++ annotated vs non-annotated tags: https://stackoverflow.com/a/11514139/6064933
+
+

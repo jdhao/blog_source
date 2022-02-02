@@ -6,7 +6,7 @@ tags: [Tmux]
 categories: [Linux]
 ---
 
-Some useful tips for using Tmux.
+In this post, I collect some useful tips for using Tmux.
 
 <!--more-->
 

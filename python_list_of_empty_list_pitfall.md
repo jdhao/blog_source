@@ -6,15 +6,16 @@ tags: []
 categories: [Python]
 ---
 
+TL;DR: do not use list multiplication to initialize an empty list of list, or
+you will end up wasting hours debugging your program.
+
+<!--more-->
+
 I wrote some Python code for my project and found that the result isn't
 correct. So I spent quite some time debugging the whole working process of this
 program, and found sadly that the culprit is a list of empty list, which is
 wrongly initialized.
 
-TL;DR: do not use list multiplication to initialize an empty list of list, or
-you will end up wasting hours debugging your program.
-
-<!--more-->
 What is the resulting list, if we do the following in Python?
 
 ```python

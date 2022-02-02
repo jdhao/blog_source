@@ -2,7 +2,7 @@
 title: "Writing Your Own Custom Dataset for Classification in PyTorch"
 date: 2017-10-23 17:14:26 +0800
 tags: [PyTorch]
-categories: [Deep-Learning]
+categories: [machine-learning]
 ---
 
 In this post, I'd like to talk about how to create your own dataset, process it

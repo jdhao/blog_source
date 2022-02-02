@@ -5,7 +5,7 @@ tags: [Hugo, Hexo, MathJax, LaTeX, Pandoc, Markdown]
 categories: [Blog]
 ---
 
-这个博客于 2017 年 2 月开始搭建运行，最初使用的是[Hexo](https://hexo.io/zh-cn/) 搭建，配合精美的[NexT](https://github.com/theme-next/hexo-theme-next) 主题，经过[鼓捣](https://jdhao.github.io/tags/Hexo/)，差不多算是做出了让自己满意的博客。不过每次安装 Hexo，要配置的东西太多了，总觉得不是很简洁，另外，随着文章数量的增加，Hexo 生成博客的速度也慢了下来。怀着尝鲜的心态，我把 Hexo 博客迁移到了 [Hugo](https://gohugo.io/)。
+这个博客于 2017 年 2 月开始搭建运行，最初使用的是 [Hexo](https://hexo.io/zh-cn/) 搭建，配合精美的 [NexT](https://github.com/theme-next/hexo-theme-next) 主题，经过[鼓捣](https://jdhao.github.io/tags/Hexo/)，差不多算是做出了让自己满意的博客。不过每次安装 Hexo，要配置的东西太多了，总觉得不是很简洁，另外，随着文章数量的增加，Hexo 生成博客的速度也慢了下来。怀着尝鲜的心态，我把 Hexo 博客迁移到了 [Hugo](https://gohugo.io/)。
 
 <!--more-->
 
@@ -52,7 +52,7 @@ archetypes/  config.toml  content/     data/        layouts/     static/      th
 
 ## 安装主题
 
-建立站点以后，我们需要安装主题，Hugo 提供了一个[主题浏览网站](https://themes.gohugo.io/)，可以浏览各种主题的效果，找了一圈，没有发现自己特别中意的。也可以直接在 GitHub 上搜索 Hugo 的主题，最后经过各种查找比较，选择了[even](https://github.com/olOwOlo/hugo-theme-even) 主题。
+建立站点以后，我们需要安装主题，Hugo 提供了一个[主题浏览网站](https://themes.gohugo.io/)，可以浏览各种主题的效果，找了一圈，没有发现自己特别中意的。也可以直接在 GitHub 上搜索 Hugo 的主题，最后经过各种查找比较，选择了 [even](https://github.com/olOwOlo/hugo-theme-even) 主题。
 
 在博客根目录下，使用以下命令安装 even 主题：
 
@@ -75,9 +75,9 @@ theme = "even"
 hugo new post/test.md
 ```
 
-这个命令会在 `content` 目录下建立 `post` 目录，并在 `post` 下生成 `test.md` 文件，博文书写就在这个文件里使用 Markdown 语法完成。博文的 front matter 里`draft` 选项默认为 `true`，需要改为 `false` 才能发表博文，建议直接更改上面说的`archetypes` 目录下的 `default` 文件，把 `draft: true` 改为 `draft: false`，这样生成的博文就是默认可以发表的。
+这个命令会在 `content` 目录下建立 `post` 目录，并在 `post` 下生成 `test.md` 文件，博文书写就在这个文件里使用 Markdown 语法完成。博文的 front matter 里 `draft` 选项默认为 `true`，需要改为 `false` 才能发表博文，建议直接更改上面说的`archetypes` 目录下的 `default` 文件，把 `draft: true` 改为 `draft: false`，这样生成的博文就是默认可以发表的。
 
-和 Hexo 一样，在 front matter 里面，使用 `tags` 指定文章的 tag，使用`categories` 指定文章的类别，示例如下：
+和 Hexo 一样，在 front matter 里面，使用 `tags` 指定文章的 tag，使用 `categories` 指定文章的类别，示例如下：
 
 ```yaml
 tags: [LaTeX, Hexo, font]
@@ -136,7 +136,7 @@ git push -f upstream master # 第一次 push 必须使用 -f，因为此时远�
 
 这样就部署成功了，一般等待几分钟，访问自己的博客，就能看到更新以后的内容。
 
-每次部署都输入一大堆命令，很繁琐，参考[官方教程](https://gohugo.io/hosting-and-deployment/hosting-on-github/)，做一个`deploy.sh` 脚本，方便每次把博客 push 到 github。我的 `deploy.sh` 脚本内容为：
+每次部署都输入一大堆命令，很繁琐，参考[官方教程](https://gohugo.io/hosting-and-deployment/hosting-on-github/)，做一个 `deploy.sh` 脚本，方便每次把博客 push 到 github。我的 `deploy.sh` 脚本内容为：
 
 <details>
 <summary><font color="red">点击查看脚本内容。</font></summary>

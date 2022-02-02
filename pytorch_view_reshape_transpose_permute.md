@@ -2,7 +2,7 @@
 title: "Difference between view, reshape, transpose and permute in PyTorch"
 date: 2019-07-10 23:21:48+0800
 tags: [PyTorch]
-categories: [Deep-Learning]
+categories: [machine-learning]
 ---
 
 PyTorch provides a lot of methods for the Tensor type. Some of these methods

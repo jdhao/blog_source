@@ -1,10 +1,12 @@
 ---
-title: "Set up Inverse Search for LaTeX with VimteX and Neovim"
+title: "Set up Inverse Search for LaTeX with VimTeX and Neovim"
 date: 2021-02-20T22:31:34+08:00
 draft: false
 tags: [LaTeX]
 categories: [Nvim]
 ---
+
+<font size="5" color="red">2022-01-19: With the release of [VimTeX v2.8](https://github.com/lervag/vimtex/releases/tag/v2.8), all the hack here may not be needed anymore.</font>
 
 <details>
 <summary><font size="2" color="red">Update log</font></summary>
@@ -110,7 +112,7 @@ command is wrong:
 Double click somewhere in the PDF file, your cursor in nvim/nvim-qt should go
 to the corresponding line in the file buffer.
 
-I have also posted this setup on VimteX repo, check [this issue](https://github.com/lervag/vimtex/issues/1964).
+I have also posted this setup on VimTeX repo, check [this issue](https://github.com/lervag/vimtex/issues/1964).
 
 # Conclusion
 

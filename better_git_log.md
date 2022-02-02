@@ -6,6 +6,10 @@ tags: [Git]
 categories: [Note]
 ---
 
+<p align="center">
+<img src="https://blog-resource-1257868508.file.myqcloud.com/20210125233412.png" width="600">
+</p>
+
 Some of the settings to make `git log` better.
 
 <!--more-->
@@ -46,12 +50,7 @@ Use color to differentiate different part of log message:
 git config format.pretty "%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(green)(%cr) %C(cyan)<%an>%Creset"
 ```
 
-After this setup, git-log output will be like the following:
-
-<p align="center">
-<img src="https://blog-resource-1257868508.file.myqcloud.com/20210125233412.png" width="600">
-</p>
-
+After this setup, git-log output will be like what is shown in the title image.
 
 # Refs
 

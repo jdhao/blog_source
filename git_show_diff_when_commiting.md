@@ -6,6 +6,10 @@ tags: [Nvim, Vim, diff]
 categories: [Git]
 ---
 
+<p align="center">
+<img src="https://blog-resource-1257868508.file.myqcloud.com/20210724122638.jpg" width="800">
+</p>
+
 I saw on YouTube [a video](https://www.youtube.com/watch?v=xv9cp7NyK5Y) made by
 [TJ DeVries](https://github.com/tjdevries) on how to contribute to the [neovim
 project](https://neovim.io/). There is a scene where he commit via `git commit`,
@@ -49,12 +53,7 @@ check.
 
 [committia.vim](https://github.com/rhysd/committia.vim) is a plugin that
 re-arrange the commit window for easier writing of commit messages. When you
-run `git commit`, it will automatically show a three-split window like the
-following:
-
-<p align="center">
-<img src="https://blog-resource-1257868508.file.myqcloud.com/20210724122638.jpg" width="800">
-</p>
+run `git commit`, it will automatically show a three-split window like what is shown in the title image.
 
 # References
 

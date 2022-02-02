@@ -1,13 +1,12 @@
 ---
-title: "A Guide on Creating Your Own Text Objects in Neovim/Vim from Scratch"
+title: "A Beginner's Guide on Creating Your Own Text Objects from Scratch in Neovim/Vim"
 date: 2020-11-15T15:00:06+08:00
 draft: false
-tags: [text-object]
+tags: [text-object, Vim]
 categories: [Nvim]
 ---
 
-Shortly after I started using [Neovim](https://github.com/neovim/neovim), I
-learned about the concept of [text objects](https://neovim.io/doc/user/motion.html#text-objects).
+Shortly after I started using [Neovim](https://github.com/neovim/neovim), I learned about the concept of [text objects](https://neovim.io/doc/user/motion.html#text-objects).
 For example, when the cursor is inside a pair of `[]`, we can use `ci]` to
 change text inside them. This is definitely one of the greatest moments on my
 road of learning Vim. However, I haven't really thought about how does text

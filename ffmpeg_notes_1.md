@@ -10,7 +10,7 @@ categories: [tools]
 
 # Install ffmpeg
 
-If we have root rights, we can install ffmpeg via package manager. On Centos 7,
+If we have root rights, we can install FFmpeg via package manager. On Centos 7,
 run the following command:
 
 ```bash
@@ -20,13 +20,13 @@ yum install ffmpeg ffmpeg-devel
 ```
 
 If you want to download binary releases, [this site](https://ffbinaries.com/downloads)
-can help you. It has binary release for ffmpeg, ffprobe for different systems.
+can help you. It has binary release for FFmpeg, ffprobe for different systems.
 It seems that the provided ffmpeg is statically linked, so all you need is that
 one file to get to work.
 
-[This site](https://johnvansickle.com/ffmpeg/) alao provides binary release for ffmpeg.
+[This site](https://johnvansickle.com/ffmpeg/) alao provides binary release for FFmpeg.
 
-Run command `ffmpeg -version` to verify that ffmpeg has been correctly
+Run command `ffmpeg -version` to verify that FFmpeg has been correctly
 installed. You will see the following output:
 
 ```

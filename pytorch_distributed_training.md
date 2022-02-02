@@ -2,7 +2,7 @@
 title: "Distributed Training in PyTorch with Horovod"
 date: 2019-11-01 22:26:53+0800
 tags: [PyTorch]
-categories: [Deep-Learning]
+categories: [machine-learning]
 ---
 
 [Horovod](https://github.com/horovod/horovod) is the distributed training

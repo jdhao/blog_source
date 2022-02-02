@@ -40,6 +40,7 @@ categories: [Note]
 + PoC: Proof of Concept, 原型设计（通常用来证明某种想法的可行性）
 + RFC: Request For Comment, 征求意见。
 + RTFM: Read The Fucking/Fine Manual, 请读程序文档
++ SLA: Sevice Level Agreement，常用来形容互联网服务的稳定性，例如 SLA 0.9999
 + STFW: Search The Fucking Web, 自己去网上搜索
 + TBH: To Be Honest, 实话跟你说吧。
 + TBQH: To Be Quite Honest, 实话跟你说吧（语气诚恳）。

@@ -2,7 +2,7 @@
 title: "Labelme JSON 标注格式转 voc XML 格式"
 date: 2019-12-21 23:37:49+0800
 tags: []
-categories: [Deep-Learning]
+categories: [machine-learning]
 ---
 
 labelme 是一款常用的计算机视觉任务标注工具，可以用来标注分类，检测，分割等任务的数据。对于检测任务，labelme 生层的标注文件是 json 格式，每个图像对应一个相应的 json 文件。但是很多任务都使用 PASCAL VOC 的 xml 格式标注，例如[maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark) 任务中的 [voc 数据集](https://github.com/facebookresearch/maskrcnn-benchmark/blob/master/maskrcnn_benchmark/data/datasets/voc.py)。

@@ -11,6 +11,8 @@ categories: [Nvim]
 
 我的完整 Neovim 配置可以点[这里](https://github.com/jdhao/nvim-config)查看。
 
+**2022-01-29: 本文写于三年以前，其中提到的一些插件已经不再维护，或者对于 Neovim 不是最佳选择，甚至还有一些插件被 Nvim 自带的功能所替代，例如，[从 2020.05 开始，highlighted yank 开始内置](https://jdhao.github.io/2020/05/22/highlight_yank_region_nvim/#neovim-only)。我在 [ 这篇博文](https://jdhao.github.io/2021/12/31/using_nvim_after_three_years/#what-remains-what-has-changed-and-some-new-plugins) 分享了一些插件迁移的事情。**
+
 Vim 是一款主要流行于 \*nix 系统上的强大的编辑器，另外一款可以与之媲美的编辑器是 Emacs，这两款编辑器广泛流行于程序员群体，[关于谁是编辑器之王的争论经久不息](https://en.wikipedia.org/wiki/Editor_war)。Vim 的功能虽然强大，但是作为一款「古老」的编辑器[^1]，也不是没有缺点：随着 Vim 代码量的增加，维护变得日益困难，不利于快速增加新功能；另外，它的主要开发者目前只有一个人，[Bram Moolenaar](https://en.wikipedia.org/wiki/Bram_Moolenaar)，也不符合当今开源社区多人协作的习惯。为了克服 Vim 的这些缺点，保留 Vim 的优点（最大程度兼容 Vim），让 Vim 的开发能有更快的迭代速度，[Neovim](https://neovim.io/) 项目诞生了。本文介绍如何安装 Neovim 并配置 Python 开发环境(在以下叙述中，Neovim 和 Nvim 含义相同，不再加以区分)[^3]。
 
 <!--more-->

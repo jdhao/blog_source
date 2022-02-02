@@ -2,7 +2,7 @@
 title: "Understanding Computational Graphs in PyTorch"
 date: 2017-11-12 13:22:46 +0800
 tags: [PyTorch, optimization]
-categories: [Deep-Learning]
+categories: [machine-learning]
 ---
 
 PyTorch is a relatively new deep learning library which support dynamic
