@@ -66,5 +66,36 @@ I have not purchased a personal domain for my blog because I think that is irrel
 It is the content of the blog that matters most.
 People often get a fancy domain for their blog, and they get tired and stop writing anything.
 
+# Post backup
 
-[^1]: My nvim config is stored in [this repo](https://github.com/jdhao/nvim-config). If you use Hugo, you can set up the [default content editor](https://gohugo.io/getting-started/configuration/#newcontenteditor) when running `hugo new post content/xxx.md`.
+In case that the post sources get lost, I have been backing up my posts periodically.
+Since all the blog posts are written in Markdown, I created a private GitHub repo to store the Markdown source files.
+I have created a backup script `post_backup.sh` under the Hugo blog site root to ease the operation:
+
+```bash
+#!/bin/bash
+msg="backup `date`"
+if [ $# -eq 1 ]
+  then msg="$1"
+fi
+
+echo -e "\033[0;32mBackup posts to GitHub...\033[0m"
+
+cd content/post
+# here we start to add and commit the blog to github
+git add .
+git commit -m "$msg"
+
+# push source to github
+git push
+
+echo -e "\033[0;32mBackup done...\033[0m"
+
+# come back to blog root
+cd ../..
+```
+
+Then I can run `./post_backup.sh` to back up all my post sources.
+
+[^1]: My nvim config is stored in [this repo](https://github.com/jdhao/nvim-config).
+If you use Hugo, you can set up the [default content editor](https://gohugo.io/getting-started/configuration/#newcontenteditor) when running `hugo new post content/xxx.md`.
