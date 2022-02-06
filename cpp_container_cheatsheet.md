@@ -17,11 +17,11 @@ cheatsheet for common STL containers/adapters just in case I need them.
 + Define a 2D vector of size 3x4: `vector<vector<int> > mat(3, vector<int>(4, 0));`
 + Add an element: `arr.push_back(2);`
 + Insert an element: `arr.insert(arr.begin(), -1);`
-+ Insert another vec: `vector<int> another = {1, 2, 3}; arr.insert(arr.begin(), another.begin(), another.end());`
++ Insert another vector: `vector<int> another = {1, 2, 3}; arr.insert(arr.begin(), another.begin(), another.end());`
 + Check its size: `cout << arr.size();`
 + Check if string is empty: `cout << arr.empty();`
-+ Slice a vector: `vector<int> arr(10, 1); vector<int> new_vec(arr.begin(), arr.begin()+3);`
-  (the end is not inclued, so the resulting vector has 3 elments)
++ Slice a vector, i.e., get a sub-vector from an existing vector: `vector<int> arr(10, 1); vector<int> new_vec(arr.begin(), arr.begin()+3);`
+  (this is end-exclusive, so the resulting vector has 3 elements)
 
 Ref:
 
@@ -30,8 +30,8 @@ Ref:
 # string
 
 + Define a string: `string myStr = "hello";`
-+ Get str size: `myStr.size()`
-+ Get sub-string: `myStr.substr(0, 2)` (Get the substring starting at index 0 and with length 2)
++ Get string size: `myStr.size()`
++ Get sub-string: `myStr.substr(0, 2)` (Get the substring starting at index 0 and with length 2, end-exclusive style)
 + Get sub-string: `myStr.substr(1)` (Get substring starting at index 1 till the end)
 + Check if string is empty: `myStr.empty();`
 + Generate a string with `n` same character `ch`: string(n, ch);
@@ -55,7 +55,7 @@ Typically implemented using balanced binary search tree.
 There is also unordered_set, which is different from set:
 
 + The underlying implementation for set is binary search tree (BST), while the underlying implementation for unordered_set is hash table.
-+ The element in set is sorted so that their order is guaranteed, while for unorder_set, there is no guarantee for the element order.
++ The element in set is sorted so that their order is guaranteed, while for unordered_set, there is no guarantee for the element order.
 + set requires less memory than unordered_set (unordered_set has to store a hash table).
 + Search time is at most `O(log(n))` for set, while for unordered_set, the search time is on average `O(1)`, but may be `O(n)` (highly unlikely)
 
@@ -105,8 +105,8 @@ structure. Element that is added last will be removed first.
 
 + Get stack size: `stack<int> s; cout << s.size() << endl;`
 + Check if stack is empty: `s.empty()` or `s.size()`
-+ Get top elment from stack: `cout << s.top() << endl;` (note that getting top element when **stack is empty** leads to errors!)
-+ Add elment to stack: `s.push(1);`
++ Get top element from stack: `cout << s.top() << endl;` (note that getting top element when **stack is empty** leads to errors!)
++ Add element to stack: `s.push(1);`
 + Pop up element from stack: `s.pop();`
 
 # tuple

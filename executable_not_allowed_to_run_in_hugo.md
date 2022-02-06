@@ -1,5 +1,5 @@
 ---
-title: "External Executable Not Allowed to Run by Default in Hugo V0.91"
+title: "External Executable Not Allowed to Run after Hugo v0.91?"
 date: 2022-02-02T13:20:20+08:00
 draft: false
 tags: [Hugo]

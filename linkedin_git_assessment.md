@@ -6,7 +6,7 @@ tags: []
 categories: [Git]
 ---
 <p align="center">
-<img src="https://blog-resource-1257868508.file.myqcloud.com/202202012337737.jpg" width="800">
+<img src="https://blog-resource-1257868508.file.myqcloud.com/202202012337737.jpg" width="600">
 </p>
 
 I took the [LinkedIn Git assessment](https://github.com/Ebazhanov/linkedin-skill-assessments-quizzes/tree/master/git) and got a certificate[^1], but found that I am not super clear on some of the questions.

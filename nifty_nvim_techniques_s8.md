@@ -5,8 +5,22 @@ tags: [diff]
 categories: [Nvim]
 ---
 
-This post continues my [previous post](https://jdhao.github.io/2020/09/22/nifty_nvim_techniques_s7/)
-on nifty Nvim/Vim techniques.
+This is the 8th post of my post series on nifty Nvim/Vim techniques that will make my editing experience easier.
+
+<details>
+<summary><font size="3" color="red">Click here to check other posts in this series.</font></summary>
+
++ Series 11: https://jdhao.github.io/2021/11/22/nifty_nvim_techniques_s11/
++ Series 10: https://jdhao.github.io/2021/06/17/nifty_nvim_techniques_s10/
++ Series 9: https://jdhao.github.io/2021/01/07/nifty_nvim_techniques_s9/
++ Series 7: https://jdhao.github.io/2020/09/22/nifty_nvim_techniques_s7/
++ Series 6: https://jdhao.github.io/2019/12/21/nifty_nvim_techniques_s6/
++ Series 5: https://jdhao.github.io/2019/11/11/nifty_nvim_techniques_s5/
++ Series 4: https://jdhao.github.io/2019/09/17/nifty_nvim_techniques_s4/
++ Series 3: https://jdhao.github.io/2019/05/14/nifty_nvim_techniques_s3/
++ Series 2: https://jdhao.github.io/2019/04/17/nifty_nvim_techniques_s2/
++ Series 1: https://jdhao.github.io/2019/03/28/nifty_nvim_techniques_s1/
+</details>
 
 <!--more-->
 
