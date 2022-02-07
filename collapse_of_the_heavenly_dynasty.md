@@ -1,5 +1,5 @@
 ---
-title: "《天朝的崩溃》"
+title: "茅海建 《天朝的崩溃》"
 date: 2021-10-31T18:02:25+08:00
 draft: false
 tags: [non-fiction]
