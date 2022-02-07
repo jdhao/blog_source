@@ -75,6 +75,12 @@ To flip a 01 string (i.e., turn 0 to 1 and turn 1 to 0), we can use
 :s/\v(0|1)/\=submatch(0)==0?1:0/g
 ```
 
+Or we can also use this (source [here](https://www.reddit.com/r/neovim/comments/slppc1/comment/hvv3vwo/)):
+
+```vim
+:s/\v(0|1)\=1-submatch(0)/g
+```
+
 Ref:
 
 + https://stackoverflow.com/a/69748382/6064933
