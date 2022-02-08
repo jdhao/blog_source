@@ -9,6 +9,7 @@ categories: [Nvim]
 <details>
 <summary><font size="3" color="red">Update log</font></summary>
 
++ <font color="blue">2022-02-08: change fastgit URL</font>
 + <font color="blue">2022-02-05: add new autocmd for auto-running command `PackerCompile`.</font>
 </details>
 
@@ -47,7 +48,7 @@ local packer_install_dir = vim.g.package_home .. "/opt/packer.nvim"
 
 local plug_url_format = ""
 if vim.g.is_linux then
-  plug_url_format = "https://hub.fastgit.org/%s"
+  plug_url_format = "https://hub.fastgit.xyz/%s"
 else
   plug_url_format = "https://github.com/%s"
 end
@@ -169,7 +170,7 @@ require('packer').startup(
   config = {
     max_jobs = 16,
     git = {
-      default_url_format = 'https://hub.fastgit.org/%s'
+      default_url_format = 'https://hub.fastgit.xyz/%s'
     }
   }
 })

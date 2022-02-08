@@ -69,7 +69,7 @@ github.com to fastgit is not efficient enough. Fortunately, we can utilize the
 git url rewrite feature to achieve this globally. Run the following command:
 
 ```bash
-git config --global url."https://hub.fastgit.org".insteadOf https://github.com
+git config --global url."https://hub.fastgit.xyz".insteadOf https://github.com
 ```
 
 After that, when you clone a github repo, the actually url used will be the

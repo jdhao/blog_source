@@ -6,6 +6,12 @@ tags: [GitHub]
 categories: [Note]
 ---
 
+<details>
+<summary><font size="2" color="red">更新记录</font></summary>
+
++ 2022-02-08： [fasgit hub 被 GFW 封了](https://t.me/fastgitchannel/81)，换一个地址。
+</details>
+
 GitHub 虽然没被封，但是阻断严重，下载 GitHub 资源速度奇慢无比，总结一些验证可行的方法。
 
 <!--more-->
@@ -21,10 +27,10 @@ wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar
 新命令：
 
 ```
-wget "https://hub.fastgit.org/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz"
+wget "https://hub.fastgit.xyz/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz"
 ```
 
-把 `github.com` 替换为 `hub.fastgit.org` 即可，也支持 git clone 加速。
+把 `github.com` 替换为 `hub.fastgit.xyz` 即可，也支持 git clone 加速。
 
 # 下载 githubusercontent.com 的内容
 

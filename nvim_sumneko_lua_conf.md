@@ -22,7 +22,7 @@ First, we need to install its dependency packages.
 On Linux, install ninja from its binary release:
 
 ```bash
-wget https://hub.fastgit.org/ninja-build/ninja/releases/download/v1.10.2/ninja-linux.zip
+wget https://hub.fastgit.xyz/ninja-build/ninja/releases/download/v1.10.2/ninja-linux.zip
 
 mkdir -p $HOME/local/bin
 unzip ninja-linux.zip -d $HOME/local/bin
@@ -45,7 +45,7 @@ Build lua-language-server:
 
 ```bash
 mkdir -p $HOME/tools/ && cd $HOME/tools
-git clone --depth=1 https://hub.fastgit.org/sumneko/lua-language-server
+git clone --depth=1 https://hub.fastgit.xyz/sumneko/lua-language-server
 
 cd lua-language-server
 # if the cloning speed is too slow, edit .gitmodules and replace github.com

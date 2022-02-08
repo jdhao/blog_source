@@ -6,36 +6,38 @@ tags: []
 categories: [Emacs]
 ---
 
-I am using [straight.el](https://github.com/raxod502/straight.el) for managing
-my packages. However, due to GitHub access issues, the [bootstrap snippet](https://github.com/raxod502/straight.el#getting-started) can not be downloaded
-successfully and run. After staring Emacs, it hangs forever with high CPU
-usage.
+<details>
+<summary><font size="2" color="red">update log</font></summary>
+
++ <font color="blue">2022-02-08: update fastgit URL</font>
+</details>
+
+I am using [straight.el](https://github.com/raxod502/straight.el) to manage my Emacs packages.
+However, due to GitHub access issues, the [bootstrap snippet](https://github.com/raxod502/straight.el#getting-started) can not be downloaded successfully and run.
+After staring Emacs, it hangs forever with high CPU usage.
 
 <!--more-->
 
-Here is what is working for me. After following these steps, I can install
-packages without issue.
-
-Here is what works for me:
+Here is what is working for me. After following these steps, I can install packages without issue.
 
 1. Go to  `~/.emacs.d`, the directory varies based on your system[^1].
+
 2. Clone the straight.el repo:
 
-```bash
-git clone https://github.com/raxod502/straight.el.git  straight/repos/straight.el
-```
+    ```bash
+    git clone https://github.com/raxod502/straight.el.git  straight/repos/straight.el
+    ```
 
 3. Change the git default url using the following command as per [guide here](https://doc.fastgit.org/en-gb/guide.html).
 
-```bash
-git config --global url."https://hub.fastgit.org/".insteadOf "https://github.com/"
-git config protocol.https.allow always
-```
+    ```bash
+    git config --global url."https://hub.fastgit.xyz/".insteadOf "https://github.com/"
+    git config protocol.https.allow always
+    ```
 
-4. Remove the straight.el bootstrap snippet from  `init.el`.
+4. Remove the straight.el bootstrap snippet from `init.el`.
 
-Restart Emacs and just wait. All my packages are installed and build
-successfully.
+Restart Emacs and just wait. All my packages are installed and built successfully.
 
 # References
 

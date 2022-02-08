@@ -6,8 +6,13 @@ tags: [C++, Clang, LSP]
 categories: [Nvim]
 ---
 
-In this post, I would like to share how to set up Neovim for writing simple C++
-programs.
+<details>
+<summary><font size="2" color="red">update log</font></summary>
+
++ <font color="blue">2022-02-08: update fastgit URL</font>
+</details>
+
+In this post, I would like to share how to set up Neovim for writing simple C++ programs.
 
 <!--more-->
 
@@ -69,7 +74,7 @@ Ccls requires newer version of cmake. The cmake on my system is tool old.
 First, we need to download cmake binary release:
 
 ```bash
-wget https://hub.fastgit.org/Kitware/CMake/releases/download/v3.20.1/cmake-3.20.1-linux-x86_64.sh
+wget https://hub.fastgit.xyz/Kitware/CMake/releases/download/v3.20.1/cmake-3.20.1-linux-x86_64.sh
 mkdir $HOME/tools/cmake
 bash cmake-3.18.4-Linux-x86_64.sh --prefix=$HOME/tools/cmake --exclude-subdir --skip-license
 ```
@@ -94,7 +99,7 @@ it is available for your system.
 Follow the guide [here](https://clang.llvm.org/get_started.html) on building Clang and LLVM on your platform.
 
 ```bash
-git clone --depth=1 https://hub.fastgit.org/llvm/llvm-project.git
+git clone --depth=1 https://hub.fastgit.xyz/llvm/llvm-project.git
 mkdir -p llvm-project/build
 cd llvm-project/build
 cmake -G "Unix Makefiles" -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra" -DCMAKE_INSTALL_PREFIX=~/tools/llvm -DCMAKE_BUILD_TYPE=Release ../llvm
