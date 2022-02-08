@@ -5,7 +5,13 @@ tags: [Markdown]
 categories: [Note]
 ---
 
-Some of the tricks when writing Markdown files.
+<details>
+<summary><font size="2" color="red">update log</font></summary>
+
++ <font color="blue">2022-02-08: Add sections on using CSS with Markdown.</font>
+</details>
+
+In this post, I share some of the tricks that will Make the Markdown file better and more beautiful.
 
 <!--more-->
 
@@ -115,6 +121,144 @@ rendering problems.
 
 To fix this problem we can use more backticks as the code block delimiter.
 
+# Style text with CSS
+
+To create stylish component in Markdown, we may need a little bit CSS.
+Below is a `div` element styled with CSS.
+
+<div style="color: #ff0000; background-color: #ffbaba; padding: 10px; border: 3px dashed; border-radius: 10px;">
+    this is some demo text
+</div>
+
+We can use inline style or internal style to reproduce this effect.
+
+## Inline style
+
+Using style attribute inside a HTML tag. The code is:
+
+```html
+<div style="color: #ff0000; background-color: #ffbaba; padding: 10px; border: 3px dashed; border-radius: 10px;">
+    this is some demo text
+</div>
+```
+
+## Internal style
+
+We can also inline CSS in Markdown using HTML [`style` tag](https://www.w3schools.com/tags/tag_style.asp).
+The code is:
+
+```
+<style>
+.demo {
+    color: #ff0000;
+    background-color: #FFBABA;
+    padding: 10px;
+    border: 3px dashed;
+    border-radius: 10px;
+}
+</style>
+
+<div class="demo">
+    this is some demo text
+</div>
+```
+
+It will create exactly the same styled text.
+
+# Creat warning/info/success/error boxes
+
+Using the techniques discussed above. We can create beautiful text boxes with different styles.
+
+Using inline style:
+
+```
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #3c763d; background-color: #dff0d8; border-color: #d6e9c6;">
+I am a success message
+</div>
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #a94442; background-color: #f2dede; border-color: #ebccd1;">
+I am an error message
+</div>
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<strong>&#9432; Info:<br/></strong> I am a info message
+</div>
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">
+<strong>&#9888; Warning:<br/></strong> I am a warning message
+</div>
+```
+The produced text boxes are like this:
+
+<p align="center">
+<img src="https://blog-resource-1257868508.file.myqcloud.com/202202082242801.jpg" width="600">
+</p>
+
+
+Using internal style (ideas are from [here](https://csshint.com/css-alert-box/)):
+
+```html
+<style type="text/css">
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
+
+.info-msg,
+.success-msg,
+.warning-msg,
+.error-msg {
+  margin: 5px 0;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px 5px 5px 5px;
+  border: 2px solid transparent;
+  border-color: transparent;
+}
+.info-msg {
+  color: #059;
+  background-color: #BEF;
+}
+.success-msg {
+  color: #270;
+  background-color: #DFF2BF;
+}
+.warning-msg {
+  color: #9F6000;
+  background-color: #FEEFB3;
+}
+.error-msg {
+  color: #D8000C;
+  background-color: #FFBABA;
+}
+
+</style>
+
+<div class="info-msg">
+  <i class="fa fa-info-circle"></i>
+  This is an info message.
+</div>
+
+<div class="success-msg">
+  <i class="fa fa-check"></i>
+  This is a success message.
+</div>
+
+<div class="warning-msg">
+  <i class="fa fa-warning"></i>
+  This is a warning message.
+</div>
+
+<div class="error-msg">
+  <i class="fa fa-times-circle"></i>
+  This is a error message.
+</div>
+```
+
+The produce text boxes are like:
+
+<p align="center">
+<img src="https://blog-resource-1257868508.file.myqcloud.com/202202082245523.jpg" width="600">
+</p>
+
+
 # References #
 
 + [Apply color in Markdown](https://stackoverflow.com/q/35465557/6064933).
@@ -124,3 +268,7 @@ To fix this problem we can use more backticks as the code block delimiter.
 + Backticks
     + [Escape backtick in inline code block](https://meta.stackexchange.com/q/82718/359653).
     + [Fenced code block inside fenced code block](https://stackoverflow.com/a/49268657/6064933).
++ CSS:
+    + https://www.w3schools.com/html/html_css.asp
+    + markdown css: https://stackoverflow.com/a/66407948/6064933
+    + https://www.w3schools.io/file/markdown-css/
