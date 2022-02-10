@@ -71,3 +71,4 @@ mac 上鼠标滚动方向和 Windows 不同，用起来有点难受，我们可�
 # 参考
 
 + awesome mac: https://github.com/jaywcjlove/awesome-mac
++ https://blog.skk.moe/post/mac-software/
