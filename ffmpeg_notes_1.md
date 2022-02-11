@@ -10,8 +10,7 @@ categories: [tools]
 
 # Install ffmpeg
 
-If we have root rights, we can install FFmpeg via package manager. On CentOS 7,
-run the following command:
+If we have root rights, we can install FFmpeg via package manager. On CentOS 7, run the following command:
 
 ```bash
 yum install epel-release
@@ -19,15 +18,13 @@ yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-
 yum install ffmpeg ffmpeg-devel
 ```
 
-If you want to download binary releases, [this site](https://ffbinaries.com/downloads)
-can help you. It has binary release for FFmpeg, ffprobe for different systems.
-It seems that the provided ffmpeg is statically linked, so all you need is that
-one file to get to work.
+If you want to download binary releases, [this site](https://ffbinaries.com/downloads) can help you.
+It has binary release for FFmpeg, ffprobe for different systems.
+It seems that the provided ffmpeg is statically linked, so all you need is that one file to get to work.
 
 [This site](https://johnvansickle.com/ffmpeg/) also provides binary release for FFmpeg.
 
-Run command `ffmpeg -version` to verify that FFmpeg has been correctly
-installed. You will see the following output:
+Run command `ffmpeg -version` to verify that FFmpeg has been correctly installed. You will see the following output:
 
 ```
 ffmpeg version 3.4.8 Copyright (c) 2000-2020 the FFmpeg developers
@@ -63,9 +60,8 @@ Ref:
 
 # Suppress excessive logging
 
-Every time I run ffmpeg command, its version, compilation configuration and
-library info is printed on the command line. This can be disabled using
-`-hide_banner` option:
+Every time I run ffmpeg command, its version, compilation configuration and library info is printed on the command line.
+This can be disabled using `-hide_banner` option:
 
 ```
 ffmpeg -hide_banner ...
@@ -78,8 +74,8 @@ ffmpeg -loglevel warning ...
 ffmpeg -loglevel info
 ```
 
-The log level `quite` will silence any logging. In case you use `-loglevel`, it
-is useful to specify `-stats` to print some running stats for ffmpeg.
+The log level `quiet` will silence any logging. In case you use `-loglevel`,
+it is useful to specify `-stats` to print some running stats for ffmpeg.
 
 Ref:
 
@@ -97,6 +93,7 @@ ffmpeg -i input.mp4 -vf "fps=1/5" output_%3d.jpg
 or
 
 ```
+# we use 0.2, since 0.2 = 1/5
 ffmpeg -i input.mp4 -r 0.2 output_%3d.jpg
 ```
 
@@ -109,8 +106,7 @@ Ref:
 
 # Extract all frames from a video
 
-If you do not provide the `-r` option, ffmpeg will extract all frame from the
-video.
+If you do not provide the `-r` option, ffmpeg will extract all frame from the video.
 
 ```bash
 ffmpeg -i test.mp4 output/img_%4d.jpg
@@ -124,9 +120,8 @@ Run the following command to extract audio from a video file:
 ffmpeg -i input.mp4 -vn -acodec copy output.aac
 ```
 
-If we use this command, we need to know the audio format (i.e., acc, or other
-formats). Use `ffprobe` to get the audio format. The output contains something
-like the following:
+If we use this command, we need to know the audio format (i.e., acc, or other formats).
+Use `ffprobe` to get the audio format. The output contains something like the following:
 
 ```
 Stream #0:1(und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 128 kb/s (default)
