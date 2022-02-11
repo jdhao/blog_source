@@ -97,26 +97,43 @@ When I run the built image, I get the following warning:
 
 The `locale` command inside container gives the following message:
 
-```
-locale: Cannot set LC_CTYPE to default locale: No such file or directory
-locale: Cannot set LC_MESSAGES to default locale: No such file or directory
-locale: Cannot set LC_ALL to default locale: No such file or directory
-LANG=
-LANGUAGE=
-LC_CTYPE="en_US.UTF-8"
-LC_NUMERIC="en_US.UTF-8"
-LC_TIME="en_US.UTF-8"
-LC_COLLATE="en_US.UTF-8"
-LC_MONETARY="en_US.UTF-8"
-LC_MESSAGES="en_US.UTF-8"
-LC_PAPER="en_US.UTF-8"
-LC_NAME="en_US.UTF-8"
-LC_ADDRESS="en_US.UTF-8"
-LC_TELEPHONE="en_US.UTF-8"
-LC_MEASUREMENT="en_US.UTF-8"
-LC_IDENTIFICATION="en_US.UTF-8"
-LC_ALL=en_US.UTF-8
-```
+<style type="text/css">
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
+
+.info-msg {
+    color: #059;
+    background-color: #BEF;
+    margin: 5px 0;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px 5px 5px 5px;
+    border: 2px solid transparent;
+    border-color: transparent;
+}
+</style>
+
+<div class="info-msg">
+    <i class="fa fa-info-circle"></i> Info</br>
+
+    locale: Cannot set LC_CTYPE to default locale: No such file or directory
+    locale: Cannot set LC_MESSAGES to default locale: No such file or directory
+    locale: Cannot set LC_ALL to default locale: No such file or directory
+    LANG=
+    LANGUAGE=
+    LC_CTYPE="en_US.UTF-8"
+    LC_NUMERIC="en_US.UTF-8"
+    LC_TIME="en_US.UTF-8"
+    LC_COLLATE="en_US.UTF-8"
+    LC_MONETARY="en_US.UTF-8"
+    LC_MESSAGES="en_US.UTF-8"
+    LC_PAPER="en_US.UTF-8"
+    LC_NAME="en_US.UTF-8"
+    LC_ADDRESS="en_US.UTF-8"
+    LC_TELEPHONE="en_US.UTF-8"
+    LC_MEASUREMENT="en_US.UTF-8"
+    LC_IDENTIFICATION="en_US.UTF-8"
+    LC_ALL=en_US.UTF-8
+</div>
 
 It seems that the locale file `en_US.UTF-8` does not exist inside container.
 After some searching, I found the correct way to set up locales inside the
@@ -173,9 +190,9 @@ Other settings are similar to that of Ubuntu.
 
 # References
 
-- [Change locale in CentOS 7](https://www.osetc.com/en/centos-7-rhel-7-change-the-system-locale.html)
-- [https://help.ubuntu.com/community/Locale](https://help.ubuntu.com/community/Locale)
-- [The meaning of LANGUAGE variable](https://superuser.com/q/412288/736190)
++ [Change locale in CentOS 7](https://www.osetc.com/en/centos-7-rhel-7-change-the-system-locale.html)
++ [https://help.ubuntu.com/community/Locale](https://help.ubuntu.com/community/Locale)
++ [The meaning of LANGUAGE variable](https://superuser.com/q/412288/736190)
 + [Set up locale inside Ubuntu docker](https://stackoverflow.com/a/28406007/6064933).
 + [Set up locale in Debian and Ubuntu](https://unix.stackexchange.com/a/247019/221410).
 + [CentOS: set up locale](https://unix.stackexchange.com/q/140299/221410).

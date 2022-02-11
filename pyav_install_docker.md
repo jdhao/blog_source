@@ -55,27 +55,44 @@ Note that installation instructions given in pyav doc [here](https://pyav.org/do
 It seems that the installed version of libavformat and other libs are too old.
 If we use that, we will see error message like this (also reported [here](https://github.com/aiortc/aiortc/issues/326) and [here](https://stackoverflow.com/q/66235459/6064933)):
 
-```
-building 'av.codec.codec' extension
-  creating build/temp.linux-x86_64-3.6/src/av/codec
-  x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -I/usr/include/python3.6m -Iinclude -I/usr/include/x86_64-linux-gnu -Ibuild/temp.linux-x86_64-3.6/include -I/usr/include/python3.6m -Ibuild/temp.linux-x86_64-3.6/include -c src/av/codec/codec.c -o build/temp.linux-x86_64-3.6/src/av/codec/codec.o
-  src/av/codec/codec.c: In function ‘__pyx_pymod_exec_codec’:
-  src/av/codec/codec.c:6061:36: error: ‘AV_CODEC_CAP_HARDWARE’ undeclared (first use in this function); did you mean ‘AV_CODEC_CAP_DR1’?
-     __pyx_t_7 = __Pyx_PyInt_From_int(AV_CODEC_CAP_HARDWARE); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 124, __pyx_L1_error)
-                                      ^~~~~~~~~~~~~~~~~~~~~
-                                      AV_CODEC_CAP_DR1
-  src/av/codec/codec.c:6061:36: note: each undeclared identifier is reported only once for each function it appears in
-  src/av/codec/codec.c:6082:36: error: ‘AV_CODEC_CAP_HYBRID’ undeclared (first use in this function); did you mean ‘AV_CODEC_CAP_DR1’?
-     __pyx_t_7 = __Pyx_PyInt_From_int(AV_CODEC_CAP_HYBRID); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 128, __pyx_L1_error)
-                                      ^~~~~~~~~~~~~~~~~~~
-                                      AV_CODEC_CAP_DR1
-  error: command 'x86_64-linux-gnu-gcc' failed with exit status 1
+<style type="text/css">
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
 
-  ----------------------------------------
-  Failed building wheel for av
-  Running setup.py clean for av
-Failed to build av
-```
+.error-msg {
+    color: #D8000C;
+    background-color: #FFBABA;
+    margin: 5px 0;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 5px 5px 5px 5px;
+    border: 2px solid transparent;
+    border-color: transparent;
+}
+</style>
+
+<div class="error-msg">
+    <i class="fa fa-times-circle"> Error</i></br>
+
+    building 'av.codec.codec' extension
+    creating build/temp.linux-x86_64-3.6/src/av/codec
+    x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -I/usr/include/python3.6m -Iinclude -I/usr/include/x86_64-linux-gnu -Ibuild/temp.linux-x86_64-3.6/include -I/usr/include/python3.6m -Ibuild/temp.linux-x86_64-3.6/include -c src/av/codec/codec.c -o build/temp.linux-x86_64-3.6/src/av/codec/codec.o
+    src/av/codec/codec.c: In function ‘__pyx_pymod_exec_codec’:
+    src/av/codec/codec.c:6061:36: error: ‘AV_CODEC_CAP_HARDWARE’ undeclared (first use in this function); did you mean ‘AV_CODEC_CAP_DR1’?
+        __pyx_t_7 = __Pyx_PyInt_From_int(AV_CODEC_CAP_HARDWARE); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 124, __pyx_L1_error)
+                                        ^~~~~~~~~~~~~~~~~~~~~
+                                        AV_CODEC_CAP_DR1
+    src/av/codec/codec.c:6061:36: note: each undeclared identifier is reported only once for each function it appears in
+    src/av/codec/codec.c:6082:36: error: ‘AV_CODEC_CAP_HYBRID’ undeclared (first use in this function); did you mean ‘AV_CODEC_CAP_DR1’?
+        __pyx_t_7 = __Pyx_PyInt_From_int(AV_CODEC_CAP_HYBRID); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 128, __pyx_L1_error)
+                                        ^~~~~~~~~~~~~~~~~~~
+                                        AV_CODEC_CAP_DR1
+    error: command 'x86_64-linux-gnu-gcc' failed with exit status 1
+
+    ----------------------------------------
+    Failed building wheel for av
+    Running setup.py clean for av
+    Failed to build av
+</div>
 
 ## Add apt source for libav
 
