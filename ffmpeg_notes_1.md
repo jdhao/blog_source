@@ -10,7 +10,7 @@ categories: [tools]
 
 # Install ffmpeg
 
-If we have root rights, we can install FFmpeg via package manager. On Centos 7,
+If we have root rights, we can install FFmpeg via package manager. On CentOS 7,
 run the following command:
 
 ```bash
@@ -24,7 +24,7 @@ can help you. It has binary release for FFmpeg, ffprobe for different systems.
 It seems that the provided ffmpeg is statically linked, so all you need is that
 one file to get to work.
 
-[This site](https://johnvansickle.com/ffmpeg/) alao provides binary release for FFmpeg.
+[This site](https://johnvansickle.com/ffmpeg/) also provides binary release for FFmpeg.
 
 Run command `ffmpeg -version` to verify that FFmpeg has been correctly
 installed. You will see the following output:
@@ -64,7 +64,7 @@ Ref:
 # Suppress excessive logging
 
 Every time I run ffmpeg command, its version, compilation configuration and
-libary info is printed on the command line. This can be disabled using
+library info is printed on the command line. This can be disabled using
 `-hide_banner` option:
 
 ```
@@ -107,7 +107,7 @@ Ref:
 + https://stackoverflow.com/q/51143100/6064933
 + https://superuser.com/q/584760/736190
 
-# Extrac all frames from a video
+# Extract all frames from a video
 
 If you do not provide the `-r` option, ffmpeg will extract all frame from the
 video.
@@ -147,3 +147,17 @@ ffmpeg -i input.mp4 -map a output.aac
 Ref:
 
 + https://stackoverflow.com/q/9913032/6064933
+
+# Download m3u8 videos
+
+Just try the following command:
+
+```bash
+# -c copy means to copy the video without re-encoding the video and audio stream
+ffmpeg -i "url_here" -c copy output.mp4
+```
+
+Ref:
+
++ https://superuser.com/a/1260862/736190
++ https://gist.github.com/tzmartin/fb1f4a8e95ef5fb79596bd4719671b5d#gistcomment-3914739
