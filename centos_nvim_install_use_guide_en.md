@@ -276,13 +276,13 @@ another plugin called
 [vim-airlinetheme](https://github.com/vim-airline/vim-airline-themes). To
 change the theme, we need to install this plugin:
 
-```
+```vim
 Plug 'vim-airline/vim-airline-themes'
 ```
 
 Then, in the Nvim configuration file, add the following settings:
 
-```
+```vim
 let g:airline_theme='<theme>' " <theme> is a valid theme name
 ```
 
@@ -327,7 +327,7 @@ Vim. For more usages, check [nerdcommenter's documentation](https://github.com/s
 [Neoformat](https://github.com/sbdchd/neoformat) can be used to format your
 source code. Install it with vim-plug:
 
-```
+```vim
 Plug 'sbdchd/neoformat'
 ```
 
@@ -350,7 +350,7 @@ If neoformat can not detect your file type or you haven't installed any
 formatter. You can add the following command to your Nvim configuration to let
 neoformat do some basic format for the file:
 
-```
+```vim
 " Enable alignment
 let g:neoformat_basic_format_align = 1
 
@@ -528,7 +528,7 @@ feature, isn't it?
 
 You can install it with vim-plug:
 
-```
+```vim
 Plug 'machakann/vim-highlightedyank'
 ```
 
@@ -536,14 +536,14 @@ Most of the time, you do not need any further settings after installing this
 plugin. But, for some colorschemes, you will not be able to see the highlight
 colors. To fix this issue, add the following setting to Nvim configuration:
 
-```
+```vim
 hi HighlightedyankRegion cterm=reverse gui=reverse
 ```
 
 If you feel that the highlight duration time is too short, you can increase the
 highlight duration (measured in ms):
 
-```
+```vim
 " set highlight duration time to 1000 ms, i.e., 1 second
 let g:highlightedyank_highlight_duration = 1000
 ```
@@ -555,7 +555,7 @@ the structure of the code.
 [SimplyFold](https://github.com/tmhedberg/SimpylFold) is nice plugin for code
 folding. Install it with vim-plug:
 
-```
+```vim
 Plug 'tmhedberg/SimpylFold'
 ```
 
@@ -604,7 +604,7 @@ colorscheme gruvbox
 It has two modes, i.e., `dark` and `light`, which can be switched using the
 following settings:
 
-```
+```vim
 set background=dark " use dark mode
 " set background=light " uncomment to use light mode
 ```
