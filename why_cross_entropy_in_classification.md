@@ -2,7 +2,7 @@
 title: "Why Use Cross Entropy in Classification Task?"
 date: 2021-10-16T09:54:49+08:00
 draft: false
-tags: [loss]
+tags: [loss, softmax]
 categories: [academic]
 ---
 
@@ -35,9 +35,9 @@ derivatives. That is why `log()` function used in this.
 
 Why log function? Because:
 
-(1) log function is monotonic. Or our objective is the same. Maximizing the old
+1. log function is monotonic. Or our objective is the same. Maximizing the old
 objective is equivalent to maximizing the new objective.
-(2) log(x * y) = log(x) + log(y), so that we can greatly simplify calculation of derivatives.
+2. log(x * y) = log(x) + log(y), so that we can greatly simplify calculation of derivatives.
 
 Another question, why do we use the minus sign?
 
