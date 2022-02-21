@@ -5,7 +5,7 @@ tags: [Bash]
 categories: [Linux]
 ---
 
-# Writing robust script
+# Writing robust scripts
 
 We should use the following options in our bash script for better quality:
 
@@ -51,8 +51,8 @@ supports `&&`, `||` and grouping command using `()` etc.
 
 # Compare string equality
 
-We can use `=` and `!=` to compare the equality of strings. Use of `==` is
-non-standard (see [here](https://stackoverflow.com/a/2237103/6064933)).
+We can use `=` and `!=` to compare the equality of strings.
+Unlike common programming languages, use of `==` is non-standard (see [here](https://stackoverflow.com/a/2237103/6064933)).
 
 # How to set boolean variable?
 
@@ -71,8 +71,7 @@ fi
 
 # How to check if a command exists?
 
-We can use `command -v YOUCOMMAND` to check if `YOURCOMMAND` exists. For
-example:
+We can use `command -v YOUCOMMAND` to check if `YOURCOMMAND` exists. For example:
 
 ```bash
 if [[ ! "$(command -v rg)" ]]; then
@@ -82,9 +81,8 @@ else
 fi
 ```
 
-According to [here](https://stackoverflow.com/a/677212/6064933), `which`
-command is not a reliable way to check if a command exists since it may return
-an exit code of 0 even if no command is found.
+According to [here](https://stackoverflow.com/a/677212/6064933), `which` command is not a reliable way to do this,
+since it may return an exit code of 0 even if no command is found.
 
 # References
 
