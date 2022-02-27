@@ -4,6 +4,7 @@ date: 2022-01-09T20:39:52+08:00
 draft: false
 tags: [softmax]
 categories: [machine-learning]
+markup: pandoc
 ---
 
 <p align="center">

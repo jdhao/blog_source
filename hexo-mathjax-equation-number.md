@@ -1,31 +1,26 @@
 ---
-title: LaTeX Equation Numbering Done Right in Hexo
+title: "LaTeX Equation Numbering Done Right in Hexo"
 date: 2018-01-25 23:19:00 +0800
 tags: [Hexo, LaTeX, MathJax, NexT, Markdown]
 categories: [Blog]
+markup: pandoc
 ---
 
 Recently I plan to transplant one of my old post from other site to this new
-site (you can find the new post
-[here](https://jdhao.github.io/2016/01/19/back-propagation-in-mlp-explained/)).
-The old post contains quite a lot of equations in LaTeX format. With so much
-equations in one post, I find it really hard to refer to some equations without
-using proper numbering. So I decide to figure out how to use LaTeX equation
-numbering properly in my post.
+site (you can find the new post [here](https://jdhao.github.io/2016/01/19/back-propagation-in-mlp-explained/)).
+The old post contains quite a lot of equations in LaTeX format.
+With so much equations in one post, I find it really hard to refer to some equations without using proper numbering.
+So I decide to figure out how to use LaTeX equation numbering properly in my post.
 
 <!--more-->
 
 # Enable MathJax and equation numbering
 
-Update 2018-05-16: This feature has been incorporated into NexT and [released
-in version
-6.3.0](https://github.com/theme-next/hexo-theme-next/releases/tag/v6.3.0). You
-can skip this section safely now.
+Update 2018-05-16: This feature has been incorporated into NexT and [released in version 6.3.0](https://github.com/theme-next/hexo-theme-next/releases/tag/v6.3.0).
+You can skip this section safely now.
 
-If you use [NexT theme](http://theme-next.iissnan.com/), see
-[here](https://jdhao.github.io/2017/10/06/hexo-markdown-latex-equation/) on how
-to enable MathJax. By default, equation numbering is disable by Mathjax, you
-can enable equation numbering in two ways.
+If you use [NexT theme](http://theme-next.iissnan.com/), see [here](https://jdhao.github.io/2017/10/06/hexo-markdown-latex-equation/) on how to enable MathJax.
+By default, equation numbering is disable by Mathjax, you can enable equation numbering in two ways.
 
 ## First way
 
@@ -72,18 +67,15 @@ to
 </script>
 ```
 
-Thanks to [the post
-here](https://notes.mengxin.science/2017/07/07/hexo-next-renderer-kramed-mathjax/).
+Thanks to [post here](https://notes.mengxin.science/2017/07/07/hexo-next-renderer-kramed-mathjax/).
 
 # Make the automatic equation numbering work
 
-In general, to make the automatic equation numbering work, you have to wrap
-your LaTeX equations in `equation` environment. Using the plain old style
-(i.e., wrap an equation with two dollar signs in each side) will not work. How
-to refer to an equation? Just give a `\label{}` tag and then in your later
-text, use `\ref{}` or `\eqref{}` to refer it. Using `\eqref{}` is preferred
-since if you use `\ref{}`, there are no parentheses around the equation number.
-But there are some variations I would like to elaborate.
+In general, to make the automatic equation numbering work, you have to wrap your LaTeX equations in `equation` environment.
+Using the plain old style (i.e., wrap an equation with two dollar signs in each side) will not work.
+How to refer to an equation? Just give a `\label{}` tag and then in your later text, use `\ref{}` or `\eqref{}` to refer it.
+Using `\eqref{}` is preferred since if you use `\ref{}`, there are no parentheses around the equation number.
+There are some variations I would like to elaborate.
 
 ## Simple equation
 
@@ -153,17 +145,13 @@ l &= m - n \label{eq5}
 \end{align}$$
 ```
 
-Since `align` in and of itself is a complete equation environment (read
-[here](https://tex.stackexchange.com/questions/95402/what-is-the-difference-between-aligned-in-displayed-mode-and-starred-align)
-about the difference between `aligned` and `align` in LaTeX). You do not need
-to wrap it with `equation` environment.
+Since `align` in and of itself is a complete equation environment[^1].
+You do not need to wrap it with `equation` environment.
 
 ### What if you do not want to number some equations
 
 In the `align` environment, if you do not want to number one or some equations,
-just [use
-`\nonumber`](https://tex.stackexchange.com/questions/17528/show-equation-number-only-once-in-align-environment)
-right behind these equations. Like the following.
+just [use `\nonumber`](https://tex.stackexchange.com/q/17528/114857) right behind these equations. Like the following.
 
 $$\begin{align}
 -4 + 5x &= 2+y \nonumber   \\
@@ -201,3 +189,5 @@ $$x+1\over\sqrt{1-x^2} \tag{i}\label{eq_tag}$$
 + <https://github.com/mathjax/MathJax/blob/master/test/sample-eqrefs.html>
 + <https://minenet.me/2016/04/05/how-to-use-mathjax.html#mjx-eqn-1>
 + <http://kchen.cc/2016/12/06/latex-in-markdown/>
+
+[^1]: Check [here](https://tex.stackexchange.com/q/95402/114857) about the difference between `aligned` and `align` in LaTeX

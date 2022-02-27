@@ -4,6 +4,7 @@ date: 2020-02-23T18:36:27+08:00
 draft: false
 tags: [math]
 categories: [Note]
+markup: pandoc
 ---
 
 Suppose that we have a straight line formed by point B and C, and we have another

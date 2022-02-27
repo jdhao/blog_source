@@ -1,8 +1,9 @@
 ---
-title: 堆排序是如何工作的？
+title: "堆排序是如何工作的？"
 date: 2017-10-06 16:25:03 +0800
 tags: [algorithms, sorting]
 categories: [Programming]
+markup: pandoc
 ---
 
 本文将介绍堆 (heap)的概念，进一步介绍如何把普通数组变成最大堆，并在此基础上进行堆排序。

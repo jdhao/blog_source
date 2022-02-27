@@ -3,6 +3,7 @@ title: "神经网络中误差反向传播(back propagation)算法的工作原理
 date: 2016-01-19 00:00:00 +0800
 tags: [optimization, CNN, math]
 categories: [academic]
+markup: pandoc
 ---
 
 神经网络，从大学时期就听说过，后面上课的时候老师也讲过，但是感觉从来没有真正掌握，总是似是而非，比较模糊，好像懂，其实并不懂。

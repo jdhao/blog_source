@@ -3,6 +3,7 @@ title: "How to Set the Aspect Ratio of Image (or Axes) in Matplotlib?"
 date: 2017-06-03 00:58:00 +0800
 tags: [Matplotlib]
 categories: [Python]
+markup: pandoc
 ---
 
 In Matplotlib, [`Axes`](https://matplotlib.org/api/axes_api.html) is the

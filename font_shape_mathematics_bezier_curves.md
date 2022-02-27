@@ -3,6 +3,7 @@ title: "The Mathematics behind Font Shapes --- Bézier Curves and More"
 date: 2018-11-27 16:14:00 +0800
 tags: [font, math]
 categories: [technique]
+markup: pandoc
 ---
 
 <p align="center">

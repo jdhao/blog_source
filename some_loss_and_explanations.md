@@ -1,15 +1,18 @@
 ---
-title: Some Loss Functions and Their Intuitive Explanations
+title: "Some Loss Functions and Their Intuitive Explanations"
 date: 2017-03-13 10:14:55 +0800
 tags: [loss, softmax]
 categories: [academic]
+markup: pandoc
 ---
 
 Loss functions are frequently used in supervised machine learning to minimize
 the differences between the predicted output of the model and the ground truth
 labels. In other words, it is used to measure how good our model can predict
 the true class of a sample from the dataset. Here I would like to list some
-frequently-used loss functions and give my intuitive explanation.<!--more-->
+frequently-used loss functions and give my intuitive explanation.
+
+<!--more-->
 
 # Cross Entropy Loss
 
