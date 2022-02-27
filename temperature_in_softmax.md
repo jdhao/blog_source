@@ -77,13 +77,7 @@ In [MoCo](https://arxiv.org/abs/1911.05722), softmax loss with temperature is us
 $$Loss = -\log\frac{exp(q\cdot k_+/\tau)}{\sum_{i=0}^{K} exp(q\cdot k_i/ \tau)}$$
 
 In that paper, $\tau$ is set to a very small value 0.07.
-MoCo attributes this value to [Unsupervised Feature Learning via Non-Parametric Instance Discrimination](https://arxiv.org/pdf/1805.01978.pdf), which says:
-
-> τ is important for supervised feature learning [43], and also necessary for tuning the concentration of v on our unit sphere.
-
-Ref 43 refers to paper [NormFace: L2 Hypersphere Embedding for Face Verification](https://arxiv.org/abs/1704.06369).
-
-If we do not use a temperature parameter, suppose that the dot product of negative pairs are -1,
+If we do not use the temperature parameter, suppose that the dot product of negative pairs are -1,
 and dot product of positive pair is 1, and we have K = 1024.
 In this case, the model has separated the positive and negative pairs perfectly, but the softmax loss is still large:
 
@@ -92,6 +86,11 @@ $$-log\frac{e}{e + 1023e^{-1}} = 4.94$$
 If we use a parameter of $\tau = 0.07$, however, the loss will now become literally 0.0.
 So using $\tau$ in this case will help collapse the probability distribution to positive pairs and reduce the loss.
 
+MoCo *borrows* this value to [Unsupervised Feature Learning via Non-Parametric Instance Discrimination](https://arxiv.org/pdf/1805.01978.pdf), which says:
+
+> τ is important for supervised feature learning [43], and also necessary for tuning the concentration of v on our unit sphere.
+
+Ref 43 refers to paper [NormFace: L2 Hypersphere Embedding for Face Verification](https://arxiv.org/abs/1704.06369).
 In NormFace Sec. 3.3, the authors show theoretically why it is necessary to use a scaling factor[^1] in softmax loss.
 Basically, if we do not use a scaling factor, the lower bound for the loss is high,
 and we can not learn a good representation of image features.
