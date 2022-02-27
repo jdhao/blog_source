@@ -6,7 +6,7 @@ tags: []
 categories: [Nvim]
 ---
 
-File explorer is one the most widely-used type of plugins for Vim/Nvim.
+File explorer is one of the most widely-used types of plugin for Vim/Nvim.
 Below are my curated list of file explorers for Nvim.
 Some of these plugins are specifically written for Nvim and will not work for Vim.
 
