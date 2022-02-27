@@ -7,6 +7,10 @@ tags: [softmax]
 categories: [machine-learning]
 ---
 
+<p align="center">
+<img src="https://blog-resource-1257868508.file.myqcloud.com/202202271549378.jpg" width="800">
+</p>
+
 Softmax function is commonly used in classification tasks.
 Suppose that we have an input vector $[z_1, z_2, \ldots, z_N]$, after softmax, the vector is transformed into a probability distribution:
 
@@ -49,7 +53,7 @@ if __name__ == "__main__":
     main()
 ```
 
-With different values of t, the output probability is:
+With different values of t, the output probability is (also check the title image):
 
 ```
 0.1 [8.194012623989748e-40, 1.928749847963737e-22, 9.357622968839298e-14, 0.9999999999999064]
