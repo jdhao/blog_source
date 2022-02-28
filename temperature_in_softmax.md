@@ -12,21 +12,25 @@ categories: [machine-learning]
 </p>
 
 Softmax function is commonly used in classification tasks.
-Suppose that we have an input vector $[z_1, z_2, \ldots, z_N]$, after softmax, the vector is transformed into a probability distribution:
+Suppose that we have an input vector $[z_1, z_2, \ldots, z_N]$, after softmax, each element becomes:
 
 <!--more-->
 
 $$p_i = \frac{\exp(z_i)}{\sum_{j=1}^{N}\exp(z_j)}$$
 
+The denominator term normalize each element so that their sum is 1.
+The original vector is transformed into a probability distribution,
+and the index that corresponds to the highest probability is the chosen class.
+
 In practice, we often see softmax with temperature, which is a slight modification of softmax:
 
 $$p_i = \frac{\exp(x_i/\tau)}{\sum_{j=1}^{N}\exp(x_j/\tau)}$$
 
-The parameter $\tau$ is called the temperature parameter and it is used to control the softness of the probability distribution.
+The parameter $\tau$ is called the temperature parameter[^2],
+and it is used to control the softness of the probability distribution.
 When $\tau$ gets lower, the biggest value in $x$ get more probability,
 when $\tau$ gets larger, the probability will be split more evenly on different elements.
-Consider the extreme cases.
-When $\tau$ approaches zero, the probability for the largest element will approach 1,
+Consider the extreme cases where $\tau$ approaches zero, the probability for the largest element will approach 1,
 while when $\tau$ approaches infinity, the probability for each element will be the same.
 
 ```python
@@ -72,25 +76,28 @@ which is pretty close to the result of softmax when $\tau = 0.1$.
 
 # Applications
 
-In [Distilling the Knowledge in a Neural Network](https://arxiv.org/pdf/1503.02531.pdf), they all used temperature parameter in softmax:
+In [Distilling the Knowledge in a Neural Network](https://arxiv.org/pdf/1503.02531.pdf), they also used temperature parameter in softmax:
 
 > Using a higher value for T produces a softer probability distribution over classes.
 
-In [MoCo](https://arxiv.org/abs/1911.05722), softmax loss with temperature is used (it is a slightly modified version of InfoNCE loss):
+## Supervised contrastive learning
+
+In the [MoCo](https://arxiv.org/abs/1911.05722) paper, softmax loss with temperature is used (it is a slightly modified version of InfoNCE loss):
 
 $$Loss = -\log\frac{exp(q\cdot k_+/\tau)}{\sum_{i=0}^{K} exp(q\cdot k_i/ \tau)}$$
 
 In that paper, $\tau$ is set to a very small value 0.07.
 If we do not use the temperature parameter, suppose that the dot product of negative pairs are -1,
-and dot product of positive pair is 1, and we have K = 1024.
-In this case, the model has separated the positive and negative pairs perfectly, but the softmax loss is still large:
+and dot product of positive pair is 1, and we have K = 1024,
+in this case, the model has separated the positive and negative pairs perfectly,
+but the softmax loss is still too large:
 
 $$-log\frac{e}{e + 1023e^{-1}} = 4.94$$
 
 If we use a parameter of $\tau = 0.07$, however, the loss will now become literally 0.0.
-So using $\tau$ in this case will help collapse the probability distribution to positive pairs and reduce the loss.
+So using a small $\tau$ helps collapse the probability distribution to the positive pair and reduces loss.
 
-MoCo *borrows* this value to [Unsupervised Feature Learning via Non-Parametric Instance Discrimination](https://arxiv.org/pdf/1805.01978.pdf), which says:
+MoCo *borrows* this value from [Unsupervised Feature Learning via Non-Parametric Instance Discrimination](https://arxiv.org/pdf/1805.01978.pdf), in which the authors say:
 
 > τ is important for supervised feature learning [43], and also necessary for tuning the concentration of v on our unit sphere.
 
@@ -108,4 +115,5 @@ and we can not learn a good representation of image features.
 + https://ogunlao.github.io/2020/04/26/you_dont_really_know_softmax.html
 + https://www.reddit.com/r/MachineLearning/comments/n1qk8w/d_temperature_term_in_simclr_or_moco_papers/
 
-[^1]: In NormFace, they use $s=1/\tau$ as the scaling factor, instead of using $\tau$ directly.
+[^1]: In NormFace, they use $s=1/\tau$ as the scaling factor and multiply it, instead of dividing $\tau$ directly.
+[^2]: The name temperature may come from [Boltzmann distribution](https://en.wikipedia.org/wiki/Boltzmann_distribution#The_distribution), where it has similar formulation and a temperature parameter.
