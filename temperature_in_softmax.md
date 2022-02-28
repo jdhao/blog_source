@@ -1,5 +1,5 @@
 ---
-title: "The Use of Temperature in Softmax"
+title: "Softmax with Temperature Explained"
 date: 2022-02-27T12:47:02+08:00
 markup: pandoc
 draft: false
