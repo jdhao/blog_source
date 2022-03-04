@@ -224,6 +224,9 @@ preserveTaxonomyNames = true
 
 由于 Markdown 中的 \\，`_` 等字符在 LaTeX 公式也有特殊含义，两者会有冲突，之前为了配置 Hexo 博客的数学公式支持也费了很大功夫，具体过程可以参考[这篇博客](https://jdhao.github.io/2018/01/25/hexo-mathjax-equation-number/)。迁移到Hugo以后，经过搜索、查找与验证，找到了两种比较好的解决方法。
 
+2022-03-04 注：mmark 已经被 hugo 淘汰，后续会移除支持，不再推荐。
+
+<del>
 ### 使用 mmark 格式
 
 [Mmark](https://github.com/miekg/mmark) 是一个 Markdown 引擎，Hugo 原生支持。对于包含 LaTeX 公式的文档，首先把后缀名改为 `mmark`（即名称由 `*.md` --> `*.mmark`），然后在文章的 front matter，加上一行设置
@@ -231,10 +234,17 @@ preserveTaxonomyNames = true
 ```toml
 markup: mmark
 ```
+</del>
 
 ### 使用 Pandoc
 
-Hugo 也支持使用外部的处理程序来处理 Markdown 文件，例如 asciidoc，reStructuredText 和 Pandoc。这里选择 Pandoc，首先[安装Pandoc](https://pandoc.org/installing.html)。然后把包含 LaTeX 公式的博文后缀为`pdc`，重新生成博客即可，不需要其他设置。
+Hugo 也支持使用外部的处理程序来处理 Markdown 文件，例如 asciidoc，reStructuredText 和 Pandoc。这里选择 Pandoc，首先[安装Pandoc](https://pandoc.org/installing.html)。然后在文章的 front matter，加上一行设置
+
+```
+markup: pandoc
+```
+
+hugo 在生成博客的时候就会自动调用 pandoc 来生成 html。
 
 ### 小问题
 
