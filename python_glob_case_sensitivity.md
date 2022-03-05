@@ -4,6 +4,7 @@ date: 2019-06-24 17:19:33+0800
 tags: []
 categories: [Python]
 ---
+tl;dr: `glob.glob()` is case sensitive in Linux, but case insensitive in Windows.
 
 Recently, I was bitten by the unintuitive behaviour of `glob.glob()`.
 I think it would be beneficial to write down what I have found.
