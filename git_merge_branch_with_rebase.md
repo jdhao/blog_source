@@ -6,6 +6,10 @@ tags: []
 categories: [Git]
 ---
 
+<p align="center">
+<img src="https://blog-resource-1257868508.file.myqcloud.com/202202021114754.jpg" width="800">
+</p>
+
 When merging branches, the most direct way we can use is to `git merge`.
 However, with git-merge, the commit history and graph will be messy if there are a lot of branches.
 
