@@ -6,6 +6,13 @@ tags: []
 categories: [Mac]
 ---
 
+<details>
+<summary><font size="2" color="red">点击查看更新记录</font></summary>
+
++ 2022-03-07：增加 shotrr
++ 2022-02-10: 增加 wezterm 介绍
+</details>
+
 记录我在 macOS 下常用到的工具。
 
 <!--more-->
@@ -22,7 +29,9 @@ categories: [Mac]
 
 # 截图
 
-开源的可以使用非常有名的 [Snipaste](https://www.snipaste.com/)。另外 [iShot](https://apps.apple.com/cn/app/ishot-%E4%BC%98%E7%A7%80%E7%9A%84%E6%88%AA%E5%9B%BE%E5%BD%95%E5%B1%8F%E5%B7%A5%E5%85%B7/id1485844094?mt=12) 以及 [xnip](https://xnipapp.com/) 也不错。
+开源的可以使用非常有名的 [Snipaste](https://www.snipaste.com/)。另外 [iShot](https://apps.apple.com/cn/app/ishot-%E4%BC%98%E7%A7%80%E7%9A%84%E6%88%AA%E5%9B%BE%E5%BD%95%E5%B1%8F%E5%B7%A5%E5%85%B7/id1485844094?mt=12) 以及 [xnip](https://xnipapp.com/) 也不错，这俩是收费的，不过也有免费使用功能。
+
+[shottr](https://shottr.cc/) 是另外一款截图工具，免费。
 
 # 录制视频/GIF
 
