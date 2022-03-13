@@ -43,3 +43,17 @@ categories: [Blog]
 ```
 
 然后重新生成 Hugo 博客即可。
+
+# iPad 上文章计数问题
+
+有人反馈，即使用了上面的设置，在 iPad 上用 Safari，Chrome，Firefox 浏览器查看文章的阅读量，还是不正确。
+
+经过搜索，发现原因是 iPad 上浏览器默认都是阻止 cross-site tracking 的，你加了 referrer meta tag 也没有用。需要用户手动允许 cross-site tracking 才能正常使用。
+
++ Safari 设置，在 “PRIVACY & SECURITY” 部分，关掉 Prevent Cross-Site Tracking 即可。
++ 对于 Chrome 和 Firefox 浏览器，设置里面，打开 Allow Cross-Website Tracking 即可。
+
+参考
+
++ Safari mobile and desktop are hiding full referrer URL: why?: https://stackoverflow.com/a/62860372/6064933
++ https://www.simoahava.com/privacy/intelligent-tracking-prevention-ios-14-ipados-14-safari-14/
