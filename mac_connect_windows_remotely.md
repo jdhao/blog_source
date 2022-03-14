@@ -6,7 +6,7 @@ tags: []
 categories: [Mac]
 ---
 
-本文简单总结 macOS 系统远程连接 Windows 电脑需要的工具以及简单设置。
+本文简单总结 macOS 系统远程连接 Windows 系统需要的工具以及简单设置。
 
 <!--more-->
 
@@ -18,7 +18,7 @@ categories: [Mac]
 
 # Microsoft Remote Desktop
 
-如果是连接公司内部的电脑，可能需要 VPN 才能连上[^2]，不能使用 TeamViewer 直接连接，可以使用 Microsoft Remote Desktop。
+如果是连接公司内部的电脑，可能需要 VPN 才能连上[^2]，不能使用 TeamViewer 直接连接，VPN 设置好以后，就可以使用 Microsoft Remote Desktop 连接远程电脑。
 
 [Microsoft Remote Desktop](https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-mac) 是微软提供的连接 Windows 电脑的工具，有多种客户端可以下载。美区的 App Store 账号可以直接从 App store 下载，App Store 有两个版本，Microsoft Remote Desktop 8 和 Microsoft Remote Desktop 10，版本 8 是旧版本，已经停止更新，建议使用版本 10。
 
@@ -40,13 +40,13 @@ categories: [Mac]
 
 # Jump Desktop
 
-[Jump Desktop](https://jumpdesktop.com/) 也是一款远程桌面应用，支持 14 天免费试用，点击 [这里](https://jumpdesktop.com/downloads/jdmac) 可以下载。安装以后，点击 Quick Connection 按钮，选择 RDP 协议，输入 windows 电脑的 IP 地址。添加完成以后，双击新建的连接，输入远程电脑的用户名还有密码，即可连接远程桌面。
+[Jump Desktop](https://jumpdesktop.com/) 也是一款远程桌面应用，需要付费，支持 14 天免费试用，点击 [这里](https://jumpdesktop.com/downloads/jdmac) 可以下载。安装以后，点击 Quick Connection 按钮，选择 RDP 协议，输入 windows 电脑的 IP 地址。添加完成以后，双击新建的连接，输入远程电脑的用户名还有密码，即可连接远程桌面。
 
 <p align="center">
 <img src="https://blog-resource-1257868508.file.myqcloud.com/20200226144337.jpg" width="400">
 </p>
 
-个人感觉，Jump Desktop 的显示效果会比 Microsoft Remote Desktop 要好比较多，Microsoft Remote Desktop 显示的桌面有一种模糊感，Jump Desktop 显示的桌面很清晰。
+个人感觉，Jump Desktop 的显示效果比 Microsoft Remote Desktop 要好很多，Microsoft Remote Desktop 显示的桌面比较模糊，Jump Desktop 显示的桌面很清晰。
 
 # Remotix
 
@@ -60,7 +60,6 @@ Remotix 显示效果也比 Microsoft Remote Desktop 好，但是略差于 Jump D
 
 # 参考 #
 
-+ [TeamViewer 使用](https://bit.ly/2HVuCz7)。
 + https://www.maczd.com/post/microsoft-remote-desktop-mac.html
 + https://blog.devhitao.com/2019/03/23/microsoft-remote-desktop-for-mac/
 + https://www.waitsun.com/tag/yuan-cheng-zhuo-mian
