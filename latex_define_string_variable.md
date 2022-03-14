@@ -50,6 +50,8 @@ We can also use `\def` to define a variable and use it later[^1].
 We can use \myVar{} like this.
 ```
 
+Note that `{}` is also required to add a literal sapce after the inserted text.
+
 # References
 
 + Space after LaTeX commands: https://tex.stackexchange.com/q/31091/114857
