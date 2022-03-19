@@ -22,6 +22,9 @@ cheatsheet for common STL containers/adapters just in case I need them.
 + Check if vector is empty: `cout << arr.empty();`
 + Slice a vector, i.e., get a sub-vector from an existing vector: `vector<int> arr(10, 1); vector<int> new_vec(arr.begin(), arr.begin()+3);`
   (this is end-exclusive, so the resulting vector has 3 elements)
++ Sort a vector:
+    + In ascending order (the default): `std::sort(arr.begin(), arr.end());`
+    + In descending order (we need to use custom compare function): `std::sort(arr.begin(), arr.end(), std::greater<int>());`
 
 Ref:
 
@@ -127,6 +130,7 @@ Ref:
 
 # References
 
++ Sort vector in descending order: https://stackoverflow.com/q/9025084/6064933
 + Why would anyone use set instead of unordered_set?: https://stackoverflow.com/q/1349734/6064933
 + How to choose between map and unordered_map?: https://stackoverflow.com/q/13799593/6064933
 + Is there any advantage of using map over unordered_map in case of trivial keys?: https://stackoverflow.com/q/2196995/6064933
