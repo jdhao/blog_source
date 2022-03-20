@@ -1,12 +1,12 @@
 ---
-title: "Cpp Container/Adapter and Common Structure CheatSheet"
+title: "A CheatSheet of C++ Container/Adapter and Common Structure"
 date: 2021-07-04 19:02:50+0800
 tags: [C++]
 categories: [Note]
 ---
 
-I use Python in my work, and rarely need C++. So I need to compile this C++
-cheatsheet for common STL containers/adapters just in case I need them.
+I use Python in my work, and rarely need C++.
+So I need to compile this C++ cheatsheet for common STL containers/adapters, just in case I need them.
 
 <!--more-->
 
@@ -44,15 +44,15 @@ Ref:
 
 + Repeat string n times: https://stackoverflow.com/q/166630/6064933
 
-# set (keys have order)
+# set (works like a Python set)
 
-Typically implemented using balanced binary search tree.
+`set` in C++ is typically implemented using balanced binary search tree.
 
 + Define a set: `set<int> x = {1, 2, 3};`
 + Add an element: `x.insert(5);`
 + Check size: `x.size()`
 + Check if set is empty: `x.empty();`
-+ Check if a key exists in a set: `x.find(2) != x.end();` or `x.count(2) != 0`
++ Check if set contains a key: `x.find(2) != x.end();` or `x.count(2) != 0`
 + Initialize set from a vector of int: `vector<int> arr = {1, 2, 1, 3}; set<int> my_set(arr.begin(), arr.end());`
 
 There is also `unordered_set`, which is different from `set`:
@@ -66,7 +66,8 @@ There is also `unordered_set`, which is different from `set`:
 
 Typically implemented using balanced binary search tree.
 
-+ Define a map: `map<int, string> items;`
++ Define an empty map: `map<int, string> items;`
++ Define a constant map: `map<int, string> num2str = {{1, "ab"}, {2, "cd"}, {3, "ef"}};`
 + Add an element: `items.insert({1, "apple"});` or `items[1] = "apple";`
 + Remove an element: `items.erase("apple");`
 + Access a key (no check): `cout << items[1] << endl;` (we have to make sure the key exists, otherwise it will be inserted silently)
@@ -79,7 +80,11 @@ Typically implemented using balanced binary search tree.
   }
   ```
 
-+ Check if a key exists in a map: `bool has_key = items.find(2) != items.end();` or `items.count(2) != 0`
+ref:
+
++ define constant map: https://stackoverflow.com/a/8688615/6064933
+
++ Check if map contains a key: `bool has_key = items.find(2) != items.end();` or `items.count(2) != 0`
 
 There is also `unordered_map`. The different between map and unordered_map is similar to difference between set and unordered_set.
 So we will not elaborate on this.
