@@ -5,8 +5,8 @@ tags: []
 categories: [machine-learning]
 ---
 
-In [maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark), there is some config parameters about warmup in solver (`WARMUP_FACTOR`, `WARMUP_ITERS`, `WARMUP_METHOD`).
-But what is warmup, and how does it work?
+Warmup is a training technique often used in training deep neural networks.
+In this post, I will try to explain what is warmup, and how does it work.
 
 <!--more-->
 
@@ -39,8 +39,22 @@ the initial learning stage.
 After the warmup epochs, the learning rate strategy would return to normal.
 You can change the learning rate based on the task at hand.
 
-## How does linear warmup work in maskrcnn
 
+## Warmup applications
+
+### Warmup in ResNet
+
+In [Deep residual learning](https://arxiv.org/abs/1512.03385), when training a 110-layer ResNet on CIFAR-10 (section 4.2),
+the authors used constant warmup to ease the initial training iterations:
+
+> In this case, we find that the initial learning rate of 0.1 is slightly too
+> large to start converging. So we use 0.01 to warm up the training until the
+> training error is below 80% (about 400 iterations), and then go back to 0.1
+> and continue training.
+
+### How does linear warmup work in maskrcnn
+
+In [maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark), there is some config parameters about warmup in solver (`WARMUP_FACTOR`, `WARMUP_ITERS`, `WARMUP_METHOD`).
 The warmup method used by maskrcnn-benchmark can be found [here](https://github.com/facebookresearch/maskrcnn-benchmark/blob/57eec25b75144d9fb1a6857f32553e1574177daf/maskrcnn_benchmark/solver/lr_scheduler.py#L39-L52):
 
 ```python
