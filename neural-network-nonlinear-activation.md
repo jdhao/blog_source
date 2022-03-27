@@ -24,8 +24,7 @@ $$f(x) = \frac{1}{1+e^{-x}}$$
 
 The derivative of sigmoid is:
 
-$$\frac{df}{dx} = \frac{e^{-x}}{(1+e^{-x})^2} = \frac{1}{1+e^{-x}}(1- \frac{1}{1+e^{-x}}) = f(x)(1-f(x))$$
-
+$$\frac{df}{dx} = \frac{e^{-x}}{(1+e^{-x})^2} \\= \frac{1}{1+e^{-x}}(1- \frac{1}{1+e^{-x}})\\ = f(x)(1-f(x))$$
 
 ## Tanh
 

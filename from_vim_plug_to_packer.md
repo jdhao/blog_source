@@ -9,11 +9,12 @@ categories: [Nvim]
 <details>
 <summary><font size="3" color="red">Update log</font></summary>
 
++ <font color="blue">2022-03-27: fix a typo in requiring lua modules</font>
 + <font color="blue">2022-02-08: change fastgit URL</font>
 + <font color="blue">2022-02-05: add new autocmd for auto-running command `PackerCompile`.</font>
 </details>
 
-Over the past two years, I have been using [vim-plug](https://github.com/junegunn/vim-plug) as my Nvim plugin manager.
+Over the past two years, I have been using [vim-plug](https://github.com/junegunn/vim-plug) as my plugin manager for Nvim.
 Vim-plug is powerful, fast and amazing, especially considering that all its features are contained in a single vim script.
 It uses the old way to manage plugins, i.e., it will manage the loading of plugins directly.
 
@@ -25,20 +26,19 @@ In Vim/Nvim, we also have another way to manage plugins, that is, by using `pack
 It is a new way of organizing plugins. We can split plugins into two types, `opt` plugins and `start` plugins.
 If we put plugins in `opt` directory under a package, the plugins will not be loaded during initialization.
 If we want to use plugin `foo` later, we use `:packadd foo` to load it.
-For plugins under `start` directory, they will be loaded[^1] by Vim automatically after initialization.
+For plugins under `start` directory, they will be loaded[^1] automatically after initialization.
 
 For `opt` plugin `foo`, Vim will look for `pack/xxx/opt/foo` under paths in the option `packpath`.
 For `start` plugins, Vim will look for them under `pack/xxx/start/` directory under paths in `packpath`.
 
 # Now enter packer.nvim!
 
-Actually, there are several plugin managers that use the package feature to manage plugins,
-for example, [minpac](https://github.com/k-takata/minpac) and [vim-packager](https://github.com/kristijanhusak/vim-packager), which are written in pure vim script.
+Actually, there are several plugin managers that use the package feature,
+for example, [minpac](https://github.com/k-takata/minpac) and [vim-packager](https://github.com/kristijanhusak/vim-packager), both of which are written in pure vim script.
 
 With the release of the long overdue [Nvim 0.5.0](https://github.com/neovim/neovim/releases/tag/v0.5.0) and increasing importance of Lua in configuring and developing Nvim.
 I would like to try a plugin manager written in Lua, which also supports packages.
-After some survey, I decide to give [packer.nvim](https://github.com/wbthomason/packer.nvim) a try,
-which is by far the most powerful and feature-rich plugin manager written in Lua[^2].
+After some survey, I decide to give [packer.nvim](https://github.com/wbthomason/packer.nvim) a try, which is by far the most powerful and feature-rich[^2].
 
 I use the following script to install packer.nvim in my computer:
 
@@ -69,14 +69,14 @@ vim.cmd("packadd packer.nvim")
 -- ....
 ```
 
-I put it under `~/.config/nvim/lua/plugins.lua` and in my `init.vim`, I just require it: `lua require('plugins.lua')`.
+I put it under `~/.config/nvim/lua/plugins.lua` and in my `init.vim`, I can require it like this: `lua require('plugins')`.
 With the above script, packer will be automatically installed if it hasn't.
 
 # Some issues I met during transition
 
 ## Issues for lazy-loaded plugins
 
-Packer's lazy loading of plugins based on some conditions is really cool, but is also error-prone for newbies.
+Packer's lazy loading of plugins based on conditions is really cool, but is also error-prone for newbies.
 All lazy-loaded plugins are put under `opt` directory.
 They are only added to runtimepath by packer when the specified conditions are met.
 This is the root cause of many issues related to missing function or modules, etc.
@@ -93,15 +93,17 @@ See for example [here](https://github.com/wbthomason/dotfiles/blob/linux/neovim/
 use { 'hrsh7th/nvim-compe', event = 'InsertEnter *', config = [[require('config.compe')]] }
 ```
 
+The code for `config` is executed once when the plugin is loaded by packer.
+
 ## Forget to run PackerCompile after changing plugin settings
 
 After changing plugin configuration, we **must** run `:PackerCompile`.
-It will generate a file named `packer_compiled.vim` or `packer_compile.lua` under the directory `~/.config/nvim/plugin`.
+It will generate a file named `packer_compiled.vim` or `packer_compile.lua` under the directory `~/.config/nvim/plugin` by default.
 
 When something went wrong, always check if you have run `:PackerCompile` and restarted nvim.
-90% time, the issue will go.
+90% of the time, the issue will go.
 
-To fix the issue once and for all, I add the following autocmd:
+To fix the issue once and for all, I created the following autocmd:
 
 ```vim
 augroup packer_auto_compile
@@ -109,6 +111,8 @@ augroup packer_auto_compile
   autocmd BufWritePost */nvim/lua/plugins.lua source <afile> | PackerCompile
 augroup END
 ```
+
+After plugin configuration is changed, command `PackerCompile` will run automatically.
 
 ## No way to retry plugins that failed during installation
 
@@ -150,13 +154,13 @@ The correct way is to run `:UpdateRemotePlugins` after semshi is loaded:
 use {'numirias/semshi', ft = 'python', config = 'vim.cmd [[UpdateRemotePlugins]]'}
 ```
 
-This way, we insure that semshi will be work properly.
+This way, we insure that semshi will work properly.
 
 ## Specify the plugin url format
 
 By default, when we use `use 'aaa/bbb'`, packer will try to clone `https://github.com/aaa/bbb.git`.
-However, due to speed issue accessing github in certain areas, the user may want to use a mirror site of GitHub,
-for example, [fastgit](https://fastgit.org/). Fortunately, this feature has been added recently, [under the request of me](https://github.com/wbthomason/packer.nvim/issues/433) 😃.
+However, due to issue accessing github in certain areas, the user may want to use a mirror site of GitHub, for example, [fastgit](https://fastgit.org/).
+Fortunately, this feature has been added recently, [under the request of me](https://github.com/wbthomason/packer.nvim/issues/433) 😃.
 
 Now, you can do the following:
 
@@ -176,17 +180,17 @@ require('packer').startup(
 })
 ```
 
-All your plugins will be clone from fastgit instead of GitHub.
+All your plugins will be cloned from fastgit instead of GitHub.
 
 # Conclusion
 
 Although there are small issues when switching from vim-plug to packer,
 it is mainly because I am new to its lazy-loading feature.
 Overall, packer.nvim is a great choice if you want to manage plugins in lua.
-Considering that packer is a young plugin and the active development happening in its GitHub repo,
+Considering that packer is a young plugin and the active development happening in its repo,
 I am sure that it will be maturer in short time.
 
-My packer.nvim config can be found [here](https://github.com/jdhao/nvim-config/blob/590baf4ca95f77418dc6beee80e9ad149cd585d4/lua/plugins.lua).
+BTW, my packer.nvim config can be found [here](https://github.com/jdhao/nvim-config/blob/590baf4ca95f77418dc6beee80e9ad149cd585d4/lua/plugins.lua).
 
 # References
 
