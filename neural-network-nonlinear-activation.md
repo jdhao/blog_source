@@ -7,7 +7,7 @@ categories: [machine-learning]
 ---
 
 <p align="center">
-<img src="https://blog-resource-1257868508.file.myqcloud.com/202203271740705.png" width="800">
+<img src="https://blog-resource-1257868508.file.myqcloud.com/202203271740705.png" width="600">
 </p>
 
 Non-linear activations are important in deep neural networks.
