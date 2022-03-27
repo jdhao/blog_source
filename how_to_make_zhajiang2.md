@@ -7,7 +7,7 @@ categories: [life]
 ---
 
 <p align="center">
-<img src="https://blog-resource-1257868508.file.myqcloud.com/202203280008836.jpg" width="600">
+<img src="https://blog-resource-1257868508.file.myqcloud.com/202203280008836.jpg" width="400">
 </p>
 
 今天介绍另外一种风格的炸酱制作，区别于之前写过的 [老北京炸酱](https://jdhao.github.io/2021/09/05/how_to_make_zhajiang_noodles/).
