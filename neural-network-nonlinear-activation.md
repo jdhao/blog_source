@@ -1,11 +1,14 @@
 ---
 title: "Nonlinear Activations for Neural Networks"
 date: 2022-03-27T17:25:12+08:00
-draft: false
 markup: pandoc
 tags: []
 categories: [machine-learning]
 ---
+
+<p align="center">
+<img src="https://blog-resource-1257868508.file.myqcloud.com/202203271740705.png" width="800">
+</p>
 
 Non-linear activations are important in deep neural networks.
 It is important in the sense that without non-linear activation functions, even if you have many linear layers,
@@ -24,7 +27,10 @@ $$f(x) = \frac{1}{1+e^{-x}}$$
 
 The derivative of sigmoid is:
 
-$$\frac{df}{dx} = \frac{e^{-x}}{(1+e^{-x})^2} \\= \frac{1}{1+e^{-x}}(1- \frac{1}{1+e^{-x}})\\ = f(x)(1-f(x))$$
+$$\begin{aligned}\frac{df}{dx} &= \frac{e^{-x}}{(1+e^{-x})^2}\\
+                               &= \frac{1}{1+e^{-x}}(1- \frac{1}{1+e^{-x}})\\
+                               &= f(x)(1-f(x))
+\end{aligned}$$
 
 ## Tanh
 
@@ -58,9 +64,7 @@ the author claimed that PReLU and RReLU works better than ReLU in small scale da
 
 # Vanishing gradient
 
-<p align="center">
-<img src="https://blog-resource-1257868508.file.myqcloud.com/202203271740705.png" width="800">
-</p>
+I show the plot of different activation functions and their derivatives in the title image.
 
 <details>
 <summary><font size="2" color="red">Click to show the code for visualization.</font></summary>
@@ -116,7 +120,6 @@ def tanh(x):
 if __name__ == "__main__":
     main()
 ```
-
 </details>
 
 The derivative of sigmoid is relatively small, and its largest value is only 0.25 (when $x = 0$).
@@ -134,7 +137,7 @@ and we might need much more epochs to get a satisfactory result.
 Another advantage of ReLU is that it is computationally cheap compared to sigmoid,
 both in terms of forward and backward operation.
 
-# Demo
+# Try it yourself interactively
 
 To gain more insight into this, we can use [minist on convenet.js](https://cs.stanford.edu/~karpathy/convnetjs/demo/mnist.html) and change the activation function to see how the train goes.
 We can see that training process under tanh and sigmoid activation is much slower than ReLU.
@@ -144,8 +147,8 @@ We can also play with different activations functions real quick with [TensorFlo
 
 # References
 
-+ https://en.wikipedia.org/wiki/Rectifier_(neural_networks)
-+ A list of activation functions: https://en.wikipedia.org/wiki/Activation_function
-+ ReLU vs Sigmoid: https://stats.stackexchange.com/q/126238/140049
++ <https://en.wikipedia.org/wiki/Rectifier_(neural_networks)>
++ A list of activation functions: <https://en.wikipedia.org/wiki/Activation_function>
++ ReLU vs Sigmoid: <https://stats.stackexchange.com/q/126238/140049>
 
 [^1]: See [this post](https://stats.stackexchange.com/a/335972/140049) and also [this one](https://stackoverflow.com/q/9782071/6064933) for more detailed discussions.
