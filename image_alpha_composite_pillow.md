@@ -1,5 +1,5 @@
 ---
-title: "How to Do Alpha-compositing in Pillow"
+title: "How to Do Image Alpha-compositing in Pillow"
 date: 2022-04-01T23:40:04+08:00
 markup: pandoc
 tags: [PIL]
@@ -108,4 +108,4 @@ The transparency decreases as we increase the value of alpha.
 
 # References
 
-- https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.Image.alpha_composite
+- <https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.Image.alpha_composite>
