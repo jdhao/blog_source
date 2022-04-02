@@ -34,6 +34,7 @@ So it is easy to see that the resulting pixel value is a linear combination of p
 For RGB images, this is done for per-channel per-pixel.
 
 Note that in Pillow, the alpha value is rescaled from $[0, 1.0]$ to $[0, 255]$.
+So in the following text, I will use the range $[0, 255]$ and it should not cause any confusion.
 
 ```python
 import numpy as np
@@ -75,6 +76,11 @@ This will not affect the region in A that do not have overlap with image B.
 Otherwise, you will get a opaque look for those regions.
 
 Then we should set proper alpha for image B, depending on how you want to composite.
+In this case, the pixel value for the resulting image becomes simply:
+
+$$v = \alpha v_a + (1-\alpha) v_b$$
+
+You can change $\alpha$ to control the contribution of A and B to the result image.
 For example, if you want B to completely dominate the overlapping region, you can set alpha to 255.
 If you want to show partial A and B, you can set alpha to a value between 0 and 255.
 The larger alpha gets, the less you will *see* the underlying part of image A.
