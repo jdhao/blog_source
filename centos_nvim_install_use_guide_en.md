@@ -22,8 +22,8 @@ use it. Most of the config below also applies to Windows and Mac. For how to
 configure Neovim on Windows, you may also be interested in [this post](https://jdhao.github.io/2018/11/15/neovim_configuration_windows/).
 
 **2022-01-29: Note that this post is written more than three years ago.
-Some of the plugins mentioned here may not be maintained or may not be the best fit for Neovim,
-or even not need anymore, e.g., [highlighted yank is builtin in Neovim since May 2020](https://jdhao.github.io/2020/05/22/highlight_yank_region_nvim/#neovim-only).
+Some of the plugins mentioned here may not be maintained or may not be the best fit for Neovim, or even not needed,
+e.g., [highlighted yank is builtin in Neovim since May 2020](https://jdhao.github.io/2020/05/22/highlight_yank_region_nvim/#neovim-only).
 I have shared some of the plugin changes in [this post](https://jdhao.github.io/2021/12/31/using_nvim_after_three_years/#what-remains-what-has-changed-and-some-new-plugins).**
 
 <!--more-->
@@ -301,7 +301,7 @@ Plug 'jiangmiao/auto-pairs'
 Let's take manipulating double quotes as an example. In insert model, press `"`,
 it will automatically become two double quotes. At the same time, the cursor is
 placed between the two double quotes, waiting for input. When you finish
-inputing text between the quotes, you may want to place the cursor after the
+inputting text between the quotes, you may want to place the cursor after the
 right quote and continue inserting text. Here comes the magic part: just press
 `"` one more time, and the cursor will be placed right behind the right quote.
 
@@ -370,7 +370,7 @@ We often need to jump to the definition of class and method to check their
 implementation details. We can use
 [jedi-vim](https://github.com/davidhalter/jedi-vim) to achieve this. Actually,
 jedi-vim can also do code auto-completion. Since we have installed deoplete and
-deoplete-jedi, we can disable code completion and only use the code jumpt
+deoplete-jedi, we can disable code completion and only use the code jump
 function of jedi-vim. Install jedi-vim with vim-plug:
 
 ```
@@ -719,9 +719,9 @@ More reference [here](https://stackoverflow.com/q/3025615/6064933). See also
 `nvim --help`.
 
 OK, that is end of this long post. You can find my complete Nvim configurations
-[here](https://github.com/jdhao/nvim-config). Happy Viming!
+[here](https://github.com/jdhao/nvim-config). Happy Vimming!
 
 [^1]: Vim was first released in 1991. Its predecessor is Vi, born in 1978.
-[^2]: Developers would send a patch to Bram. Bram will review it and then merge it on GitHub if he thinks the patch is ok.
+[^2]: Developers would send a patch to Bram. Bram will review it and then merge it on GitHub if he thinks the patch is okay.
 [^3]: Check [here](https://jdhao.github.io/2018/10/16/tmux_build_without_root_priviledge/) on how to build the latest version of tmux from source.
 [^4]: For Windows, the config directory is different. Open neovim and run command `:echo stdpath('config')` to find the exact directory.
