@@ -2,7 +2,7 @@
 title: "How to Add Color Emoji to Image in Python"
 date: 2022-04-03T11:52:55+08:00
 markup: markdown
-tags: [font, PIL]
+tags: [font, PIL, Unicode]
 categories: [Python]
 ---
 
