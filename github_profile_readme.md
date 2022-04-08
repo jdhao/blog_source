@@ -1,9 +1,14 @@
 ---
-title: "How to Customize Your GitHub Profile"
+title: "How to Make An Impressive and Beautiful GitHub Profile"
 date: 2022-01-03T13:13:03+08:00
 tags: [GitHub]
 categories: [Note]
 ---
+<details>
+<summary><font size="2" color="red">update log</font></summary>
+
++ <font color="blue">2022-04-09: add section on Stack Overflow stats card.</font>
+</details>
 
 In this post, I will share how to customize your GitHub profile page,
 and you can find the end result [here](https://github.com/jdhao).
@@ -79,15 +84,27 @@ With the help of project [github-readme-stats](https://github.com/anuraghazra/gi
 
 ```html
 <p align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=jdhao&show_icons=true&count_private=true&theme=solarized-light&hide_border=true" width="800">
+<img src="https://github-readme-stats.vercel.app/api?username=jdhao&show_icons=true&count_private=true&theme=solarized-light&hide_border=true" width="600">
 </p>
 ```
 
 The result is:
 
 <p align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=jdhao&show_icons=true&count_private=true&theme=solarized-light&hide_border=true" width="800">
+<img src="https://github-readme-stats.vercel.app/api?username=jdhao&show_icons=true&count_private=true&theme=solarized-light&hide_border=true" width="600">
 </p>
+
+## Show Stack Overflow stats
+
+With the help of project [stackoverflow-card](https://github.com/nschloe/stackoverflow-card), we can easily create a card for our Stack Overflow account:
+
+```
+[![jdhao's stackoverflow profile](https://stackoverflow-card.vercel.app/?userID=6064933&theme=solarized-light)](https://stackoverflow.com/users/6064933/jdhao)
+```
+
+The result is like this:
+
+[![jdhao's stackoverflow profile](https://stackoverflow-card.vercel.app/?userID=6064933&theme=solarized-light)](https://stackoverflow.com/users/6064933/jdhao)
 
 # References
 
