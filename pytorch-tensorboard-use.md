@@ -78,3 +78,8 @@ tensorboard --logdir=exp_log
 
 The argument `--logdir` should be followed one of valid tensorboard logs you have written during your experiment.
 Then you can open the browser and check the plots.
+
+# References
+
++ Tensorboard tutorial: https://pytorch.org/tutorials/intermediate/tensorboard_tutorial.html
++ PyTorch Tensorboard doc: https://pytorch.org/docs/stable/tensorboard.html
