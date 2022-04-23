@@ -46,3 +46,4 @@ Then open the searched item for github and directly update your access token the
 # References
 
 + https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/
++ update GitHub access token on mac: https://gist.github.com/jonjack/bf295d4170edeb00e96fb158f9b1ba3c
