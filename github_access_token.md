@@ -1,5 +1,5 @@
 ---
-title: "Push to GitHub with GitHub Access Token"
+title: "Push to GitHub with Personal Access Token (PAT)"
 date: 2022-04-23T14:30:06+08:00
 markup: markdown
 tags: [GitHub]
