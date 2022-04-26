@@ -1,12 +1,24 @@
 ---
-title: "Concurrent.futures in Python"
+title: "Using Concurrent.futures in Python"
 date: 2020-12-29T23:32:08+08:00
 draft: false
 tags: []
 categories: [Python]
 ---
 
-My notes on using `concurrent.futures` in Python.
+My notes on using [`concurrent.futures`](https://docs.python.org/3/library/concurrent.futures.html) in Python.
+
+<!--more-->
+
+# ThreadPoolExecutor or ProcessPoolExecutor?
+
+`concurrent.futures` provides two convenient and high-level class `ThreadPoolExecutor` and `ProcessPoolExecutor`.
+You would want to use `ThreadPoolExecutor` when dealing with IO-bound tasks,
+for example, when you are making a lot of requests to a web service.
+You would want to use `ProcessPoolExecutor` if you are dealing with CPU intensive operations.
+The `ProcessPoolExecutor` allows users to utilize the multi-core power of the system and achieve significant speedup of the programs.
+
+These two classes have almost the same interface, so it is easy to learn and use.
 
 # executor.map() VS executor.submit()
 
@@ -90,7 +102,7 @@ indefinitely without any progress. I have to reduce `max_worker` to about 50 to
 run the code smoothly. So in our real projects, we should tweak the value of
 `max_workers` to fit our needs.
 
-# Ref
+# References
 
 + [How does ThreadPoolExecutor().map differ from ThreadPoolExecutor().submit?](https://stackoverflow.com/q/20838162/6064933)
 + [Number of max_workers when using ThreadPoolExecutor from concurrent.futures?](https://stackoverflow.com/q/47498288/6064933)
