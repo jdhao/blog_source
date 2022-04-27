@@ -1,5 +1,5 @@
 ---
-title: "How Match Non-greedily in Nvim/Vim"
+title: "How to Match Non-greedily in Nvim/Vim"
 date: 2022-04-27T02:20:12+08:00
 markup: markdown
 tags: [Regex]
