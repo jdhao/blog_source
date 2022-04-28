@@ -34,6 +34,55 @@ def sqrt(x):
 
 This method is very fast, it can calculate $sqrt(5)$ is less than 5 iterations.
 
+# Newton method
+
+We can also use [newton's method](https://en.wikipedia.org/wiki/Newton%27s_method) to find the square root of $num$.
+Basically, we have the following $f(x)$:
+
+$$f(x) = x^2 - num$$
+
+We can get the square root of $num$ iteratively via:
+
+$$x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$$
+
+The code is like this:
+
+```python
+def newton_sqrt(num):
+    cur = num / 2.0
+    eps = 1e-7
+
+    while abs(get_next(cur, num) - cur) > eps:
+        cur = get_next(cur, num)
+
+    return cur
+
+
+def get_next(x, num):
+    return x - f_val(x, num)/df(x)
+
+
+def f_val(x, num):
+    return x*x - num
+
+
+def df(x):
+    return 2*x
+
+
+def main():
+    num = 5
+    res = newton_sqrt(num)
+
+    print(f"res: {res}")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Newton's method also works pretty quickly to find the root square of a num.
+
 # Gradient descent
 
 Apart from the Babylonian method, I thought we can also solve this problem with gradient descent easily.
@@ -115,7 +164,13 @@ There are two points worth noting.
 
 First, it is how we calculate the loss. Initially I made the mistake of defining the loss as $x - w^2$.
 Since we want to minimize the difference between $x$ and $w^2$, the loss should be defined as $\Vert x - w^2 \Vert$.
-Otherwise, we can never learn a proper value for $w$.
+Otherwise, we can never learn a proper value for $w$. The derivative of loss w.r.t $w$ is:
+
+$$\frac{\partial l}{\partial w} =
+\begin{cases}
+      -2w & w^2 < x\\
+      2w &  w^2 >= x
+\end{cases}$$
 
 Another point is the learning rate schedule.
 When $w$ is close to its real value, we should use a small learning rate.
@@ -136,5 +191,5 @@ With this policy, we can approximate $\sqrt{x}$ with precision as high as $1*10^
 
 # Conclusion
 
-As you can see, the Babylonian method converges much faster than gradient descent.
-However, using gradient descent to solve this problem is kind of fun and provides a new perspective.
+Both the Babylonian method and Newton's method converge much faster than gradient descent.
+However, using gradient descent to solve this problem is fun and provides a new perspective.
