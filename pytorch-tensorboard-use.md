@@ -10,11 +10,15 @@ This is a brief note on how to use [Tensorboard](https://github.com/tensorflow/t
 
 <!--more-->
 
+# Install
+
 First we need to install tensorboard:
 
 ```
 pip install tensorboard
 ```
+
+# SummaryWriter
 
 The main interface we use is [`SummaryWriter`](https://pytorch.org/docs/stable/tensorboard.html#torch.utils.tensorboard.writer.SummaryWriter).
 It has many builtin functions, such as `add_scalar`, `add_image`,  `add_graph` (for torch models) etc.
@@ -42,6 +46,8 @@ def main():
 
 The first argument is the tag given to this value series.
 
+## Group plots
+
 We can also group the plot like this:
 
 ```python
@@ -54,6 +60,8 @@ for n_iter in range(100):
 
 In the visualization, we will get two groups, one for `Loss` and one for `Accuracy`.
 Each group has two plots, for `train` and `test` respectively.
+
+## Compare stats in the same plot
 
 Often we want to show/compare several curves on the same plot.
 This can be achieved with [`add_scalars()`](https://pytorch.org/docs/stable/tensorboard.html#torch.utils.tensorboard.writer.SummaryWriter.add_scalars):
@@ -69,6 +77,22 @@ for n_iter in range(100):
 ```
 
 In the above code, we have two groups, and each group has one plot showing both `train` and `test` stats.
+
+## Change the axis scale?
+
+Sometimes the scale for x and y axis may not be right.
+The first thing you can do is to disable outlier removal, since it is enabled by default.
+
+Or we can manually select a region using the mouse to only show that region.
+After tensorboard [version 2.5](https://github.com/tensorflow/tensorboard/releases/tag/2.5.0), you can set axis range in the tensorboard web interface interactively,
+thanks to the work of [this pr](https://github.com/tensorflow/tensorboard/pull/4711).
+
+ref:
+
++ https://stackoverflow.com/questions/37144211/rescale-tensorboard-summaries-plot
++ https://github.com/tensorflow/tensorboard/issues/273
+
+# Visualize the plot
 
 To actually show the visualizations, we can run the following command:
 
