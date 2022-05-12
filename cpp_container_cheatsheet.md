@@ -60,7 +60,7 @@ There is also `unordered_set`, which is different from `set`:
 + The underlying implementation for `set` is binary search tree (BST), while the underlying implementation for `unordered_set` is hash table.
 + The element in `set` is sorted so that their order is guaranteed, while for `unordered_set`, there is no guarantee for the element order.
 + `set` requires less memory than `unordered_set` (`unordered_set` has to store a hash table).
-+ Search time is at most `O(log(n))` for `set`, while for `unordered_set`, the search time is on average `O(1)`, but may be `O(n)` (highly unlikely)
++ Search time is at most `O(log(n))` for `set`, while for `unordered_set`, the search time is on average `O(1)`, but may be `O(n)` in worst case (highly unlikely)
 
 # map (works like a Python dict)
 
@@ -83,11 +83,10 @@ Typically implemented using balanced binary search tree.
 ref:
 
 + define constant map: https://stackoverflow.com/a/8688615/6064933
-
 + Check if map contains a key: `bool has_key = items.find(2) != items.end();` or `items.count(2) != 0`
 
-There is also `unordered_map`. The different between map and unordered_map is similar to difference between set and unordered_set.
-So we will not elaborate on this.
+There is also `unordered_map`. The different between map and unordered_map is similar to the difference between set and unordered_set.
+So I will not elaborate on this.
 
 Note that when map is defined using the `const` modifier, you can not access map element with operator `[]`,
 since it is possible to alter map value when accessing map element like this,
