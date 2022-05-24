@@ -33,3 +33,4 @@ categories: [thought]
 
 - [如何高效使用搜索引擎找到技术问题的答案](https://jdhao.github.io/2020/05/09/search_for_solution_with_web_engine/)
 - [为什么要用英语以及谷歌？](https://jdhao.github.io/2020/01/22/why_use_english_and_google/)
+- Getting answers: https://www.mikeash.com/getting_answers.html#guide_begin

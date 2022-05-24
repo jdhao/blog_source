@@ -127,7 +127,7 @@ Ref:
 
 + Lua: colon notation, 'self' and function definition vs. call: https://stackoverflow.com/q/32080972/6064933
 
-## The weirdness of lua REPL
+## The weirdness of Lua REPL
 
 If we have the following code in `test.lua`:
 
@@ -138,7 +138,7 @@ print(x)
 
 it will print out `1`, not `nil`. Expected result, nothing special.
 
-In the lua REPL, if we type the following command:
+In the Lua REPL, if we type the following command:
 
 ```lua
 > local x = 1
@@ -147,7 +147,7 @@ In the lua REPL, if we type the following command:
 
 the output is surprisingly `nil`, not 1! Crazy, isn't it?
 
-The reason is that in lua REPL, each line is treated as a block.
+The reason is that in Lua REPL, each line is treated as a block.
 Basically, a block is an area where a variable is visible.
 Local variables only work in that block. For example, the following works:
 
@@ -167,7 +167,7 @@ Ref:
 + https://stackoverflow.com/a/33155461/6064933
 + https://stackoverflow.com/a/2835433/6064933
 
-## In lua, both 0 and empty string is true
+## In Lua, both 0 and empty string is true
 
 Unlike Python, both 0 and empty string is considered `true` in lua, which is weird.
 
