@@ -18,7 +18,7 @@ We can use [open3d](https://github.com/isl-org/Open3D). We can use pip to instal
 pip install open3d
 ```
 
-For CentOs 7, I met error when installing the latest version:
+For CentOS 7, I met error when installing the latest version:
 
 >  /lib64/libc.so.6: version `GLIBC_2.18' not found
 
@@ -73,9 +73,9 @@ Ref:
     + https://stackoverflow.com/q/71233749/6064933
 
 
-# PyntCloud
+# Pyntcloud
 
-We can also use [PyntCloud](https://github.com/daavoo/pyntcloud):
+We can also use [pyntcloud](https://github.com/daavoo/pyntcloud):
 
 ```
 pip install pyntcloud
@@ -143,7 +143,7 @@ def use_plyfile(pts, write_text):
     PlyData([el], text=write_text).write('my_pts3.ply')
 ```
 
-Summay: Not intuitive API design, at least for writing a ply file.
+Summary: Not intuitive API design, at least for writing a ply file.
 
 # Meshio
 
