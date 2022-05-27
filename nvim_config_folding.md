@@ -233,6 +233,6 @@ create fancy foldings and folding text as you want.
 
 # References #
 
-+ https://vi.stackexchange.com/questions/3814/is-there-a-best-practice-to-fold-a-vimrc-file
++ Is there a best practice to fold a vimrc file: https://vi.stackexchange.com/q/3814/15292
 
 [^1]: See `:h fold-foldtext` for detailed explanations on fold text.
