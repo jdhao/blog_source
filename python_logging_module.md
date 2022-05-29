@@ -5,19 +5,17 @@ tags: [logging]
 categories: [Python]
 ---
 
-In the past, I use plain `print()` to display some statistics during training
-process of my models. However, it is not convenient to save the statistics in a
-file for later inspection. Once the program is finished, we do not have an
-overview of the training process. I am aware that there are packages such as
-[tensorboardX](https://github.com/lanpa/tensorboardX) and [visdom](https://github.com/facebookresearch/visdom), which are specifically designed for
-inspecting the various statistics during training. Right now, I would rather
-keep the program plain simple and usable. So I decided to give [Python logging
-pacakge](https://docs.python.org/3/library/logging.html) a try.
+In the past, I use plain `print()` to display some statistics during training process of my models.
+However, it is not convenient to save the statistics in a file for later inspection.
+Once the program is finished, we do not have an overview of the training process.
+I am aware that there are packages such as [tensorboardX](https://github.com/lanpa/tensorboardX) and [visdom](https://github.com/facebookresearch/visdom),
+which are specifically designed for inspecting the various statistics during training.
+Right now, I would rather keep the program plain simple and usable.
+So I decided to give [Python logging package](https://docs.python.org/3/library/logging.html) a try.
 
 <!--more-->
 
-If we want to display messages on the terminal and save to a file, we can use
-the following setting:
+If we want to display messages on the terminal and save to a file, we can use the following setting:
 
 ```python
 import logging
@@ -33,19 +31,17 @@ logging.basicConfig(
 )
 ```
 
-The `datefmt` parameter is used to format the time string in the logging
-message. With the above format, the time is shown as something like the
-following:
+The `datefmt` parameter is used to format the time string in the logging message.
+With the above format, the time is shown as something like the following:
 
 > 2018-10-15 09:44:49 (...other message...)
 
-The format string uses the standard Python time format. You can find the
-full list of format directives [here](https://docs.python.org/3/library/time.html#time.strftime).
+The format string uses the standard Python time format.
+You can find the full list of format directives [here](https://docs.python.org/3/library/time.html#time.strftime).
 
-The `format` paramter is used to set the format of the output message, i.e.,
-what to show in the logging message. We can show time, current file name,
-process name etc. A list of predefined attributes are (excerpted from the
-logging documentation):
+The `format` parameter is used to set the format of the output message, i.e., what to show in the logging message.
+We can show time, current file name, process name etc.
+A list of predefined attributes are (excerpted from the logging documentation):
 
 <details>
 <summary><font color="red">Click to see the doc.</font></summary>
@@ -78,10 +74,9 @@ logging documentation):
 ```
 </details>
 
-The `handler` parameter is used to set up where logging messages should go. In
-the above example, we use a [`FileHandler`](https://docs.python.org/3/library/logging.handlers.html#filehandler)
-to save the logging message to a disk file. We use [`StreamHandler`](https://docs.python.org/3/library/logging.handlers.html#streamhandler)
-to display messages in the terminal.
+The `handler` parameter is used to set up where logging messages should go.
+In the above example, we use a [`FileHandler`](https://docs.python.org/3/library/logging.handlers.html#filehandler) to save the logging message to a disk file.
+We use [`StreamHandler`](https://docs.python.org/3/library/logging.handlers.html#streamhandler) to display messages in the terminal.
 
 After configuring logging, we need a logger:
 
@@ -96,20 +91,19 @@ An example usage is shown below:
 logger.info("Epoch %d, Accuracy: %f, Loss: %f", epoch, accuracy, loss)
 ```
 
-The logging module relies on the old Python string formatting style. If you use
-the new [`.format()`](https://pyformat.info/) style string formatting. You will
-see a pylint warning complaining:
+The logging module relies on the old Python string formatting style.
+If you use the new [`.format()`](https://pyformat.info/) style string formatting, you will see a pylint warning complaining:
 
 > pylint: logging-not-lazy / Specify string format arguments as logging function parameters
 
-The above formatting is also slightly different from the old Python formatting
-style. We do not need to write `%` between strings and the values. We can just
-append a list of needed values as the argument for the `info` method.
+The above formatting is also slightly different from the old Python formatting style.
+We do not need to write `%` between strings and the values.
+We can just append a list of needed values as the argument for the `info` method.
 
 # How to log exceptions
 
-After catching an exception, we may want to log the exception message using our
-logger. Initially, I have the following code:
+After catching an exception, we may want to log the exception message using our logger.
+Initially, I have the following code:
 
 ```python
 try:
@@ -118,14 +112,13 @@ except SomeError as e:
     logger.debug("Exception: %s", e)
 ```
 
-Unfortunately, this will only print an incomplete excpetion message and does
-not help to debug the error.
+Unfortunately, this will only print an incomplete exception message and does not help to debug the error.
 
-Using `str(e)` or `repr(e)` to represent the exception, you also won't get the
-actual stack trace, so it is not helpful to find where the exception is.
+Using `str(e)` or `repr(e)` to represent the exception, you also won't get the actual stack trace.
+So it is not helpful to find where the exception is.
 
-After reading other answers and the logging package doc, the following two ways
-work great to print the actual stack trace for later debugging:
+After reading other answers and the logging package doc,
+the following two ways work great to print the actual stack trace for later debugging:
 
 1. use `logger.debug()` with parameter `exc_info`:
 

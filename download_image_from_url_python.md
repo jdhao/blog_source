@@ -1,12 +1,12 @@
 ---
-title: "Download Image from URL using Python"
+title: "How to Download Image from URL using Python"
 date: 2020-06-17 09:19:30+0800
 tags: [requests]
 categories: [Python]
 ---
 
-Recently, I want to download some images using Python. This is what I've
-learned after survey.
+Recently, I want to download some images using Python.
+This is what I've learned after the survey.
 
 <!--more-->
 
