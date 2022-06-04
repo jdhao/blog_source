@@ -2,7 +2,7 @@
 title: "Learning SQL from Scratch(1): Do We Even Need to Start?"
 date: 2022-06-04T01:19:17+08:00
 markup: markdown
-tags: []
+tags: [PostgreSQL, MySQL]
 categories: [SQL]
 ---
 
