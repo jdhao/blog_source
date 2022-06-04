@@ -1,5 +1,5 @@
 ---
-title: "How to Use Git branches"
+title: "A List of Common Git-branch Operations"
 date: 2020-09-03 23:41:00+0800
 tags: [Git]
 categories: [Git]
@@ -9,13 +9,13 @@ categories: [Git]
 <img src="https://blog-resource-1257868508.file.myqcloud.com/202202021114754.jpg" width="800">
 </p>
 
-Some commonly used Git commands related to branch operations.
+This post summarizes some commonly used Git commands related to branch operations.
 
 <!--more-->
 
 # Create a new branch (locally and remotely)
 
-## Create branch locally
+## Create a branch locally
 
 We can use the following command to create a new branch
 
@@ -23,8 +23,7 @@ We can use the following command to create a new branch
 git branch <new_branch>
 ```
 
-At this time, we are still in original branch. To switch to new branch, use the
-following command:
+At this time, we are still in original branch. To switch to new branch, use the following command:
 
 ```
 git checkout <new_branch>
@@ -36,7 +35,7 @@ The two steps can be combined with the following command:
 git checkout -b <new_branch>
 ```
 
-## Create branch remotely
+## Create a branch remotely
 
 To create a remote branch, use the following command:
 
@@ -44,9 +43,8 @@ To create a remote branch, use the following command:
 git push -u origin <local_branch>
 ```
 
-The `-u` option sets a upstream branch of the same name for tracking, i.e., now
-our local branch corresponds to the remote branch of the same name.
-
+The `-u` option sets a upstream branch of the same name for tracking,
+i.e., now our local branch corresponds to a remote branch of the same name.
 
 Ref:
 
@@ -57,11 +55,10 @@ Ref:
 
 ## Create a git branch from a specific commit
 
-Sometimes, we may find that we need to fix a flaw in a specific commit, but
-current work has not been finished. We may create a new branch from that commit,
-and after that, merge that branch to current branch.
+Sometimes, we may need to fix a flaw in a specific commit, but current work has not been finished.
+We may create a new branch from that commit, and after that, merge that branch to current branch.
 
-This is how we do using git:
+This is how we do this using git:
 
 ```
 git branch fix_bug <commit_id>
@@ -76,8 +73,7 @@ The above command can also be simplified using `-b` for checkout:
 git checkout -b fix_bug <commit_id>
 ```
 
-After fixing the issue in branch `fix_bug`, we can then merge the change into
-the original branch, say, master branch:
+After fixing the issue in branch `fix_bug`, we can then merge the change into the original branch, say, `master` branch:
 
 ```
 git checkout master
@@ -97,11 +93,11 @@ Ref:
 
 # Delete a branch
 
-+ Delete local branch: `git branch -d <branch_name>`
-+ Delete remote branch: `git push -d <remote_name> <remote_branch>`
++ Delete a local branch: `git branch -d <branch_name>`
++ Delete a remote branch: `git push <remote_name> -d <remote_branch>`
 
-Note that you **can not** delete a local branch when you are on it! You need
-first to checkout to another branch.
+Note that we **can not** delete a local branch when we are on it!
+We need first to checkout to another branch.
 
 Ref:
 
@@ -109,33 +105,35 @@ Ref:
 
 # Rename a branch locally and remotely
 
-First we need to rename the local branch:
+Suppose we want to rename the branch `foo` in local and remote repo to name `bar`,
+first we need to rename the local branch:
 
-```bash
+```
 git branch -m foo bar
 git branch --unset-upstream foo
 ```
 
-Then we push this branch to the remote:
+Then we push the `bar` branch to the remote:
 
 ```bash
 # create a remote branch of the same name and track it.
 git push -u origin bar
 ```
 
-If the original remote branch `foo` is the default branch, you need to set
-other branch as the default. Otherwise, you can delete remote branch `foo`.
-After making sure that `foo` is default remote branch, run the following
-command to delete it from remote:
+If the original remote branch `foo` is the default branch, we need to set other branch as the default.
+Otherwise, we can not delete remote branch `foo`.
+In GitHub, go to `Settings --> Branches` and change the default branch.
+After making sure that `foo` is not the default remote branch, run the following command to delete it from remote:
 
 ```bash
 # suppose that origin is the remote name
-git push -d origin foo
+git push origin -d foo
 ```
 
 Ref:
 
 + How do I rename both a Git local and remote branch name?: https://stackoverflow.com/q/30590083/6064933
++ Cannot delete a remote master branch on git? https://stackoverflow.com/q/12208751/6064933
 
 # Create a local branch from a remote branch?
 
@@ -152,7 +150,7 @@ Then we can create a local branch from the remote branch:
 git checkout -b local_branch_name remote_name/remote_branch
 ```
 
-If you do not want to change the remote name, you can also also `-t`:
+If we do not want to change the remote name, we can also also `-t`:
 
 ```
 git checkout -t <name of remote>/<remote branch name>
@@ -168,7 +166,7 @@ Ref:
 
 # Find remote tracking branch for local branch
 
-If we want to find the remote local branch a local branch is tracking, we can use the following command:
+If we want to find the remote branch that a local branch is tracking, we can use the following command:
 
 ```bash
 git branch -vv
@@ -184,4 +182,3 @@ Ref:
 
 + https://stackoverflow.com/q/171550/6064933
 + https://stackoverflow.com/q/4950725/6064933
-
