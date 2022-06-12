@@ -71,7 +71,13 @@ Most people will probably choose a GUI client to work with the databases.
 
 ## Pgadmin
 
-If you use PostgreSQL, you can try [Pgadmin 4](https://www.pgadmin.org/download/).
+If you use PostgreSQL, you can try [Pgadmin 4](https://www.pgadmin.org/download/), which is specifically builit for Postgres.
+However, some people say the UX sucks.
+
+## Postico
+
+[Postico](https://eggerapps.at/postico/) is a lightweight tool built for Postgres.
+Simple interface, non-free, no auto-completion.
 
 ## Datagrip
 
@@ -95,3 +101,10 @@ Change keyword case in DBeaver: https://stackoverflow.com/a/60854946/6064933
 
 No autocompletion, very simple GUI, less features than DBeaver and Datagrip.
 Not recommended.
+
+## Table plus
+
+[Table plus](https://tableplus.com/) is a commerical product that supports a lot of databases.
+The interface is clean and easy to use.
+
+Requires a license, otherwise very limited feature available.
