@@ -1,5 +1,5 @@
 ---
-title: "How to Calculate Sqrt without Builtin Sqrt Method?"
+title: "How to Calculate Square Root without Using sqrt()?"
 date: 2022-04-28T21:45:01+08:00
 markup: pandoc
 tags: [optimization, math]
@@ -7,6 +7,7 @@ categories: [Programming]
 ---
 
 I saw an interesting question that how to get square root of x without using builtin function from your language.
+There are different ways to approach this problem.
 
 <!--more-->
 
@@ -86,6 +87,9 @@ Newton's method also works pretty quickly to find the root square of a num.
 # Gradient descent
 
 Apart from the Babylonian method, I thought we can also solve this problem with gradient descent easily.
+
+## l1 loss
+
 Suppose that square root of $x$ is $w$, then our loss function will be the difference between $x$ and $w^2$.
 Our objective is minimize the loss.
 
@@ -103,8 +107,10 @@ def main():
     w = random.uniform(1, x)
     print(f"initial w: {w}")
 
+    loss_type = "l2"
+
     n_iter = 200
-    lr = 0.1
+    lr = 0.01
     eps = 0.00001
     losses = []
 
@@ -112,10 +118,16 @@ def main():
         lr = exp_decay_lr_scheduler(lr, i, n_iter)
         # lr = step_lr_scheduler(lr, i, n_iter)
 
-        dl_dw = get_dl_dw(w, x)
+        if loss_type == 'l1':
+            dl_dw = get_dl_dw(w, x)
+        else:
+            dl_dw = get_dl_dw2(w, x)
         w -= (lr * dl_dw)
 
-        loss = abs(x - w**2)
+        if loss_type == 'l1':
+            loss = abs(x - w**2)
+        else:
+            loss =(x - w**2)**2
         print(f"step: {i}, lr: {lr}, w: {w}, loss: {loss}")
         losses.append(loss)
 
@@ -149,11 +161,13 @@ def exp_decay_lr_scheduler(lr, i, n_iter):
 
 
 def get_dl_dw(w, x):
-
     if w*w >= x:
         return 2*w
     else:
         return -2*w
+
+def get_dl_dw2(w, x):
+    return 4*w**3 - 4*w*x
 
 
 if __name__ == "__main__":
@@ -162,9 +176,11 @@ if __name__ == "__main__":
 
 There are two points worth noting.
 
-First, it is how we calculate the loss. Initially I made the mistake of defining the loss as $x - w^2$.
+First, it is how we calculate the loss.
+Initially I made the mistake of defining the loss as $x - w^2$.
 Since we want to minimize the difference between $x$ and $w^2$, the loss should be defined as $\Vert x - w^2 \Vert$.
-Otherwise, we can never learn a proper value for $w$. The derivative of loss w.r.t $w$ is:
+Otherwise, we can never learn a proper value for $w$.
+The derivative of loss w.r.t $w$ is:
 
 $$\frac{\partial l}{\partial w} =
 \begin{cases}
@@ -174,9 +190,10 @@ $$\frac{\partial l}{\partial w} =
 
 Another point is the learning rate schedule.
 When $w$ is close to its real value, we should use a small learning rate.
-Otherwise, we will see oscillation of the loss: the loss will bump up and down.
-I first tried with step policy for learning rate, i.e., reducing the learning rate by a certain factor after the specified steps.
-With this policy, I found that the loss curve is not smooth and oscillates, and we can not get a loss significantly small than 0.001.
+Otherwise, we will see oscillation of the training curve: the loss will bump up and down.
+I first tried with step policy for learning rate, i.e., reducing the learning rate after the specified steps.
+With this policy, I found that the loss curve will oscillates and is not smooth,
+and we can not get a loss significantly small than 0.001.
 
 I tried with the exponentially decaying policy, where we decay the learning rate smoothly with the following factor:
 
@@ -188,6 +205,16 @@ With this policy, we can approximate $\sqrt{x}$ with precision as high as $1*10^
 <p align="center">
 <img src="https://blog-resource-1257868508.file.myqcloud.com/202204282237723.jpg" width="400">
 </p>
+
+## Using l2 loss
+
+Aside from using l1 loss, we can also use l2 loss: $(x - w^2)^2$.
+The derivative of loss w.r.t $w$ is:
+
+$$\frac{\partial l}{\partial w} = 4w^3 - 4xw$$
+
+In the above code, we can change `loss_type` to `l2` to try the l2 loss.
+Using l2 loss often leads to faster convergence than l1 loss.
 
 # Conclusion
 
