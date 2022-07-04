@@ -6,7 +6,7 @@ tags: []
 categories: [Nvim]
 ---
 
-Recently the nvim 0.7.2 version is released following the [0.7.0 release](https://github.com/neovim/neovim/releases/tag/v0.7.0) two months ago.
+Recently the [nvim 0.7.2 version](https://github.com/neovim/neovim/commit/e8ee6733926db83ef216497a1d660a173184ff39) is released following the [0.7.0 release](https://github.com/neovim/neovim/releases/tag/v0.7.0) two months ago.
 Here are some of the updates in 0.7.0.
 
 <!--more-->
