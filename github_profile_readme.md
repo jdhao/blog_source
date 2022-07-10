@@ -94,6 +94,18 @@ The result is:
 <img src="https://github-readme-stats.vercel.app/api?username=jdhao&show_icons=true&count_private=true&theme=solarized-light&hide_border=true" width="600">
 </p>
 
+## Show GitHub streak stats
+
+The project [github-readme-streak-stats](https://github.com/DenverCoder1/github-readme-streak-stats) can help to show your contributions and streak stats.
+
+```
+<img alt="jdhao's GitHub Streak" src="https://github-readme-streak-stats.herokuapp.com?user=jdhao&theme=solarized-light&hide_border=true" width="48%">
+```
+
+The result is like this:
+
+<img alt="jdhao's GitHub Streak" src="https://github-readme-streak-stats.herokuapp.com?user=jdhao&theme=solarized-light&hide_border=true" width="48%">
+
 ## Show Stack Overflow stats
 
 With the help of project [stackoverflow-card](https://github.com/nschloe/stackoverflow-card), we can easily create a card for our Stack Overflow account:
