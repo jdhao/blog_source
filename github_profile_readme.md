@@ -99,12 +99,12 @@ The result is:
 The project [github-readme-streak-stats](https://github.com/DenverCoder1/github-readme-streak-stats) can help to show your contributions and streak stats.
 
 ```
-<img alt="jdhao's GitHub Streak" src="https://github-readme-streak-stats.herokuapp.com?user=jdhao&theme=solarized-light&hide_border=true" width="48%">
+<img alt="jdhao's GitHub Streak" src="https://github-readme-streak-stats.herokuapp.com?user=jdhao&theme=solarized-light&hide_border=true" width="60%">
 ```
 
 The result is like this:
 
-<img alt="jdhao's GitHub Streak" src="https://github-readme-streak-stats.herokuapp.com?user=jdhao&theme=solarized-light&hide_border=true" width="48%">
+<img alt="jdhao's GitHub Streak" src="https://github-readme-streak-stats.herokuapp.com?user=jdhao&theme=solarized-light&hide_border=true" width="60%">
 
 ## Show Stack Overflow stats
 
@@ -123,3 +123,6 @@ The result is like this:
 + https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/about-your-profile
 + Create GitHub profile: https://www.youtube.com/watch?v=ECuqb5Tv9qI
 + https://aboutmonica.com/blog/how-to-create-a-github-profile-readme/
++ collections of Markdown badges:
+    + https://github.com/Ileriayo/markdown-badges
+    + https://github.com/progfay/shields-with-icon
