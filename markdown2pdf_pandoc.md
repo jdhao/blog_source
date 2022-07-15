@@ -21,8 +21,7 @@ Taking our notes in Markdown has several advantages:
 Sublime Text, which means more efficient editing and pleasant writing
 experience.
 
-+ Since a Markdown file is a textual file, we can search it using powerful
-+ search tool such as `grep` or [`ripgrep`](https://github.com/BurntSushi/ripgrep).
++ Since a Markdown file is a textual file, we can search it using powerful search tool such as `grep` or [`ripgrep`](https://github.com/BurntSushi/ripgrep).
 + We can covert the Markdown files to various formats such as PDF, HTML, epub,
 mobi etc., for better reading experience, with the help of [Pandoc](https://pandoc.org/).
 + The notes are all text files and are small in size, which means
@@ -49,7 +48,7 @@ tools:
 ## Background ##
 
 For those who are not familiar with Pandoc, Pandoc is a powerful tool for
-converting document between different formats. It is called the swiss knife of
+converting document between different formats. It is called the Swiss knife of
 document converter. There are actually two steps involved in converting
 Markdown files to PDF:
 
@@ -216,35 +215,29 @@ right=2cm" -o test.pdf test.md
 
 ## Error when using backslash inside Markdown ##
 
-In ordinary Markdown format, it is fine to use backslash characters inside the
-files. But Pandoc interpret the backslash and string after it as LaTeX command
-by default. As a result, you may encounter [weired
-errors](https://tex.stackexchange.com/q/407744/114857) when trying to compile
-Markdown files containing backslash characters. Based on discussions
-[here](https://github.com/jgm/pandoc/issues/1637) and
-[here](https://github.com/jgm/pandoc/issues/2790), the solution is to make
-Pandoc treat the Markdown file as normal Markdown files and not interpret the
-LaTeX command. You need to use the following flag:
+In ordinary Markdown format, it is fine to use backslash characters inside the files.
+But Pandoc interpret the backslash and string after it as LaTeX command by default.
+As a result, you may encounter [weird errors](https://tex.stackexchange.com/q/407744/114857)
+when trying to compile Markdown files containing backslash characters.
+Based on discussions [here](https://github.com/jgm/pandoc/issues/1637) and [here](https://github.com/jgm/pandoc/issues/2790),
+the solution is to make Pandoc treat the Markdown file as normal Markdown files and not interpret the LaTeX command.
+You need to use the following flag:
 
 ```
 pandoc -f markdown-raw_tex
 ```
 
-Or you can use two backslash to represent a literal backslash, e.g., `
-\\sometxt `. If you want to express a LaTeX command, enclose the command with
-inline code block, like this: ` \textt{} `.
-
+Or you can use two backslash to represent a literal backslash, e.g., ` \\sometxt `.
+If you want to express a LaTeX command, enclose the command with inline code block, like this: ` \textt{} `.
 
 ## Add background color to inline code ##
 
-In translating Markdown source file to TeX files, Pandoc use the
-[` \texttt`](https://www.tutorialspoint.com/tex_commands/texttt.htm)
-command to represent the inline code. So inline code has no background color in
-the generated PDF files. To increase the readability of inline code, we can
-modify the `\texttt` command to add background color to text.
+In translating Markdown source file to TeX files,
+Pandoc use the [` \texttt`](https://www.tutorialspoint.com/tex_commands/texttt.htm) command to represent the inline code.
+So inline code has no background color in the generated PDF files.
+To increase the readability of inline code, we can modify the `\texttt` command to add background color to text.
 
-First, we need to create a file named `head.tex` and add the following settings
-to it:
+First, we need to create a file named `head.tex` and add the following settings to it:
 
 ```latex
 % change background color for inline code in
@@ -496,7 +489,7 @@ hello<space><space>
 world
 ```
 
-Using space at the line end for formating is annoying since it cause the
+Using space at the line end for formatting is annoying since it cause the
 trailing whitespace warning. The space characters are also not visible.
 
 Pandoc also provides an

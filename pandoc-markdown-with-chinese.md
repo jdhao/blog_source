@@ -9,8 +9,6 @@ categories: [tools]
          title="生成的 PDF 截图"
          style="float: middle;">
 
-
-
 <details>
 <summary><font size="3" color="red">update log</font></summary>
 
@@ -18,7 +16,6 @@ categories: [tools]
 </details>
 
 For English version of this post, click [here](https://jdhao.github.io/2019/05/30/markdown2pdf_pandoc/).
-
 
 本文主要写如何使用 Pandoc 从 Markdown 文件生成格式精美的 PDF 文件，也包含了一些遇到的问题的解决办法。
 
