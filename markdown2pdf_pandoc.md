@@ -5,6 +5,12 @@ tags: [Pandoc, Sublime-Text, PDF, Markdown, font, LaTeX, Unicode]
 categories: [tools]
 ---
 
+<details>
+<summary><font size="2" color="red">update log</font></summary>
+
++ <font color="blue">2022-07-19: Add build method via neovim</font>
+</details>
+
 本文的中文版本参见 [这里](https://jdhao.github.io/2017/12/10/pandoc-markdown-with-chinese/)。
 
 Over the past few years, I have been using some dedicated note-taking software to manage my notes.
@@ -557,6 +563,11 @@ So I adjust the above build system:
 
 After that, everything goes well.
 
+# Generate PDF via Neovim
+
+We can also define a command to generate and preview the PDF via Neovim.
+For the details, see [this commit](https://github.com/jdhao/nvim-config/commit/33270f32579672e43c8b6f8d5b64ef0e4e99d20e).
+
 # Conclusion #
 
 In this post, I give a complete summary on how to generate beautiful PDF files from Markdown.
@@ -565,10 +576,13 @@ I hope that you can now generate beautiful PDF from Markdown files.
 
 # References #
 
++ pandoc variables for LaTeX: https://pandoc.org/MANUAL.html#variables-for-latex
++ change hyperref color: https://stackoverflow.com/a/58885711/6064933
++ [colors provided by dvipsnames](https://en.wikibooks.org/wiki/LaTeX/Colors#The_68_standard_colors_known_to_dvips)
++ pandoc LaTeX template: https://github.com/Wandmalfarbe/pandoc-latex-template
 + [Dealing with Chinese in Pandoc](https://pandoc.org/faqs.html#i-get-a-blank-document-when-i-try-to-convert-a-markdown-document-in-chinese-to-pdf-using-pandoc--o-test.pdf-test.markdown)
 + [Pandoc's handling of block quote](https://pandoc.org/MANUAL.html#block-quotations)
 + [Pandoc syntax highlighting](https://pandoc.org/MANUAL.html#syntax-highlighting)
-+ [colors provided by dvipsnames](https://en.wikibooks.org/wiki/LaTeX/Colors#The_68_standard_colors_known_to_dvips)
 + [Pandoc section number](https://stackoverflow.com/q/24208889/6064933)
 + [Pandoc command not found](https://stackoverflow.com/a/47837674/6064933)
 + Anchors in Pandoc
