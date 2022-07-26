@@ -25,3 +25,7 @@ categories: [thought]
 + 有时间去学习新东西，去成长，不会一直忙于业务
 + 开会要少，很多会长时间浪费参与者时间，没有任何用
 + 薪水达到平均水平，不一定最高
+
+# References
+
++ work is not your friend: https://www.youtube.com/watch?v=52pdPQHDKho
